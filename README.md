@@ -44,3 +44,7 @@ Le robot détecte un site mort ou remplacé, pas un jeu devenu payant : ces cham
 ## Mise en ligne
 
 GitHub Pages, par [.github/workflows/deploy.yml](.github/workflows/deploy.yml) : dans les réglages du dépôt, Pages → Source → « GitHub Actions ». Avec un nom de domaine, construire avec `SITE=https://… BASE=/`.
+
+## Propositions de nouveaux jeux
+
+Un agent Claude planifié cherche chaque lundi de nouveaux jeux et ouvre une pull request avec au plus cinq fiches. Il ne fusionne jamais lui-même. Pour qu'un jeu refusé ne soit plus proposé, ajouter son adresse dans [src/data/rejected.json](src/data/rejected.json), par exemple `["https://exemple.io/"]`.
