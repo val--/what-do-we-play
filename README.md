@@ -2,7 +2,7 @@
 
 A directory of multiplayer games that run in a web browser, for families, friends and team icebreakers. Filter by group size, language, audience and time, then share a link: nothing to install.
 
-**Live site: https://val--.github.io/what-do-we-play/** (also [in French](https://val--.github.io/what-do-we-play/fr/))
+**Live site: https://whatdoweplay.games/** (also [in French](https://whatdoweplay.games/fr/))
 
 It is a static site built with [Astro](https://astro.build), in English and French, with combinable filters, a daily link check and a weekly agent that proposes new games.
 
@@ -10,7 +10,7 @@ It is a static site built with [Astro](https://astro.build), in English and Fren
 
 ```
 npm install
-npm run dev          # http://localhost:4321/what-do-we-play/
+npm run dev          # http://localhost:4321/
 npm run build        # builds into dist/
 npm run check-links  # visits every game and updates src/data/status.json
 npm run covers       # fetches a thumbnail for games that have none
@@ -59,7 +59,7 @@ The checker reads the raw HTML only, so it sees nothing on sites that are pure J
 
 ## Deployment
 
-GitHub Pages, through [.github/workflows/deploy.yml](.github/workflows/deploy.yml), on every push to `main`. With a custom domain, build with `SITE=https://… BASE=/`.
+GitHub Pages, through [.github/workflows/deploy.yml](.github/workflows/deploy.yml), on every push to `main`, served at the custom domain `whatdoweplay.games` (set in the repository's Pages settings). To build for another address, use `SITE=https://… BASE=/…`.
 
 ## New game proposals
 

@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
 
-// GitHub Pages address by default. With a custom domain:
-// SITE=https://whatdoweplay.games BASE=/ npm run build
+// Served at the custom domain. To build for another address:
+// SITE=https://example.org BASE=/some-path npm run build
 export default defineConfig({
-  site: process.env.SITE ?? 'https://val--.github.io',
-  base: process.env.BASE ?? '/what-do-we-play',
+  site: process.env.SITE ?? 'https://whatdoweplay.games',
+  base: process.env.BASE ?? '/',
 });
