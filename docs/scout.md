@@ -27,7 +27,7 @@ A candidate qualifies only if ALL of these hold:
 - At least TWO independent sources mention it, and at least one of them was published in the last three years. These do NOT count as sources: the game's own site, posts written by its creator or team (Show HN, a launch post, a Product Hunt page they submitted), press releases, and a second blog that copies the same list. Write down the URL and the date of each source.
 - You fetched the game's own site yourself and it responded with a real game page (not a parked domain, not a domain for sale, not a shutdown notice).
 
-If a candidate only barely meets these conditions, drop it and mention it in the "Not selected" section of the pull request. Never propose a game while describing it as fragile or uncertain.
+If a candidate only barely meets these conditions, drop it and mention it in the "Écartés" section of the pull request. Never propose a game while describing it as fragile or uncertain.
 
 Prefer games that fill gaps in the catalogue: types with few entries, interfaces in languages other than English, large groups, kids. Do not propose a game of a type that already has five or more entries unless it clearly offers something the existing ones lack, and say what.
 
@@ -83,17 +83,17 @@ The only files you may change are src/data/games.json and the new images in publ
 
 ## 7. Open the pull request
 
-Create a branch named `proposals/YYYY-MM-DD` (today's date), commit, push the branch, and open a pull request against main. Write the title and body in ENGLISH, in plain language for a non-specialist owner. Title: `Game proposals for YYYY-MM-DD`.
+Create a branch named `proposals/YYYY-MM-DD` (today's date), commit, push the branch, and open a pull request against main. Write the title and body in FRENCH, in plain language for a non-specialist owner. Title: `Propositions de jeux du JJ/MM/AAAA`.
 
 For each game, the body gives, in this order:
 
 1. The name and link, and one sentence on what it brings that the catalogue lacks.
 2. "Sources": the links, each with its date.
-3. "What the entry says": a table with one row per fact from section 3 (free, no account, on a phone, shared screen, players, languages, duration), the value you entered, and where it comes from: either a link with the words that support it, or "default value, not confirmed".
-4. "Thumbnail": whether an image was kept, and if not, why.
-5. "To check by playing": only what a person must check by opening a game.
+3. "Ce que dit la fiche": a table with one row per fact from section 3 (gratuit, sans compte, sur téléphone, écran partagé, joueurs, langues, durée), the value you entered, and where it comes from: either a link with the words that support it, or "valeur par défaut, non confirmé".
+4. "Vignette": whether an image was kept, and if not, why.
+5. "À vérifier en jouant": only what a person must check by opening a game.
 
-After the games, a section "Not selected" lists the candidates you dropped and why, in one line each. End the body with: to refuse a game, remove its entry from the pull request and add its URL to src/data/rejected.json.
+After the games, a section "Écartés" lists the candidates you dropped and why, in one line each. End the body with: to refuse a game, remove its entry from the pull request and add its URL to src/data/rejected.json.
 
 If you cannot open the pull request (missing permission or tooling), push the branch if you can and state clearly in your final message what was done and what was not. If websites are unreachable because of the session's network policy, stop, open nothing, and say so.
 
