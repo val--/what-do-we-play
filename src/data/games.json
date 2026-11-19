@@ -996,7 +996,7 @@
     "audience": ["family", "friends", "coworkers"],
     "players": { "min": 2, "max": 200 },
     "duration": { "min": 10, "max": 30 },
-    "free": true, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Dropped at a random spot on Street View, everyone guesses where they are on a map. Free with ads; the host shares a link to start a private party.",
       "fr": "Déposé au hasard dans Street View, chacun devine sur une carte où il se trouve. Gratuit avec publicités ; l'hôte partage un lien pour lancer une partie privée."
