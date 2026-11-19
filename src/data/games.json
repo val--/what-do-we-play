@@ -985,5 +985,22 @@
       "fr": "Brise-glaces et jeux de réunion conçus pour les équipes à distance. En partie payant ; l'hôte a besoin d'un compte."
     },
     "tested": null
+  },
+  {
+    "id": "worldguessr",
+    "name": "WorldGuessr",
+    "url": "https://www.worldguessr.com/",
+    "keyword": "worldguessr",
+    "types": ["geography"],
+    "languages": ["en", "fr", "es", "de"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 200 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "Dropped at a random spot on Street View, everyone guesses where they are on a map. Free with ads; the host shares a link to start a private party.",
+      "fr": "Déposé au hasard dans Street View, chacun devine sur une carte où il se trouve. Gratuit avec publicités ; l'hôte partage un lien pour lancer une partie privée."
+    },
+    "tested": null
   }
 ]
