@@ -117,7 +117,24 @@
       "fr": "Tout le monde légende le même mème, puis le groupe vote pour le plus drôle."
     },
     "tested": null
+  },  {
+    "id": "votes-out",
+    "name": "The Vote's Out",
+    "url": "https://votesout.com/",
+    "keyword": "votesout",
+    "types": ["humor"],
+    "languages": ["en"],
+    "audience": ["friends"],
+    "players": { "min": 3, "max": 12 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Everyone answers the same twelve silly prompts on their own phone, then the group votes for the best answer. A set of question packs is free; extra packs and writing your own questions need a one-time paid pass for the host.",
+      "fr": "Chacun répond sur son téléphone aux douze mêmes questions farfelues, puis le groupe vote pour la meilleure réponse. Une série de paquets de questions est gratuite ; les paquets supplémentaires et les questions personnalisées demandent un pass payant, acheté une seule fois par l'hôte."
+    },
+    "tested": null
   },
+
   {
     "id": "jklm",
     "name": "JKLM.FUN",
@@ -322,7 +339,58 @@
       "fr": "Une course de frappe au clavier : on invite ses amis sur une piste privée, le plus rapide gagne."
     },
     "tested": null
+  },  {
+    "id": "tusmo",
+    "name": "Tusmo",
+    "url": "https://www.tusmo.xyz/",
+    "keyword": "tusmo",
+    "types": ["words"],
+    "languages": ["fr", "en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 6 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A French take on Wordle in the style of the TV show Motus: create a private room, share the link and race to find the same words. Free rooms hold 6 players; bigger rooms need the host to be a paying supporter.",
+      "fr": "Le Motus en ligne : on crée un salon privé, on partage le lien et tout le monde cherche les mêmes mots le plus vite possible. Les salons gratuits accueillent 6 joueurs ; au-delà, l'hôte doit être membre payant."
+    },
+    "tested": null
+  },  {
+    "id": "letter-jam",
+    "name": "Letter Jam Online",
+    "url": "https://letterjam.game/",
+    "keyword": "letterjam",
+    "types": ["words"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 6 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "The official online version of the cooperative word game: you see everyone's letter but your own, and clues made from the others' letters help each player work out theirs. Bring your own voice or video call.",
+      "fr": "La version officielle en ligne du jeu de mots coopératif : on voit la lettre de chacun sauf la sienne, et des indices formés avec les lettres des autres aident chaque joueur à deviner la sienne. Prévoir un appel vocal ou vidéo à côté."
+    },
+    "tested": null
+  },  {
+    "id": "squabble",
+    "name": "Squabble",
+    "url": "https://squabble.me/",
+    "keyword": "squabble",
+    "types": ["words"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 99 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "Wordle as a battle royale: everyone guesses five-letter words at once, wrong guesses cost health and the last player standing wins. Small Blitz games or a big Royale lobby.",
+      "fr": "Wordle façon battle royale : tout le monde cherche des mots de cinq lettres en même temps, chaque erreur coûte des points de vie et le dernier debout gagne. En petit comité (Blitz) ou en grand salon (Royale)."
+    },
+    "tested": null
   },
+
+
+
   {
     "id": "kahoot",
     "name": "Kahoot!",
@@ -373,7 +441,58 @@
       "fr": "Quiz et jeux de soirée pour la visio : une personne partage son écran, les autres rejoignent sur leur téléphone."
     },
     "tested": null
+  },  {
+    "id": "buzzin-live",
+    "name": "BuzzIn.live",
+    "url": "https://buzzin.live/",
+    "keyword": "buzzin",
+    "types": ["quiz"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 3, "max": 200 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "An online buzzer for your own quiz night: the host reads the questions, everyone buzzes from their phone and the site shows who was first. You bring the questions.",
+      "fr": "Un buzzer en ligne pour votre propre soirée quiz : l'hôte lit les questions, chacun buzze depuis son téléphone et le site indique qui a été le plus rapide. Les questions sont à préparer soi-même."
+    },
+    "tested": null
+  },  {
+    "id": "jeopardylabs",
+    "name": "JeopardyLabs",
+    "url": "https://jeopardylabs.com/",
+    "keyword": "jeopardylabs",
+    "types": ["quiz"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": true,
+    "desc": {
+      "en": "Jeopardy-style quiz boards: build your own or pick one of millions made by others, show it on one screen and keep score by team. Players have no device; the host reads and awards the points.",
+      "fr": "Des grilles de quiz façon Jeopardy : on crée la sienne ou on en choisit une parmi des millions, on l'affiche sur un écran et on compte les points par équipe. Les joueurs n'ont pas d'appareil ; l'hôte lit et attribue les points."
+    },
+    "tested": null
+  },  {
+    "id": "arcademics",
+    "name": "Arcademics",
+    "url": "https://www.arcademics.com/games",
+    "keyword": "arcademics",
+    "types": ["quiz", "arcade", "collection"],
+    "languages": ["en"],
+    "audience": ["kids", "family"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 5, "max": 10 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Short races where the right answer makes your car, penguin or tractor go faster: times tables, sums, spelling. Children can set up a private game with a password. In English, for primary school children.",
+      "fr": "De courtes courses où la bonne réponse fait avancer sa voiture, son pingouin ou son tracteur : tables de multiplication, calcul, orthographe. Les enfants peuvent créer une partie privée avec un mot de passe. En anglais, pour les élèves de primaire."
+    },
+    "tested": null
   },
+
+
+
   {
     "id": "songtrivia",
     "name": "SongTrivia2",
@@ -390,7 +509,58 @@
       "fr": "Un blind test musical : trouver le titre ou l'artiste plus vite que les autres."
     },
     "tested": null
+  },  {
+    "id": "blinest",
+    "name": "Blinest",
+    "url": "https://blinest.com/",
+    "keyword": "blinest",
+    "types": ["music", "quiz"],
+    "languages": ["fr", "en"],
+    "audience": ["friends", "coworkers"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": false, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "A French multiplayer music blind test with themed rooms (2000s, Disney, French songs, rock...). Free and volunteer-run, but everyone needs a free account to play; you can then create a private room and give its name or password to your friends.",
+      "fr": "Un blind test musical multijoueur avec des salles à thème (années 2000, Disney, chanson française, rock...). Gratuit et tenu par des bénévoles, mais chaque joueur doit créer un compte gratuit ; on peut ensuite créer une salle privée et donner son nom ou son mot de passe à ses amis."
+    },
+    "tested": null
+  },  {
+    "id": "blindtest-gg",
+    "name": "Blindtest.gg",
+    "url": "https://blindtest.gg/",
+    "keyword": "blindtest",
+    "types": ["music", "quiz"],
+    "languages": ["fr", "en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 5, "max": 10 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A real-time music blind test: 15 clips of 25 seconds, type the title and the artist before the others. Private rooms by link, with your own Spotify or Deezer playlists.",
+      "fr": "Un blind test musical en temps réel : 15 extraits de 25 secondes, il faut taper le titre et l'artiste avant les autres. Salons privés par simple lien, avec vos propres playlists Spotify ou Deezer."
+    },
+    "tested": null
+  },  {
+    "id": "blindz",
+    "name": "Blindz",
+    "url": "https://blindz.fr/",
+    "keyword": "blindz",
+    "types": ["music", "quiz"],
+    "languages": ["fr"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 15, "max": 20 },
+    "free": true, "noAccount": false, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "A French music blind test where each phone becomes a buzzer: the host's device plays the 30 clips, everyone else joins with a code and no sign-up. The host needs a free account to create a game.",
+      "fr": "Un blind test musical où le téléphone de chacun sert de buzzer : l'appareil de l'hôte diffuse les 30 extraits, les autres rejoignent avec un code, sans inscription. L'hôte doit créer un compte gratuit pour lancer une partie."
+    },
+    "tested": null
   },
+
+
+
   {
     "id": "geoguessr",
     "name": "GeoGuessr",
@@ -424,7 +594,41 @@
       "fr": "Une alternative gratuite à GeoGuessr, financée par les dons, avec des salons multijoueurs."
     },
     "tested": null
+  },  {
+    "id": "guess-where-you-are",
+    "name": "Guess Where You Are",
+    "url": "https://guesswhereyouare.com/",
+    "keyword": "guesswhereyouare",
+    "types": ["geography"],
+    "languages": ["en", "fr"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A free, ad-supported GeoGuessr-style game: guess where the street view was taken, in private parties or duels, without signing up.",
+      "fr": "Un jeu gratuit à la GeoGuessr, financé par la publicité : deviner où la vue de rue a été prise, en partie privée ou en duel, sans inscription."
+    },
+    "tested": null
+  },  {
+    "id": "maponica",
+    "name": "Maponica",
+    "url": "https://maponica.com/",
+    "keyword": "maponica",
+    "types": ["geography"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 250 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "The successor to City Guesser: watch a video walk through a city somewhere in the world and guess where it is on the map. Create a room, share the six-digit code, up to 250 players.",
+      "fr": "Le successeur de City Guesser : on regarde une promenade filmée dans une ville quelque part dans le monde et on devine où elle se trouve sur la carte. On crée un salon, on partage le code à six chiffres, jusqu'à 250 joueurs."
+    },
+    "tested": null
   },
+
+
   {
     "id": "board-game-arena",
     "name": "Board Game Arena",
@@ -543,7 +747,109 @@
       "fr": "Le jeu de cartes Set en temps réel : repérer trois cartes qui vont ensemble avant les autres."
     },
     "tested": null
+  },  {
+    "id": "lichess",
+    "name": "Lichess",
+    "url": "https://lichess.org/",
+    "keyword": "lichess",
+    "types": ["board"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 2 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Free chess with no ads: create a game, send the link to a friend and play, no sign-up needed.",
+      "fr": "Des échecs gratuits et sans publicité : on crée une partie, on envoie le lien à un ami et on joue, sans inscription."
+    },
+    "tested": null
+  },  {
+    "id": "buddyboardgames",
+    "name": "BuddyBoardGames",
+    "url": "https://buddyboardgames.com/",
+    "keyword": "buddyboardgames",
+    "types": ["board", "collection"],
+    "languages": ["en", "fr", "es", "de"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 8 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Around forty board and card games (Azul, Yahtzee, Uno-style, Hearts, Ludo...): pick a room name, share it, and everyone plays on their own device. Free with light ads.",
+      "fr": "Une quarantaine de jeux de plateau et de cartes (Azul, Yahtzee, façon Uno, Dame de pique, petits chevaux...) : on choisit un nom de salon, on le partage, et chacun joue sur son appareil. Gratuit, avec un peu de publicité."
+    },
+    "tested": null
+  },  {
+    "id": "trickster-cards",
+    "name": "Trickster Cards",
+    "url": "https://www.trickstercards.com/",
+    "keyword": "trickster",
+    "types": ["board"],
+    "languages": ["en"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Trick-taking card games (Hearts, Spades, Euchre, Bridge, 500, Pinochle...) at a private table with built-in video chat. Free with a short ad before each game.",
+      "fr": "Des jeux de cartes à plis (Dame de pique, Spades, Euchre, Bridge, 500, Pinochle...) à une table privée, avec visio intégrée. Gratuit, avec une courte publicité avant chaque partie."
+    },
+    "tested": null
+  },  {
+    "id": "cardgames-io",
+    "name": "CardGames.io",
+    "url": "https://cardgames.io/",
+    "keyword": "cardgames",
+    "types": ["board", "collection"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Classic card and board games (Hearts, Spades, Rummy, Yahtzee, Backgammon...) with no login: create a private table and share it with friends. Paid for by ads.",
+      "fr": "Des classiques de cartes et de plateau (Dame de pique, Rami, Yahtzee, Backgammon...) sans connexion : on crée une table privée et on la partage avec ses amis. Financé par la publicité."
+    },
+    "tested": null
+  },  {
+    "id": "tabletopia",
+    "name": "Tabletopia",
+    "url": "https://tabletopia.com/",
+    "keyword": "tabletopia",
+    "types": ["board", "collection"],
+    "languages": ["en"],
+    "audience": ["friends"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": false, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "A virtual table with over 2,500 modern board games; you move the pieces yourself, rules are not enforced. Many games are free, others need a subscription; the host needs an account. Best on a computer.",
+      "fr": "Une table virtuelle avec plus de 2 500 jeux de société modernes ; on déplace soi-même les pièces, les règles ne sont pas appliquées. Beaucoup de jeux sont gratuits, d'autres demandent un abonnement ; l'hôte a besoin d'un compte. À privilégier sur ordinateur."
+    },
+    "tested": null
+  },  {
+    "id": "my-free-bingo-cards",
+    "name": "My Free Bingo Cards",
+    "url": "https://myfreebingocards.com/virtual-bingo",
+    "keyword": "virtual bingo",
+    "types": ["board"],
+    "languages": ["en"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 30 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Bingo for a video call: the host reads out the numbers the caller draws, everyone marks a card on their own device. Free up to 30 players, paid beyond.",
+      "fr": "Un bingo pour la visio : l'hôte annonce les numéros tirés par le site, chacun coche sa grille sur son appareil. Gratuit jusqu'à 30 joueurs, payant au-delà."
+    },
+    "tested": null
   },
+
+
+
+
+
+
   {
     "id": "tetrio",
     "name": "TETR.IO",
@@ -611,7 +917,24 @@
       "fr": "Des batailles de karts de trois minutes avec des armes de dessin animé, en salons privés."
     },
     "tested": null
+  },  {
+    "id": "minecraft-classic",
+    "name": "Minecraft Classic",
+    "url": "https://classic.minecraft.net/",
+    "keyword": "minecraft",
+    "types": ["arcade"],
+    "languages": ["en"],
+    "audience": ["kids", "family", "friends"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "The original 2009 Minecraft, official and playable in the browser without an account: pick a username, send your friends the link and build together, up to ten players. The game ends for everyone when the host leaves. Keyboard required.",
+      "fr": "Le Minecraft d'origine de 2009, officiel et jouable dans le navigateur sans compte : on choisit un pseudo, on envoie le lien à ses amis et on construit ensemble, jusqu'à dix joueurs. La partie s'arrête pour tout le monde quand l'hôte la quitte. Clavier nécessaire."
+    },
+    "tested": null
   },
+
   {
     "id": "jackbox",
     "name": "Jackbox Games",
@@ -628,7 +951,24 @@
       "fr": "La référence des jeux de soirée. Une personne achète et lance le jeu puis partage son écran ; les autres rejoignent depuis le navigateur de leur téléphone."
     },
     "tested": null
+  },  {
+    "id": "airconsole",
+    "name": "AirConsole",
+    "url": "https://www.airconsole.com/",
+    "keyword": "airconsole",
+    "types": ["collection", "arcade"],
+    "languages": ["en", "fr"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": false, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "A game console in the browser: one big screen shows the game, and each player's phone becomes the controller. Racing, sports and party games, no sign-up. The free version is limited to two players with waiting breaks; more players and the full catalogue need the AirConsole Hero subscription, which one person in the group is enough to hold.",
+      "fr": "Une console de jeu dans le navigateur : un grand écran affiche le jeu et le téléphone de chacun sert de manette. Courses, sport et jeux de soirée, sans inscription. La version gratuite est limitée à deux joueurs, avec des pauses d'attente ; au-delà, et pour tout le catalogue, il faut l'abonnement AirConsole Hero, qu'une seule personne du groupe suffit à détenir."
+    },
+    "tested": null
   },
+
   {
     "id": "brightful",
     "name": "Brightful",

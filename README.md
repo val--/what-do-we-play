@@ -53,7 +53,9 @@ Filter labels and all site text live in [src/i18n.ts](src/i18n.ts).
 - One successful visit puts the game back online, even when archived.
 - A bot refusal (HTTP 401, 403, 429) counts neither as a failure nor as a success.
 
-The checker detects a dead or replaced site, not a game that became paid: those fields are checked by hand.
+- When a live page announces a new version, a move or a shutdown, the sentence is recorded as a `notice` in `status.json` and printed in the run log. It never changes a game's state; the weekly agent reviews these notices.
+
+The checker reads the raw HTML only, so it sees nothing on sites that are pure JavaScript apps, and it cannot tell that a game became paid: those cases are caught by the weekly agent's review or by hand.
 
 ## Deployment
 

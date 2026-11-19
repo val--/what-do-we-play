@@ -46,6 +46,13 @@
     "lastOk": "2026-11-19",
     "lastResult": "HTTP 200"
   },
+  "votes-out": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
   "jklm": {
     "state": "online",
     "fails": 0,
@@ -129,6 +136,27 @@
     "lastOk": "2026-11-19",
     "lastResult": "HTTP 200"
   },
+  "tusmo": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "letter-jam": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "squabble": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
   "kahoot": {
     "state": "online",
     "fails": 0,
@@ -149,7 +177,49 @@
     "lastOk": "2026-11-19",
     "lastResult": "HTTP 200"
   },
+  "buzzin-live": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "jeopardylabs": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "arcademics": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
   "songtrivia": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "blinest": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "blindtest-gg": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "blindz": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-19",
@@ -164,6 +234,20 @@
     "lastResult": "HTTP 200"
   },
   "geotastic": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "guess-where-you-are": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "maponica": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-19",
@@ -219,6 +303,47 @@
     "lastOk": "2026-11-19",
     "lastResult": "HTTP 200"
   },
+  "lichess": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastResult": "HTTP 403"
+  },
+  "buddyboardgames": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "trickster-cards": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "cardgames-io": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "tabletopia": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "my-free-bingo-cards": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
   "tetrio": {
     "state": "online",
     "fails": 0,
@@ -247,7 +372,21 @@
     "lastOk": "2026-11-19",
     "lastResult": "HTTP 200"
   },
+  "minecraft-classic": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
   "jackbox": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-19",
+    "lastOk": "2026-11-19",
+    "lastResult": "HTTP 200"
+  },
+  "airconsole": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-19",

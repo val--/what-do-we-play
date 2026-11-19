@@ -27,6 +27,8 @@ A candidate qualifies only if ALL of these hold:
 - At least TWO independent sources mention it, and at least one of them was published in the last three years. These do NOT count as sources: the game's own site, posts written by its creator or team (Show HN, a launch post, a Product Hunt page they submitted), press releases, and a second blog that copies the same list. Write down the URL and the date of each source.
 - You fetched the game's own site yourself and it responded with a real game page (not a parked domain, not a domain for sale, not a shutdown notice).
 
+Always read the HOME page of a game's site, not only the page a source linked to. If it announces a new version, a new name, a move to another address or a shutdown ("we built a new version", "we've moved", "now called…", "try …"), follow it: evaluate the successor's own site instead, use the successor's name and address in the entry, and never propose the old address. Many sites are JavaScript apps whose raw HTML is empty: when a fetch returns almost no text, read the page another way (its script bundle, or a rendered view) before concluding anything.
+
 If a candidate only barely meets these conditions, drop it and mention it in the "Écartés" section of the pull request. Never propose a game while describing it as fragile or uncertain.
 
 Prefer games that fill gaps in the catalogue: types with few entries, interfaces in languages other than English, large groups, kids. Do not propose a game of a type that already has five or more entries unless it clearly offers something the existing ones lack, and say what.
@@ -81,7 +83,16 @@ Then review your own work: re-read each new entry field by field against section
 
 The only files you may change are src/data/games.json and the new images in public/covers/. Do not touch src/data/status.json or src/data/rejected.json.
 
-## 7. Open the pull request
+## 7. Review part of the existing catalogue
+
+Games already listed can move, be renamed or close without their address going dead. Each week, look at:
+
+- every game whose entry in src/data/status.json has a `notice` (a sentence the daily link checker found suspicious) or a `state` of `offline`;
+- six other games from src/data/games.json, picked at random.
+
+For each, open the home page of its site as in section 2 and look for a successor, a rename, a move, a shutdown, or a change that makes the entry wrong (now paid, account now required). Do NOT edit existing entries yourself. If you find something, report it in a GitHub issue titled `Catalogue : jeux à revoir`, written in French: for each game, what you saw, the exact words and the address where you saw them, and what you suggest (new address, new name, removal, field to correct). If an open issue with that title already exists, add a comment to it instead of opening a new one. If you find nothing, open no issue.
+
+## 8. Open the pull request
 
 Create a branch named `proposals/YYYY-MM-DD` (today's date), commit, push the branch, and open a pull request against main. Write the title and body in FRENCH, in plain language for a non-specialist owner. Title: `Propositions de jeux du JJ/MM/AAAA`.
 
