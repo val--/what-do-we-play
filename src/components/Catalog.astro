@@ -5,6 +5,7 @@ import '../styles/site.css';
 import Icon from './Icon.astro';
 import games from '../data/games.json';
 import status from '../data/status.json';
+import { readdirSync } from 'node:fs';
 import { strings, TYPES, AUDIENCES, LANGUAGES, type Locale } from '../i18n';
 
 interface Props { locale: Locale }
@@ -24,6 +25,10 @@ const visible = games
 
 const lastCheck = Object.values(st).map((s) => s.lastChecked ?? '').sort().pop() || null;
 const usedTypes = TYPES.filter((x) => visible.some((g) => g.types.includes(x)));
+
+// Vignettes récupérées par scripts/fetch-covers.mjs ; les jeux sans fichier gardent la vignette colorée.
+let covers = new Set<string>();
+try { covers = new Set(readdirSync('public/covers').map((f) => f.replace(/.webp$/, ''))); } catch {}
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const otherHref = locale === 'en' ? `${base}/fr/` : `${base}/`;
@@ -142,7 +147,11 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
             data-phone={g.mobile ? 1 : 0}
             data-noscreen={g.sharedScreen ? 0 : 1}
           >
-            <a class={`cover k-${g.types[0]}`} href={g.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span>{g.name}</span></a>
+            <a class:list={['cover', `k-${g.types[0]}`, { photo: covers.has(g.id) }]} href={g.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+              {covers.has(g.id)
+                ? <img src={`${base}/covers/${g.id}.webp`} alt="" width="480" height="300" loading="lazy" decoding="async" />
+                : <span>{g.name}</span>}
+            </a>
             <div class="body">
               <h2><a href={g.url} target="_blank" rel="noopener">{g.name}</a></h2>
               <p>{g.desc[locale]}</p>

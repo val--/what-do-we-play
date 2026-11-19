@@ -18,13 +18,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 24
+          cache: npm
+      - run: npm ci
       - run: node scripts/check-links.mjs
+      # Vignettes des jeux qui n'en ont pas encore (par exemple ceux d'une proposition fusionnée).
+      - run: node scripts/fetch-covers.mjs
       - name: Commit status
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add src/data/status.json
-          git diff --cached --quiet || git commit -m "Robot : état des liens"
+          git add src/data/status.json public/covers
+          git diff --cached --quiet || git commit -m "Robot : état des liens et vignettes"
           git push
 
   # Un push fait avec le jeton du robot ne déclenche pas Deploy : on l'appelle donc ici.

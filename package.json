@@ -7,11 +7,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "check-links": "node scripts/check-links.mjs"
+    "check-links": "node scripts/check-links.mjs",
+    "covers": "node scripts/fetch-covers.mjs"
   },
   "dependencies": {
     "@fontsource-variable/dm-sans": "^5.3.0",
     "@fontsource-variable/outfit": "^5.3.0",
-    "astro": "^7.4.13"
+    "astro": "^7.4.13",
+    "sharp": "^0.35.5"
   }
 }

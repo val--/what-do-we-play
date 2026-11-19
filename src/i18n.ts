@@ -59,7 +59,7 @@ export const strings = {
   },
   fr: {
     htmlLang: 'fr',
-    titleA: 'On joue à ', titleMark: 'quoi', titleEnd: ' ?',
+    titleA: 'On ', titleMark: 'joue', titleEnd: ' à quoi ?',
     lead: 'Trouvez rapidement un jeu en ligne à plusieurs, pour la famille, les amis ou vos équipes au travail.',
     filterTitle: 'Filtrer les jeux',
     favOnly: 'Mes favoris',
