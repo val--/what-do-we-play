@@ -1,5 +1,5 @@
-// Filtres côté navigateur. À l'intérieur d'un groupe, les cases s'additionnent (OU) ;
-// entre groupes, elles se cumulent (ET). L'état vit dans l'adresse pour être partageable.
+// Client-side filters. Within a group, ticked boxes add up (OR);
+// across groups they combine (AND). State lives in the URL so it can be shared.
 const form = document.getElementById('filters');
 const games = [...document.querySelectorAll('#games > .game')];
 const count = document.getElementById('count');
@@ -13,7 +13,7 @@ const FLAGS = ['free', 'noaccount', 'phone', 'noscreen'];
 const list = document.getElementById('games');
 const sort = document.getElementById('sort');
 
-// Favoris : propres à ce navigateur, jamais dans l'adresse.
+// Favourites: specific to this browser, never in the URL.
 const FAV_KEY = 'wdwp:favs';
 let favs = new Set();
 try { favs = new Set(JSON.parse(localStorage.getItem(FAV_KEY) || '[]')); } catch {}

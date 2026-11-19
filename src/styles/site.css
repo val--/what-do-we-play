@@ -1,4 +1,4 @@
-/* Clair, arrondi, coloré : cartes blanches, vert en accent, une couleur par genre de jeu. */
+/* Light, rounded, colourful: white cards, green accent, one colour per kind of game. */
 :root {
   --bg: #f5f8f6;
   --card: #ffffff;
@@ -61,7 +61,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .icon { width: 1.15em; height: 1.15em; flex: none; }
 :focus-visible { outline: 2.5px solid var(--green); outline-offset: 2px; border-radius: 6px; }
 
-/* En-tête */
+/* Header */
 .top { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
 .brand { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--head); font-weight: 800; font-size: 1.35rem; letter-spacing: -.01em; text-decoration: none; }
 .brand .icon { width: 1.5em; height: 1.5em; color: var(--green); }
@@ -71,7 +71,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 }
 .switch:hover { border-color: var(--green); color: var(--green-ink); }
 
-/* Accroche */
+/* Hero */
 .hero { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.75rem 0 1.5rem; }
 h1 { margin: 0; font-family: var(--head); font-weight: 800; font-size: clamp(2.4rem, 7.5vw, 4.2rem); line-height: 1.02; letter-spacing: -.03em; text-wrap: balance; }
 .mark {
@@ -82,7 +82,7 @@ h1 { margin: 0; font-family: var(--head); font-weight: 800; font-size: clamp(2.4
 .art { width: clamp(7rem, 22vw, 13rem); flex: none; }
 .art .sparks { stroke: var(--green); }
 
-/* Panneau de filtres */
+/* Filter panel */
 .panel { background: var(--card); border: 1.5px solid var(--line); border-radius: 18px; box-shadow: var(--shadow); padding: 1.1rem 1.25rem 1.25rem; }
 .panel-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: .9rem; }
 .panel-head h2 { display: flex; align-items: center; gap: .6rem; margin: 0; font-family: var(--head); font-size: 1.2rem; font-weight: 700; }
@@ -126,14 +126,14 @@ legend .icon, .field .icon { color: var(--soft); }
 .box.favs { margin-left: auto; }
 .box.favs .icon { color: var(--red); }
 
-/* Décompte et tri */
+/* Count and sort */
 .tally { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .4rem 1rem; margin: 1.5rem 0 .8rem; }
 .tally strong { font-family: var(--head); font-size: 1.25rem; font-weight: 700; }
 .verified { display: inline-flex; align-items: center; gap: .35rem; margin-right: auto; font-size: .85rem; font-weight: 600; color: var(--green-ink); }
 .sort { display: flex; align-items: center; gap: .5rem; font-size: .9rem; color: var(--soft); white-space: nowrap; }
 .sort select { width: auto; padding: .35rem .6rem; font-size: .9rem; font-weight: 650; }
 
-/* Fiches */
+/* Game cards */
 .games { display: grid; gap: .8rem; }
 .game {
   display: grid; grid-template-columns: 10.5rem minmax(0, 1fr) auto; gap: 1.1rem; align-items: stretch;
@@ -142,7 +142,7 @@ legend .icon, .field .icon { color: var(--soft); }
 }
 .game:hover { border-color: color-mix(in srgb, var(--green) 55%, var(--line)); transform: translateY(-1px); }
 
-/* Vignette : une couleur par genre, le nom du jeu en guise de logo */
+/* Fallback thumbnail: one colour per kind, the game's name as a logo */
 .cover {
   position: relative; overflow: hidden; display: grid; place-items: center; min-height: 6.6rem; padding: .6rem;
   border-radius: 11px; text-decoration: none; color: #fff;
@@ -190,7 +190,7 @@ legend .icon, .field .icon { color: var(--soft); }
 
 .none { margin: 0; padding: 2.2rem 1rem; text-align: center; font-weight: 600; color: var(--soft); background: var(--card); border: 1.5px dashed var(--line); border-radius: 16px; }
 
-/* Bandeau du bas */
+/* Bottom strip */
 .perks { display: grid; grid-template-columns: repeat(4, 1fr); gap: .8rem; margin-top: 1.6rem; padding: 1rem 1.2rem; background: var(--green-tint); border-radius: 16px; }
 .perks li { display: flex; align-items: center; gap: .65rem; font-family: var(--head); font-weight: 650; font-size: .9rem; line-height: 1.25; }
 .perks .icon { width: 1.7rem; height: 1.7rem; color: var(--green-ink); }

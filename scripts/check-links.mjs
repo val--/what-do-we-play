@@ -1,13 +1,13 @@
-// Visite chaque jeu et met à jour src/data/status.json.
+// Visits every game and updates src/data/status.json.
 //
-//   en ligne  --(3 échecs de suite)-->  offline  --(30 jours)-->  archived
-//   Un seul passage réussi remet le jeu en ligne, même archivé.
+//   online  --(3 failures in a row)-->  offline  --(30 days)-->  archived
+//   A single successful visit puts the game back online, even when archived.
 //
-// Un échec = pas de réponse, erreur HTTP, ou page qui ne contient plus le mot attendu
-// (domaine racheté, jeu remplacé). Un refus anti-robot (401/403/429) ne prouve rien :
-// il est noté « blocked » et ne compte ni comme échec ni comme succès.
+// A failure = no response, an HTTP error, or a page that no longer contains the expected
+// keyword (domain resold, game replaced). A bot refusal (401/403/429) proves nothing:
+// it is recorded as "blocked" and counts neither as a failure nor as a success.
 //
-// Usage : node scripts/check-links.mjs [--dry]   (--dry : affiche sans rien écrire)
+// Usage: node scripts/check-links.mjs [--dry]   (--dry: print without writing anything)
 import { readFile, writeFile } from 'node:fs/promises';
 
 const FAILS_BEFORE_OFFLINE = 3;
@@ -39,7 +39,7 @@ async function visit(game) {
 
 async function check(game) {
   let outcome = await visit(game);
-  if (outcome.result === 'fail') outcome = await visit(game); // une seconde chance dans le même passage
+  if (outcome.result === 'fail') outcome = await visit(game); // one retry within the same run
   return outcome;
 }
 
@@ -77,7 +77,7 @@ await Promise.all(
   }),
 );
 
-// Même ordre que le catalogue, pour des diffs lisibles ; les jeux retirés du catalogue disparaissent.
+// Same order as the catalogue, for readable diffs; games removed from the catalogue are dropped.
 const ordered = Object.fromEntries(games.map((g) => [g.id, next[g.id]]));
 if (!dry) await writeFile(statusUrl, JSON.stringify(ordered, null, 2) + '\n');
 

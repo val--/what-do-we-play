@@ -21,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          # La pointe de la branche, pas le commit déclencheur : le robot vient peut-être de pousser.
+          # The branch tip, not the triggering commit: the bot may just have pushed.
           ref: ${{ github.ref_name }}
       - uses: actions/setup-node@v4
         with:

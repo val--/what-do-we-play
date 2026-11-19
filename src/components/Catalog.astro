@@ -26,7 +26,7 @@ const visible = games
 const lastCheck = Object.values(st).map((s) => s.lastChecked ?? '').sort().pop() || null;
 const usedTypes = TYPES.filter((x) => visible.some((g) => g.types.includes(x)));
 
-// Vignettes récupérées par scripts/fetch-covers.mjs ; les jeux sans fichier gardent la vignette colorée.
+// Thumbnails fetched by scripts/fetch-covers.mjs; games without a file keep the coloured tile.
 let covers = new Set<string>();
 try { covers = new Set(readdirSync('public/covers').map((f) => f.replace(/.webp$/, ''))); } catch {}
 

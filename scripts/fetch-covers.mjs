@@ -1,17 +1,17 @@
-// Récupère la vignette de chaque jeu : l'image d'aperçu que le site publie lui-même
-// (balise og:image ou twitter:image), recadrée en 480 × 300 et rangée dans
-// public/covers/<id>.webp. À défaut, l'icône du site posée sur un fond flouté.
-// Un jeu sans image exploitable garde la vignette colorée du site.
+// Fetches a thumbnail for every game: the preview image the site publishes itself
+// (og:image or twitter:image tag), cropped to 480 × 300 and stored in
+// public/covers/<id>.webp. Failing that, the site's icon on a blurred backdrop.
+// A game with no usable image keeps the coloured tile drawn by the site.
 //
-// Usage : node scripts/fetch-covers.mjs            (seulement les jeux sans vignette)
-//         node scripts/fetch-covers.mjs --force    (tout refaire)
-//         node scripts/fetch-covers.mjs skribbl jklm   (seulement ces jeux, refaits)
+// Usage: node scripts/fetch-covers.mjs            (only games without a thumbnail)
+//         node scripts/fetch-covers.mjs --force    (redo everything)
+//         node scripts/fetch-covers.mjs skribbl jklm   (only these games, redone)
 import { readFile, writeFile, mkdir, access } from 'node:fs/promises';
 import sharp from 'sharp';
 
 const WIDTH = 480;
 const HEIGHT = 300;
-const MIN_SOURCE_WIDTH = 300; // en dessous, l'image serait floue une fois agrandie : on la traite comme une icône
+const MIN_SOURCE_WIDTH = 300; // below this the image would be blurry once enlarged: treat it as an icon
 const MIN_ICON_WIDTH = 96;
 const ICON_SIZE = 150;
 const MAX_BYTES = 8_000_000;
@@ -28,7 +28,7 @@ const exists = (url) => access(url).then(() => true, () => false);
 const get = (url, accept) =>
   fetch(url, { redirect: 'follow', signal: AbortSignal.timeout(TIMEOUT_MS), headers: { 'user-agent': USER_AGENT, accept } });
 
-// Lit <meta property="og:image" content="…"> quel que soit l'ordre des attributs.
+// Reads <meta property="og:image" content="…"> whatever the attribute order.
 function findPreviewImage(html, pageUrl) {
   for (const key of ['og:image:secure_url', 'og:image', 'twitter:image', 'twitter:image:src']) {
     for (const tag of html.match(/<meta\b[^>]*>/gi) ?? []) {
@@ -42,7 +42,7 @@ function findPreviewImage(html, pageUrl) {
   return null;
 }
 
-// La plus grande icône déclarée par la page (apple-touch-icon de préférence).
+// The largest icon the page declares (apple-touch-icon preferred).
 function findIcon(html, pageUrl) {
   const icons = [];
   for (const tag of html.match(/<link\b[^>]*>/gi) ?? []) {
@@ -66,11 +66,11 @@ async function download(url) {
   return { bytes, width };
 }
 
-// Grande image : simple recadrage.
+// Large image: a plain crop.
 const crop = (bytes) =>
   sharp(bytes).flatten({ background: '#ffffff' }).resize(WIDTH, HEIGHT, { fit: 'cover', position: 'attention' });
 
-// Petite image ou icône : posée au centre, sur elle-même agrandie et floutée.
+// Small image or icon: centred on an enlarged, blurred copy of itself.
 async function iconCard(bytes) {
   const icon = await sharp(bytes)
     .resize(ICON_SIZE, ICON_SIZE, { fit: 'contain', background: { r: 0, g: 0, b: 0, alpha: 0 } })
@@ -114,7 +114,7 @@ const games = JSON.parse(await readFile(gamesUrl, 'utf8'));
 await mkdir(coversDir, { recursive: true });
 let made = 0;
 for (const game of games) {
-  if (game.cover === false) continue; // image du site inutilisable, refusée à la main
+  if (game.cover === false) continue; // the site's image is unusable, rejected by hand
   if (only.length ? !only.includes(game.id) : !force && (await exists(new URL(`${game.id}.webp`, coversDir)))) continue;
   let problem;
   try { problem = await cover(game); } catch (err) { problem = err.cause?.code ?? err.name ?? String(err); }
