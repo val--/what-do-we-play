@@ -1,0 +1,185 @@
+---
+import '@fontsource-variable/outfit';
+import '@fontsource-variable/dm-sans';
+import '../styles/site.css';
+import Icon from './Icon.astro';
+import games from '../data/games.json';
+import status from '../data/status.json';
+import { strings, TYPES, AUDIENCES, LANGUAGES, type Locale } from '../i18n';
+
+interface Props { locale: Locale }
+const { locale } = Astro.props;
+const t = strings[locale];
+
+type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string };
+const st = status as Record<string, St>;
+const dateLocale = locale === 'fr' ? 'fr-FR' : 'en-GB';
+const fmt = (iso?: string | null, month: 'long' | 'short' = 'long') =>
+  iso ? new Date(iso).toLocaleDateString(dateLocale, { day: 'numeric', month, year: 'numeric', timeZone: 'UTC' }) : null;
+
+const visible = games
+  .filter((g) => st[g.id]?.state !== 'archived')
+  .map((g) => ({ ...g, offline: st[g.id]?.state === 'offline', offlineSince: st[g.id]?.offlineSince, lastOk: st[g.id]?.lastOk }))
+  .sort((a, b) => Number(a.offline) - Number(b.offline));
+
+const lastCheck = Object.values(st).map((s) => s.lastChecked ?? '').sort().pop() || null;
+const usedTypes = TYPES.filter((x) => visible.some((g) => g.types.includes(x)));
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const otherHref = locale === 'en' ? `${base}/fr/` : `${base}/`;
+const canonical = new URL(locale === 'en' ? `${base}/` : `${base}/fr/`, Astro.site);
+const alternate = new URL(otherHref, Astro.site);
+const durations = [10, 20, 30];
+const perkIcons = ['shield', 'check', 'monitor', 'users'];
+const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
+---
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{t.metaTitle}</title>
+    <meta name="description" content={t.metaDesc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={locale === 'en' ? 'fr' : 'en'} href={alternate} />
+    <link rel="alternate" hreflang={locale} href={canonical} />
+    <meta property="og:title" content={t.metaTitle} />
+    <meta property="og:description" content={t.metaDesc} />
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href={locale === 'en' ? `${base}/` : `${base}/fr/`}><Icon name="gamepad" />WhatDoWePlay</a>
+      <a class="switch" href={otherHref} data-lang-switch><Icon name="globe" />{t.other}</a>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <h1>{t.titleA}<span class="mark">{t.titleMark}</span>{t.titleEnd}</h1>
+          <p class="lead">{t.lead}</p>
+        </div>
+        <svg class="art" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <g class="sparks"><path d="M150 22l6-16M166 30l14-12M172 46l18-4" /></g>
+          <g transform="rotate(-8 100 85)">
+            <rect x="42" y="34" width="112" height="76" rx="8" />
+            <path d="M22 112h152l-8 16H30z" />
+            <circle cx="98" cy="62" r="8" /><path d="M84 88c0-9 6-14 14-14s14 5 14 14" />
+            <circle cx="72" cy="68" r="6" /><path d="M60 88c0-7 5-11 12-11" />
+            <circle cx="124" cy="68" r="6" /><path d="M136 88c0-7-5-11-12-11" />
+          </g>
+        </svg>
+      </section>
+
+      <form class="panel" id="filters" autocomplete="off">
+        <div class="panel-head">
+          <h2><Icon name="sliders" />{t.filterTitle}</h2>
+          <button type="button" id="reset"><Icon name="reset" />{t.reset}</button>
+        </div>
+
+        <fieldset>
+          <legend><Icon name="users" />{t.forWhom}</legend>
+          <div class="chips">
+            {AUDIENCES.map((a) => <label class="chip"><input type="checkbox" name="for" value={a} /><span>{t.audience[a]}</span></label>)}
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><Icon name="gamepad" />{t.kind}</legend>
+          <div class="chips">
+            {usedTypes.map((x) => <label class={`chip k-${x}`}><input type="checkbox" name="type" value={x} /><span><i class="dot"></i>{t.types[x]}</span></label>)}
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend><Icon name="globe" />{t.inLang}</legend>
+          <div class="chips">
+            {LANGUAGES.map((l) => <label class="chip"><input type="checkbox" name="lang" value={l} /><span>{t.languages[l]}</span></label>)}
+          </div>
+        </fieldset>
+
+        <div class="pair">
+          <label class="field"><span><Icon name="users" />{t.weAre}</span>
+            <input type="number" name="n" min="1" max="99" inputmode="numeric" placeholder="8" />
+          </label>
+          <label class="field"><span><Icon name="clock" />{t.weHave}</span>
+            <select name="t">
+              <option value="">{t.anyTime}</option>
+              {durations.map((d) => <option value={d}>{t.minutes(d)}</option>)}
+            </select>
+          </label>
+        </div>
+
+        <div class="flags">
+          {(['free', 'noaccount', 'phone', 'noscreen'] as const).map((f) => <label class="box"><input type="checkbox" name={f} value="1" /><span>{t.flags[f]}</span></label>)}
+          <label class="box favs"><input type="checkbox" name="favs" value="1" /><span><Icon name="heart" />{t.favOnly}</span></label>
+        </div>
+      </form>
+
+      <div class="tally">
+        <strong id="count" aria-live="polite" data-one={t.count(1)} data-many={t.count(2).replace('2', '{n}')} data-zero={t.count(0)}>{t.count(visible.length)}</strong>
+        {lastCheck && <span class="verified"><Icon name="shield" />{t.linksChecked(fmt(lastCheck, 'short') ?? '')}</span>}
+        <label class="sort">{t.sortBy}
+          <select id="sort">
+            {Object.entries(t.sorts).map(([v, label]) => <option value={v}>{label}</option>)}
+          </select>
+        </label>
+      </div>
+
+      <ol class="games" id="games">
+        {visible.map((g, i) => (
+          <li
+            class:list={['game', { off: g.offline }]}
+            data-id={g.id}
+            data-i={i}
+            data-name={g.name.toLowerCase()}
+            data-langs={g.languages.join(' ')}
+            data-for={g.audience.join(' ')}
+            data-types={g.types.join(' ')}
+            data-min={g.players.min}
+            data-max={g.players.max}
+            data-dmin={g.duration.min}
+            data-free={g.free ? 1 : 0}
+            data-noaccount={g.noAccount ? 1 : 0}
+            data-phone={g.mobile ? 1 : 0}
+            data-noscreen={g.sharedScreen ? 0 : 1}
+          >
+            <a class={`cover k-${g.types[0]}`} href={g.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><span>{g.name}</span></a>
+            <div class="body">
+              <h2><a href={g.url} target="_blank" rel="noopener">{g.name}</a></h2>
+              <p>{g.desc[locale]}</p>
+              <ul class="meta">
+                <li><Icon name="users" />{range(g.players.min, g.players.max)}</li>
+                <li><Icon name="clock" />{range(g.duration.min, g.duration.max)} min</li>
+                <li class="langs">{g.languages.map((l) => <b>{l}</b>)}</li>
+              </ul>
+              <ul class="tags">
+                {g.types.map((x) => <li class={`k-${x}`}><i class="dot"></i>{t.types[x as keyof typeof t.types]}</li>)}
+                {[!g.free && t.paid, !g.noAccount && t.account, !g.mobile && t.noPhone, g.sharedScreen && t.screen].filter(Boolean).map((c) => <li class="warn">{c}</li>)}
+              </ul>
+            </div>
+            <div class="side">
+              <button type="button" class="fav" aria-pressed="false" aria-label={`${t.fav} : ${g.name}`} title={t.fav}><Icon name="heart" /></button>
+              <div class="state">
+                {g.offline && <span class="pill down">{t.offline}</span>}
+                {g.offline && <small>{t.offlineSince(fmt(g.offlineSince, 'short') ?? '')}</small>}
+                {!g.offline && g.free && <span class="pill"><Icon name="check" />{t.flags.free}</span>}
+                {!g.offline && g.noAccount && <span class="pill"><Icon name="check" />{t.flags.noaccount}</span>}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ol>
+      <p class="none" id="none" hidden>{t.none}</p>
+
+      <ul class="perks">
+        {t.perks.map((p, i) => <li><Icon name={perkIcons[i]} />{p}</li>)}
+      </ul>
+    </main>
+
+    <footer>
+      <p>{t.footCheck(fmt(lastCheck))}</p>
+      <p>{t.footNote}</p>
+    </footer>
+
+    <script src="../scripts/filters.js"></script>
+  </body>
+</html>

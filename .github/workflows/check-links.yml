@@ -1,0 +1,33 @@
+name: Check links
+
+on:
+  schedule:
+    - cron: '17 5 * * *' # tous les jours à 05:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node scripts/check-links.mjs
+      - name: Commit status
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/status.json
+          git diff --cached --quiet || git commit -m "Robot : état des liens"
+          git push
+
+  # Un push fait avec le jeton du robot ne déclenche pas Deploy : on l'appelle donc ici.
+  deploy:
+    needs: check
+    uses: ./.github/workflows/deploy.yml

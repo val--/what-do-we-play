@@ -1,0 +1,112 @@
+export type Locale = 'en' | 'fr';
+
+export const TYPES = ['drawing', 'quiz', 'words', 'bluff', 'board', 'geography', 'music', 'humor', 'arcade', 'collection'] as const;
+export const AUDIENCES = ['kids', 'family', 'friends', 'coworkers'] as const;
+export const LANGUAGES = ['en', 'fr', 'es', 'de', 'it', 'pt'] as const;
+
+export const strings = {
+  en: {
+    htmlLang: 'en',
+    titleA: 'What do we ', titleMark: 'play', titleEnd: '?',
+    lead: 'Quickly find an online game to play together, with family, friends or your team at work.',
+    filterTitle: 'Filter games',
+    favOnly: 'My favourites',
+    fav: 'Add to favourites',
+    sortBy: 'Sort by',
+    sorts: { '': 'Our pick', az: 'A–Z', short: 'Shortest first', big: 'Biggest groups' },
+    linksChecked: (d: string) => `Links checked on ${d}`,
+    perks: ['Links checked every day', 'No sign-up (most of them)', 'Computer and phone', 'Family, friends or work'],
+    title: 'What do we play?',
+    metaTitle: 'WhatDoWePlay — browser games to play together',
+    metaDesc:
+      'A hand-picked list of multiplayer browser games for families, friends and team icebreakers. Filter by group size, language, audience and time. Nothing to install.',
+    intro: (n: number) =>
+      `${n} games that run in a browser tab. Share a link, everybody's in. Tick what fits your group.`,
+    weAre: 'Number of players',
+    players: 'players',
+    weHave: 'Time for one game',
+    anyTime: 'Any length',
+    minutes: (m: number) => `≤ ${m} min`,
+    forWhom: 'Audience',
+    inLang: 'Language',
+    kind: 'Kind of game',
+    also: 'Practical',
+    flags: { free: 'Free', noaccount: 'No sign-up', phone: 'On a phone', noscreen: 'No screen sharing' },
+    audience: { kids: 'Kids', family: 'Family', friends: 'Friends', coworkers: 'Coworkers' },
+    types: {
+      drawing: 'drawing', quiz: 'quiz', words: 'words', bluff: 'bluffing', board: 'board & cards',
+      geography: 'geography', music: 'music', humor: 'humour', arcade: 'arcade', collection: 'several games',
+    },
+    languages: { en: 'English', fr: 'French', es: 'Spanish', de: 'German', it: 'Italian', pt: 'Portuguese' },
+    count: (n: number) => (n === 1 ? '1 game found' : `${n} games found`),
+    reset: 'Reset',
+    none: 'Nothing fits all of that. Untick a box or two.',
+    playersLabel: 'players',
+    min: 'min',
+    paid: 'paid',
+    account: 'sign-up needed',
+    noPhone: 'computer only',
+    screen: 'screen sharing',
+    play: 'Open',
+    offline: 'Offline',
+    offlineSince: (d: string) => `not responding since ${d}`,
+    footCheck: (d: string | null) =>
+      d
+        ? `A robot visits every link each day; last round on ${d}. A game that stops answering is marked Offline, then removed after 30 days.`
+        : 'A robot visits every link each day. A game that stops answering is marked Offline, then removed after 30 days.',
+    footNote: 'Player counts, prices and languages change without notice: check on the game itself before a big event.',
+    other: 'Français',
+  },
+  fr: {
+    htmlLang: 'fr',
+    titleA: 'On joue à ', titleMark: 'quoi', titleEnd: ' ?',
+    lead: 'Trouvez rapidement un jeu en ligne à plusieurs, pour la famille, les amis ou vos équipes au travail.',
+    filterTitle: 'Filtrer les jeux',
+    favOnly: 'Mes favoris',
+    fav: 'Ajouter aux favoris',
+    sortBy: 'Trier par',
+    sorts: { '': 'Notre sélection', az: 'A–Z', short: 'Les plus courts', big: 'Grands groupes' },
+    linksChecked: (d: string) => `Liens vérifiés le ${d}`,
+    perks: ['Liens vérifiés chaque jour', 'Sans inscription (la plupart)', 'Ordinateur et mobile', 'Famille, amis ou entreprise'],
+    title: 'On joue à quoi ?',
+    metaTitle: 'WhatDoWePlay — des jeux à plusieurs dans le navigateur',
+    metaDesc:
+      "Une liste choisie de jeux multijoueurs sur navigateur, pour la famille, les amis ou briser la glace entre collègues. Filtres par nombre de joueurs, langue, public et durée. Rien à installer.",
+    intro: (n: number) =>
+      `${n} jeux qui tiennent dans un onglet de navigateur. On partage un lien et tout le monde joue. Cochez ce qui correspond à votre groupe.`,
+    weAre: 'Nombre de joueurs',
+    players: 'joueurs',
+    weHave: "Durée d'une partie",
+    anyTime: 'Peu importe',
+    minutes: (m: number) => `≤ ${m} min`,
+    forWhom: 'Public',
+    inLang: 'Langue',
+    kind: 'Type de jeu',
+    also: 'Pratique',
+    flags: { free: 'Gratuit', noaccount: 'Sans compte', phone: 'Sur mobile', noscreen: "Sans partage d'écran" },
+    audience: { kids: 'Enfants', family: 'Famille', friends: 'Amis', coworkers: 'Collègues' },
+    types: {
+      drawing: 'dessin', quiz: 'quiz', words: 'mots', bluff: 'bluff', board: 'plateau & cartes',
+      geography: 'géographie', music: 'musique', humor: 'humour', arcade: 'arcade', collection: 'plusieurs jeux',
+    },
+    languages: { en: 'anglais', fr: 'français', es: 'espagnol', de: 'allemand', it: 'italien', pt: 'portugais' },
+    count: (n: number) => (n === 0 ? 'Aucun jeu trouvé' : n === 1 ? '1 jeu trouvé' : `${n} jeux trouvés`),
+    reset: 'Réinitialiser',
+    none: 'Rien ne coche toutes les cases. Décochez-en une ou deux.',
+    playersLabel: 'joueurs',
+    min: 'min',
+    paid: 'payant',
+    account: 'inscription requise',
+    noPhone: 'ordinateur seulement',
+    screen: "partage d'écran",
+    play: 'Ouvrir',
+    offline: 'Hors ligne',
+    offlineSince: (d: string) => `ne répond plus depuis le ${d}`,
+    footCheck: (d: string | null) =>
+      d
+        ? `Un robot visite chaque lien tous les jours ; dernier passage le ${d}. Un jeu qui ne répond plus est marqué Hors ligne, puis retiré au bout de 30 jours.`
+        : 'Un robot visite chaque lien tous les jours. Un jeu qui ne répond plus est marqué Hors ligne, puis retiré au bout de 30 jours.',
+    footNote: "Nombre de joueurs, prix et langues changent sans prévenir : vérifiez sur le jeu lui-même avant un grand événement.",
+    other: 'English',
+  },
+};

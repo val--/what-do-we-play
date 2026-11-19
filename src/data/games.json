@@ -1,0 +1,648 @@
+[
+  {
+    "id": "skribbl",
+    "name": "skribbl.io",
+    "url": "https://skribbl.io/",
+    "keyword": "skribbl",
+    "types": ["drawing"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "One player draws a word, everyone else races to guess it in the chat.",
+      "fr": "Un joueur dessine un mot, les autres tentent de le deviner dans le chat."
+    },
+    "tested": null
+  },
+  {
+    "id": "gartic-phone",
+    "name": "Gartic Phone",
+    "url": "https://garticphone.com/",
+    "keyword": "gartic",
+    "types": ["drawing"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 4, "max": 30 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "The telephone game with drawings: write a sentence, draw it, describe the drawing, and laugh at the result.",
+      "fr": "Le téléphone arabe dessiné : on écrit une phrase, on la dessine, on décrit le dessin, et on rit du résultat."
+    },
+    "tested": null
+  },
+  {
+    "id": "gartic-io",
+    "name": "Gartic.io",
+    "url": "https://gartic.io/",
+    "keyword": "gartic",
+    "types": ["drawing"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 50 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Draw and guess in themed rooms, from the makers of Gartic Phone.",
+      "fr": "Dessiner et deviner dans des salons à thème, par les créateurs de Gartic Phone."
+    },
+    "tested": null
+  },
+  {
+    "id": "drawasaurus",
+    "name": "Drawasaurus",
+    "url": "https://www.drawasaurus.org/",
+    "keyword": "drawasaurus",
+    "types": ["drawing"],
+    "languages": ["en"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 16 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A simple draw-and-guess game with private rooms.",
+      "fr": "Un jeu de dessin à deviner tout simple, avec salons privés."
+    },
+    "tested": null
+  },
+  {
+    "id": "sketchful",
+    "name": "Sketchful.io",
+    "url": "https://sketchful.io/",
+    "keyword": "sketchful",
+    "types": ["drawing"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 16 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Draw-and-guess with richer drawing tools and custom word lists.",
+      "fr": "Dessin à deviner avec des outils de dessin plus riches et des listes de mots personnalisées."
+    },
+    "tested": null
+  },
+  {
+    "id": "drawphone",
+    "name": "Drawphone",
+    "url": "https://drawphone.tannerkrewson.com/",
+    "keyword": "drawphone",
+    "types": ["drawing"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 4, "max": 16 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Telephone with pictures, built for phones: everyone plays on their own device.",
+      "fr": "Le téléphone arabe en images, pensé pour le téléphone : chacun joue sur son appareil."
+    },
+    "tested": null
+  },
+  {
+    "id": "make-it-meme",
+    "name": "Make It Meme",
+    "url": "https://makeitmeme.com/",
+    "keyword": "meme",
+    "types": ["humor"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["friends", "coworkers"],
+    "players": { "min": 3, "max": 15 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Everyone captions the same meme template, then the group votes for the funniest.",
+      "fr": "Tout le monde légende le même mème, puis le groupe vote pour le plus drôle."
+    },
+    "tested": null
+  },
+  {
+    "id": "jklm",
+    "name": "JKLM.FUN",
+    "url": "https://jklm.fun/",
+    "keyword": "jklm",
+    "types": ["words", "quiz"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 16 },
+    "duration": { "min": 5, "max": 15 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Two quick games: BombParty (find a word before the bomb explodes) and PopSauce (picture and trivia quiz).",
+      "fr": "Deux jeux rapides : BombParty (trouver un mot avant l'explosion) et PopSauce (quiz d'images et de culture générale)."
+    },
+    "tested": null
+  },
+  {
+    "id": "gidd",
+    "name": "gidd.io",
+    "url": "https://gidd.io/",
+    "keyword": "gidd",
+    "types": ["collection", "drawing", "quiz", "words"],
+    "languages": ["en", "de"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 12 },
+    "duration": { "min": 5, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A single room with a dozen party games: drawing, quiz, word and bluffing games.",
+      "fr": "Un seul salon et une douzaine de jeux de soirée : dessin, quiz, mots et bluff."
+    },
+    "tested": null
+  },
+  {
+    "id": "bloob",
+    "name": "Bloob.io",
+    "url": "https://bloob.io/",
+    "keyword": "bloob",
+    "types": ["collection", "drawing", "words", "board"],
+    "languages": ["en"],
+    "audience": ["kids", "family", "friends"],
+    "players": { "min": 2, "max": 12 },
+    "duration": { "min": 5, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A collection of small multiplayer games: drawing, hangman, chess, checkers and more.",
+      "fr": "Une collection de petits jeux à plusieurs : dessin, pendu, échecs, dames et d'autres."
+    },
+    "tested": null
+  },
+  {
+    "id": "rocketcrab",
+    "name": "rocketcrab",
+    "url": "https://rocketcrab.com/",
+    "keyword": "rocketcrab",
+    "types": ["collection"],
+    "languages": ["en"],
+    "audience": ["friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 5, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A party lobby for phones: gather everyone once, then hop between dozens of browser party games.",
+      "fr": "Un salon pour téléphones : on réunit le groupe une fois, puis on passe d'un jeu de soirée à l'autre."
+    },
+    "tested": null
+  },
+  {
+    "id": "netgames",
+    "name": "netgames.io",
+    "url": "https://netgames.io/games/",
+    "keyword": "netgames",
+    "types": ["bluff", "collection"],
+    "languages": ["en"],
+    "audience": ["friends", "coworkers"],
+    "players": { "min": 3, "max": 20 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Social deduction games (Spyfall, Avalon, Codewords, Werewolf...) played on everyone's phone.",
+      "fr": "Jeux de déduction sociale (Spyfall, Avalon, Codewords, Loup-garou...) joués sur le téléphone de chacun."
+    },
+    "tested": null
+  },
+  {
+    "id": "spyfall",
+    "name": "Spyfall",
+    "url": "https://spyfall.adrianocola.com/",
+    "keyword": "spyfall",
+    "types": ["bluff"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 3, "max": 12 },
+    "duration": { "min": 5, "max": 15 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Everyone knows the location except the spy, who must work it out from the questions asked.",
+      "fr": "Tout le monde connaît le lieu sauf l'espion, qui doit le deviner à partir des questions posées."
+    },
+    "tested": null
+  },
+  {
+    "id": "wolfy",
+    "name": "Wolfy",
+    "url": "https://wolfy.net/",
+    "keyword": "wolfy",
+    "types": ["bluff"],
+    "languages": ["fr", "en"],
+    "audience": ["friends"],
+    "players": { "min": 5, "max": 20 },
+    "duration": { "min": 15, "max": 40 },
+    "free": true, "noAccount": false, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Online Werewolf with many roles, text or voice games.",
+      "fr": "Le Loup-garou en ligne, avec de nombreux rôles, en parties écrites ou vocales."
+    },
+    "tested": null
+  },
+  {
+    "id": "codenames",
+    "name": "Codenames",
+    "url": "https://codenames.game/",
+    "keyword": "codenames",
+    "types": ["words"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 4, "max": 20 },
+    "duration": { "min": 15, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "The official online Codenames: two teams, one-word clues, find your agents first.",
+      "fr": "La version officielle de Codenames : deux équipes, des indices en un mot, retrouver ses agents en premier."
+    },
+    "tested": null
+  },
+  {
+    "id": "longwave",
+    "name": "Longwave",
+    "url": "https://longwave.web.app/",
+    "keyword": "longwave",
+    "types": ["words"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 4, "max": 12 },
+    "duration": { "min": 15, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "An online take on Wavelength: give a clue that places a hidden target on a scale between two opposites.",
+      "fr": "Une adaptation en ligne de Wavelength : donner un indice qui situe une cible cachée entre deux opposés."
+    },
+    "tested": null
+  },
+  {
+    "id": "fishbowl",
+    "name": "Fishbowl",
+    "url": "https://fishbowl-game.com/",
+    "keyword": "fishbowl",
+    "types": ["words"],
+    "languages": ["en", "fr", "es", "de"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 4, "max": 20 },
+    "duration": { "min": 20, "max": 40 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Taboo, charades and password in three rounds, designed for video calls.",
+      "fr": "Taboo, mimes et mot unique en trois manches, conçu pour les appels vidéo."
+    },
+    "tested": null
+  },
+  {
+    "id": "scattergories",
+    "name": "Scattergories Online",
+    "url": "https://scattergoriesonline.net/",
+    "keyword": "scattergories",
+    "types": ["words"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "One letter, several categories, a timer: find a word for each before time runs out.",
+      "fr": "Le petit bac : une lettre, plusieurs catégories, un chrono, et un mot à trouver pour chacune."
+    },
+    "tested": null
+  },
+  {
+    "id": "typeracer",
+    "name": "TypeRacer",
+    "url": "https://play.typeracer.com/",
+    "keyword": "typeracer",
+    "types": ["words", "arcade"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["friends", "coworkers"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 5, "max": 10 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "A typing race: invite friends to a private track and see who types the quote fastest.",
+      "fr": "Une course de frappe au clavier : on invite ses amis sur une piste privée, le plus rapide gagne."
+    },
+    "tested": null
+  },
+  {
+    "id": "kahoot",
+    "name": "Kahoot!",
+    "url": "https://kahoot.com/",
+    "keyword": "kahoot",
+    "types": ["quiz"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 40 },
+    "duration": { "min": 10, "max": 30 },
+    "free": false, "noAccount": false, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "The classic live quiz: the host shares the questions on screen, players answer on their phones. Host account needed; the free plan is limited.",
+      "fr": "Le quiz en direct classique : l'hôte affiche les questions, les joueurs répondent sur leur téléphone. Compte nécessaire pour l'hôte ; l'offre gratuite est limitée."
+    },
+    "tested": null
+  },
+  {
+    "id": "blooket",
+    "name": "Blooket",
+    "url": "https://www.blooket.com/",
+    "keyword": "blooket",
+    "types": ["quiz"],
+    "languages": ["en"],
+    "audience": ["kids", "family"],
+    "players": { "min": 2, "max": 60 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": false, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "Quizzes wrapped in mini-games, popular in classrooms. The host needs an account.",
+      "fr": "Des quiz habillés en mini-jeux, très utilisés en classe. L'hôte a besoin d'un compte."
+    },
+    "tested": null
+  },
+  {
+    "id": "crowdparty",
+    "name": "Crowdparty",
+    "url": "https://crowdparty.app/",
+    "keyword": "crowdparty",
+    "types": ["quiz", "collection"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 50 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "Trivia and party games for video calls: one person shares the screen, everyone joins from their phone.",
+      "fr": "Quiz et jeux de soirée pour la visio : une personne partage son écran, les autres rejoignent sur leur téléphone."
+    },
+    "tested": null
+  },
+  {
+    "id": "songtrivia",
+    "name": "SongTrivia2",
+    "url": "https://songtrivia2.io/",
+    "keyword": "songtrivia",
+    "types": ["music", "quiz"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A music blind test: guess the song or the artist faster than the others.",
+      "fr": "Un blind test musical : trouver le titre ou l'artiste plus vite que les autres."
+    },
+    "tested": null
+  },
+  {
+    "id": "geoguessr",
+    "name": "GeoGuessr",
+    "url": "https://www.geoguessr.com/",
+    "keyword": "geoguessr",
+    "types": ["geography"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 10, "max": 30 },
+    "free": false, "noAccount": false, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Dropped somewhere in Street View, guess where you are. Party mode requires a paid subscription for the host.",
+      "fr": "Lâché quelque part dans Street View, il faut deviner où l'on est. Le mode groupe demande un abonnement payant pour l'hôte."
+    },
+    "tested": null
+  },
+  {
+    "id": "geotastic",
+    "name": "Geotastic",
+    "url": "https://geotastic.net/",
+    "keyword": "geotastic",
+    "types": ["geography"],
+    "languages": ["en", "fr", "de"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": false, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A free, donation-funded alternative to GeoGuessr, with multiplayer lobbies.",
+      "fr": "Une alternative gratuite à GeoGuessr, financée par les dons, avec des salons multijoueurs."
+    },
+    "tested": null
+  },
+  {
+    "id": "board-game-arena",
+    "name": "Board Game Arena",
+    "url": "https://boardgamearena.com/",
+    "keyword": "board game arena",
+    "types": ["board", "collection"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 10, "max": 60 },
+    "free": true, "noAccount": false, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Hundreds of board games with the rules enforced for you. Free for most games; some need one premium player at the table.",
+      "fr": "Des centaines de jeux de société dont les règles sont appliquées automatiquement. Gratuit pour la plupart ; certains exigent un joueur premium à la table."
+    },
+    "tested": null
+  },
+  {
+    "id": "colonist",
+    "name": "Colonist",
+    "url": "https://colonist.io/",
+    "keyword": "colonist",
+    "types": ["board"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 30, "max": 60 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A settlers-style board game of trading and building, playable as a guest.",
+      "fr": "Un jeu de plateau de commerce et de construction à la manière des colons, jouable en invité."
+    },
+    "tested": null
+  },
+  {
+    "id": "richup",
+    "name": "RichUp",
+    "url": "https://richup.io/",
+    "keyword": "richup",
+    "types": ["board"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 6 },
+    "duration": { "min": 30, "max": 60 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A property-trading board game in the browser: buy cities, build, bankrupt your friends.",
+      "fr": "Un jeu de plateau d'achat de propriétés dans le navigateur : acheter des villes, construire, ruiner ses amis."
+    },
+    "tested": null
+  },
+  {
+    "id": "papergames",
+    "name": "Papergames.io",
+    "url": "https://papergames.io/",
+    "keyword": "papergames",
+    "types": ["board"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["kids", "family", "friends"],
+    "players": { "min": 2, "max": 2 },
+    "duration": { "min": 5, "max": 10 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Pen-and-paper classics for two: tic-tac-toe, battleship, connect four, with tournaments for groups.",
+      "fr": "Les classiques papier-crayon à deux : morpion, bataille navale, puissance 4, avec des tournois pour les groupes."
+    },
+    "tested": null
+  },
+  {
+    "id": "playingcards",
+    "name": "PlayingCards.io",
+    "url": "https://playingcards.io/",
+    "keyword": "playingcards",
+    "types": ["board"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 10, "max": 40 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A virtual card table: the cards move, the rules are up to you. Many ready-made games.",
+      "fr": "Une table de cartes virtuelle : les cartes bougent, les règles sont à vous. Nombreux jeux prêts à l'emploi."
+    },
+    "tested": null
+  },
+  {
+    "id": "cardzmania",
+    "name": "CardzMania",
+    "url": "https://www.cardzmania.com/",
+    "keyword": "cardzmania",
+    "types": ["board"],
+    "languages": ["en"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 12 },
+    "duration": { "min": 10, "max": 40 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Dozens of classic card games (Hearts, Spades, Rummy, Crazy Eights...) with private tables.",
+      "fr": "Des dizaines de jeux de cartes classiques (Dame de pique, Rami, Huit américain...) avec tables privées."
+    },
+    "tested": null
+  },
+  {
+    "id": "set-with-friends",
+    "name": "Set with Friends",
+    "url": "https://setwithfriends.com/",
+    "keyword": "set with friends",
+    "types": ["board"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 12 },
+    "duration": { "min": 5, "max": 15 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "The card game Set in real time: spot three matching cards before anyone else.",
+      "fr": "Le jeu de cartes Set en temps réel : repérer trois cartes qui vont ensemble avant les autres."
+    },
+    "tested": null
+  },
+  {
+    "id": "tetrio",
+    "name": "TETR.IO",
+    "url": "https://tetr.io/",
+    "keyword": "tetr",
+    "types": ["arcade"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["friends", "coworkers"],
+    "players": { "min": 2, "max": 50 },
+    "duration": { "min": 5, "max": 15 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "Falling-block battles in private rooms, playable as a guest. Keyboard required.",
+      "fr": "Des duels de blocs qui tombent en salons privés, jouables en invité. Clavier nécessaire."
+    },
+    "tested": null
+  },
+  {
+    "id": "haxball",
+    "name": "HaxBall",
+    "url": "https://www.haxball.com/",
+    "keyword": "haxball",
+    "types": ["arcade"],
+    "languages": ["en"],
+    "audience": ["kids", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 5, "max": 15 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "Minimalist top-down football: push the ball, score, argue about it. Keyboard required.",
+      "fr": "Du football minimaliste vu de dessus : pousser le ballon, marquer, contester. Clavier nécessaire."
+    },
+    "tested": null
+  },
+  {
+    "id": "bonk",
+    "name": "Bonk.io",
+    "url": "https://bonk.io/",
+    "keyword": "bonk",
+    "types": ["arcade"],
+    "languages": ["en"],
+    "audience": ["kids", "friends"],
+    "players": { "min": 2, "max": 8 },
+    "duration": { "min": 5, "max": 15 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "Physics brawls: bump the other balls off the level. Keyboard required.",
+      "fr": "Des bagarres physiques : pousser les autres billes hors du niveau. Clavier nécessaire."
+    },
+    "tested": null
+  },
+  {
+    "id": "smash-karts",
+    "name": "Smash Karts",
+    "url": "https://smashkarts.io/",
+    "keyword": "smash karts",
+    "types": ["arcade"],
+    "languages": ["en"],
+    "audience": ["kids", "friends"],
+    "players": { "min": 2, "max": 8 },
+    "duration": { "min": 5, "max": 10 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Three-minute kart battles with cartoon weapons, in private rooms.",
+      "fr": "Des batailles de karts de trois minutes avec des armes de dessin animé, en salons privés."
+    },
+    "tested": null
+  },
+  {
+    "id": "jackbox",
+    "name": "Jackbox Games",
+    "url": "https://www.jackboxgames.com/",
+    "keyword": "jackbox",
+    "types": ["collection", "humor", "drawing", "quiz"],
+    "languages": ["en", "fr", "es", "de", "it"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 3, "max": 8 },
+    "duration": { "min": 15, "max": 30 },
+    "free": false, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "The party-pack reference. One person buys and runs the game and shares the screen; everyone else joins from a phone browser.",
+      "fr": "La référence des jeux de soirée. Une personne achète et lance le jeu puis partage son écran ; les autres rejoignent depuis le navigateur de leur téléphone."
+    },
+    "tested": null
+  },
+  {
+    "id": "brightful",
+    "name": "Brightful",
+    "url": "https://www.brightful.me/",
+    "keyword": "brightful",
+    "types": ["collection", "quiz", "drawing"],
+    "languages": ["en"],
+    "audience": ["coworkers"],
+    "players": { "min": 3, "max": 50 },
+    "duration": { "min": 10, "max": 30 },
+    "free": false, "noAccount": false, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Icebreakers and meeting games built for remote teams. Partly paid; the host needs an account.",
+      "fr": "Brise-glaces et jeux de réunion conçus pour les équipes à distance. En partie payant ; l'hôte a besoin d'un compte."
+    },
+    "tested": null
+  }
+]
