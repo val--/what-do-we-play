@@ -130,6 +130,10 @@ legend .icon, .field .icon { color: var(--soft); }
 .tally { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .4rem 1rem; margin: 1.5rem 0 .8rem; }
 .tally strong { font-family: var(--head); font-size: 1.25rem; font-weight: 700; }
 .verified { display: inline-flex; align-items: center; gap: .35rem; margin-right: auto; font-size: .85rem; font-weight: 600; color: var(--green-ink); }
+.search { display: flex; align-items: center; gap: .45rem; padding: .3rem .65rem; background: var(--field); border: 1.5px solid var(--line); border-radius: 10px; color: var(--soft); }
+.search:hover, .search:focus-within { border-color: var(--green); }
+.search input { width: 11rem; font: inherit; font-size: .9rem; color: var(--ink); background: none; border: 0; outline: 0; padding: 0; }
+.search input::placeholder { color: #a9b2c2; }
 .sort { display: flex; align-items: center; gap: .5rem; font-size: .9rem; color: var(--soft); white-space: nowrap; }
 .sort select { width: auto; padding: .35rem .6rem; font-size: .9rem; font-weight: 650; }
 
@@ -211,5 +215,7 @@ footer p { max-width: 44rem; margin: 0 0 .4rem; }
   .side { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: flex-start; padding: 0 .1rem; }
   .fav { position: absolute; top: .45rem; right: .45rem; }
   .state { flex-direction: row; align-items: center; gap: .6rem; }
+  .search { order: 3; flex: 1 1 100%; }
+  .search input { width: 100%; }
   .perks { grid-template-columns: 1fr 1fr; }
 }

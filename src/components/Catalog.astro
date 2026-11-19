@@ -36,6 +36,10 @@ const canonical = new URL(locale === 'en' ? `${base}/` : `${base}/fr/`, Astro.si
 const alternate = new URL(otherHref, Astro.site);
 const durations = [10, 20, 30];
 const perkIcons = ['shield', 'check', 'monitor', 'users'];
+// Text the search box looks into: name, description, kinds and languages, without accents.
+const plain = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const searchText = (g: (typeof visible)[number]) =>
+  plain([g.name, g.desc[locale], ...g.types.map((x) => t.types[x as keyof typeof t.types]), ...g.languages.map((l) => t.languages[l as keyof typeof t.languages])].join(' '));
 const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
 ---
 <!doctype html>
@@ -122,6 +126,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
       <div class="tally">
         <strong id="count" aria-live="polite" data-one={t.count(1)} data-many={t.count(2).replace('2', '{n}')} data-zero={t.count(0)}>{t.count(visible.length)}</strong>
         {lastCheck && <span class="verified"><Icon name="shield" />{t.linksChecked(fmt(lastCheck, 'short') ?? '')}</span>}
+        <label class="search"><Icon name="search" /><input type="search" id="q" placeholder={t.search} aria-label={t.search} autocomplete="off" /></label>
         <label class="sort">{t.sortBy}
           <select id="sort">
             {Object.entries(t.sorts).map(([v, label]) => <option value={v}>{label}</option>)}
@@ -136,6 +141,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
             data-id={g.id}
             data-i={i}
             data-name={g.name.toLowerCase()}
+            data-search={searchText(g)}
             data-langs={g.languages.join(' ')}
             data-for={g.audience.join(' ')}
             data-types={g.types.join(' ')}

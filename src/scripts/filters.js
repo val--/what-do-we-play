@@ -12,6 +12,10 @@ const GROUPS = { for: 'for', lang: 'langs', type: 'types' };
 const FLAGS = ['free', 'noaccount', 'phone', 'noscreen'];
 const list = document.getElementById('games');
 const sort = document.getElementById('sort');
+const search = document.getElementById('q');
+
+// Same folding as the build: lower case, no accents.
+const plain = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
 // Favourites: specific to this browser, never in the URL.
 const FAV_KEY = 'wdwp:favs';
@@ -30,7 +34,7 @@ const SORTS = {
 
 function readForm() {
   const data = new FormData(form);
-  const state = { n: data.get('n') || '', t: data.get('t') || '' };
+  const state = { n: data.get('n') || '', t: data.get('t') || '', q: search.value.trim() };
   for (const name of Object.keys(GROUPS)) state[name] = data.getAll(name);
   for (const flag of FLAGS) state[flag] = data.has(flag);
   return state;
@@ -38,6 +42,7 @@ function readForm() {
 
 function toQuery(state) {
   const q = new URLSearchParams();
+  if (state.q) q.set('q', state.q);
   if (state.n) q.set('n', state.n);
   if (state.t) q.set('t', state.t);
   for (const name of Object.keys(GROUPS)) if (state[name].length) q.set(name, state[name].join(','));
@@ -47,6 +52,7 @@ function toQuery(state) {
 
 function fillForm(query) {
   const q = new URLSearchParams(query);
+  search.value = q.get('q') || '';
   form.elements.n.value = q.get('n') || '';
   form.elements.t.value = q.get('t') || '';
   for (const box of form.querySelectorAll('input[type=checkbox]:not([name=favs])')) {
@@ -58,6 +64,8 @@ function fillForm(query) {
 
 function matches(el, state) {
   const d = el.dataset;
+  // Every word typed must appear somewhere in the game's text.
+  if (state.q && !plain(state.q).split(/s+/).every((word) => d.search.includes(word))) return false;
   const n = Number(state.n);
   if (n && (n < Number(d.min) || n > Number(d.max))) return false;
   if (state.t && Number(d.dmin) > Number(state.t)) return false;
@@ -89,6 +97,7 @@ fillForm(location.search);
 paintFavs();
 apply();
 form.addEventListener('input', apply);
+search.addEventListener('input', apply);
 form.addEventListener('submit', (e) => e.preventDefault());
 reset.addEventListener('click', () => {
   fillForm('');
