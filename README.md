@@ -1,60 +1,70 @@
 # WhatDoWePlay
 
-Un annuaire de jeux multijoueurs jouables dans le navigateur, pour la famille, les amis ou briser la glace entre collègues. Site statique (Astro), en anglais et en français, avec filtres combinables et vérification quotidienne des liens.
+A directory of multiplayer games that run in a web browser, for families, friends and team icebreakers. Filter by group size, language, audience and time, then share a link: nothing to install.
 
-## Commandes
+**Live site: https://val--.github.io/what-do-we-play/** (also [in French](https://val--.github.io/what-do-we-play/fr/))
+
+It is a static site built with [Astro](https://astro.build), in English and French, with combinable filters, a daily link check and a weekly agent that proposes new games.
+
+## Commands
 
 ```
 npm install
 npm run dev          # http://localhost:4321/what-do-we-play/
-npm run build        # génère dist/
-npm run check-links  # visite chaque jeu et met à jour src/data/status.json
-npm run covers       # récupère la vignette des jeux qui n'en ont pas
+npm run build        # builds into dist/
+npm run check-links  # visits every game and updates src/data/status.json
+npm run covers       # fetches a thumbnail for games that have none
 ```
 
-`node scripts/check-links.mjs --dry` affiche le résultat sans rien écrire.
+`node scripts/check-links.mjs --dry` prints the result without writing anything.
 
-## Ajouter un jeu
+## Adding a game
 
-Ajouter une entrée dans [src/data/games.json](src/data/games.json) :
+Add an entry to [src/data/games.json](src/data/games.json):
 
-| Champ | Rôle |
+| Field | Purpose |
 | --- | --- |
-| `id` | identifiant unique, sert de clé dans `status.json` |
-| `keyword` | mot que le robot doit retrouver sur la page (en général le nom du jeu) |
+| `id` | unique identifier, used as the key in `status.json` and as the thumbnail file name |
+| `keyword` | a word the link checker must find on the page (usually the game's name) |
 | `types` | `drawing`, `quiz`, `words`, `bluff`, `board`, `geography`, `music`, `humor`, `arcade`, `collection` |
 | `languages` | `en`, `fr`, `es`, `de`, `it`, `pt` |
 | `audience` | `kids`, `family`, `friends`, `coworkers` |
-| `players`, `duration` | bornes min et max (durée en minutes) |
-| `free`, `noAccount`, `mobile`, `sharedScreen` | critères pratiques |
-| `tested` | date du dernier test à la main (`null` tant que personne n'a joué) |
+| `players`, `duration` | minimum and maximum (duration in minutes) |
+| `free`, `noAccount`, `mobile`, `sharedScreen` | practical criteria |
+| `tested` | date of the last hands-on test (`null` until someone has actually played) |
 
-Les libellés des filtres et les textes du site sont dans [src/i18n.ts](src/i18n.ts).
+Filter labels and all site text live in [src/i18n.ts](src/i18n.ts).
 
-## Les vignettes
+## Thumbnails
 
-[scripts/fetch-covers.mjs](scripts/fetch-covers.mjs) copie l'image d'aperçu que chaque jeu publie lui-même (balise `og:image`), la recadre en 480 × 300 et la range dans `public/covers/<id>.webp`. À défaut, il pose l'icône du site sur un fond flouté. Un jeu sans image garde la vignette colorée générée par le site.
+[scripts/fetch-covers.mjs](scripts/fetch-covers.mjs) copies the preview image each game publishes itself (its `og:image` tag), crops it to 480 × 300 and stores it in `public/covers/<id>.webp`. Failing that, it places the site's icon on a blurred backdrop. A game with no image keeps the coloured tile drawn by the site.
 
-- `npm run covers` ne traite que les jeux sans vignette ; `npm run covers -- --force` refait tout, `npm run covers -- skribbl` refait un jeu.
-- Pour refuser l'image d'un jeu, supprimer son fichier et ajouter `"cover": false` à sa fiche.
-- Le robot quotidien lance aussi ce script, donc un jeu ajouté reçoit sa vignette au plus tard le lendemain.
-- Une image choisie à la main fonctionne aussi : la déposer dans `public/covers/` sous le nom `<id>.webp`.
+- `npm run covers` only handles games without a thumbnail; `npm run covers -- --force` redoes everything, `npm run covers -- skribbl` redoes one game.
+- To reject a game's image, delete its file and add `"cover": false` to its entry.
+- The daily bot also runs this script, so a newly added game gets its thumbnail by the next day at the latest.
+- A hand-picked image works too: drop it in `public/covers/` as `<id>.webp`.
 
-## Le robot
+## The link checker
 
-[scripts/check-links.mjs](scripts/check-links.mjs) tourne chaque jour via [.github/workflows/check-links.yml](.github/workflows/check-links.yml), enregistre son résultat dans `src/data/status.json`, puis redéploie le site.
+[scripts/check-links.mjs](scripts/check-links.mjs) runs every day through [.github/workflows/check-links.yml](.github/workflows/check-links.yml), records its result in `src/data/status.json`, then redeploys the site.
 
-- 3 échecs de suite : le jeu est marqué **Offline** et passe en fin de liste.
-- 30 jours hors ligne : la fiche est archivée (masquée du site, conservée dans les données).
-- Un passage réussi remet le jeu en ligne, même archivé.
-- Un refus anti-robot (HTTP 401, 403, 429) ne compte ni comme échec ni comme succès.
+- 3 failures in a row: the game is marked **Offline** and moves to the end of the list.
+- 30 days offline: the entry is archived (hidden from the site, kept in the data).
+- One successful visit puts the game back online, even when archived.
+- A bot refusal (HTTP 401, 403, 429) counts neither as a failure nor as a success.
 
-Le robot détecte un site mort ou remplacé, pas un jeu devenu payant : ces champs se vérifient à la main.
+The checker detects a dead or replaced site, not a game that became paid: those fields are checked by hand.
 
-## Mise en ligne
+## Deployment
 
-GitHub Pages, par [.github/workflows/deploy.yml](.github/workflows/deploy.yml) : dans les réglages du dépôt, Pages → Source → « GitHub Actions ». Avec un nom de domaine, construire avec `SITE=https://… BASE=/`.
+GitHub Pages, through [.github/workflows/deploy.yml](.github/workflows/deploy.yml), on every push to `main`. With a custom domain, build with `SITE=https://… BASE=/`.
 
-## Propositions de nouveaux jeux
+## New game proposals
 
-Un agent Claude planifié cherche chaque lundi de nouveaux jeux et ouvre une pull request avec au plus cinq fiches. Ses consignes sont dans [docs/scout.md](docs/scout.md) : modifier ce fichier suffit à changer son comportement. Il ne fusionne jamais lui-même. Pour qu'un jeu refusé ne soit plus proposé, ajouter son adresse dans [src/data/rejected.json](src/data/rejected.json), par exemple `["https://exemple.io/"]`.
+A scheduled Claude agent looks for new games every Monday and opens a pull request with at most five entries. It never merges anything itself. Its instructions are in [docs/scout.md](docs/scout.md): editing that file is enough to change its behaviour.
+
+To stop a refused game from being proposed again, add its address to [src/data/rejected.json](src/data/rejected.json), for example `["https://example.io/"]`.
+
+## Thumbnails and trademarks
+
+Game names, logos and preview images belong to their respective owners. They are shown only to identify and link to each game. If you publish one of these games and want its image removed, open an issue.
