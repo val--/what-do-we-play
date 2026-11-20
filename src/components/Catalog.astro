@@ -72,6 +72,8 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="sitemap" href={`${base}/sitemap.xml`} />
+    <!-- Visit counter: no cookies, nothing personal stored. It ignores localhost by itself. -->
+    <script is:inline data-goatcounter="https://whatdoweplay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
     <!-- Applies a theme chosen earlier before the page paints, to avoid a flash. -->
     <script is:inline>try { var th = localStorage.getItem('wdwp:theme'); if (th === 'light' || th === 'dark') document.documentElement.dataset.theme = th; } catch (e) {}</script>
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
