@@ -75,3 +75,14 @@ Game names, logos and preview images belong to their respective owners. They are
 ## Search engines and link previews
 
 `/sitemap.xml` and `/robots.txt` are generated at build time ([src/pages](src/pages)). The image shown when the site is shared (`public/og-en.png`, `public/og-fr.png`) is drawn from [scripts/og/card.html](scripts/og/card.html): after editing it, run `node scripts/og/make.mjs` (needs Chrome or Edge) and commit the two images.
+
+## Pages by need
+
+Besides the two home pages, the site builds one page per kind of game or situation
+("drawing games", "games for large groups", "free, no sign-up"…), in both languages.
+They exist so that people searching for a precise need can land on a matching list.
+
+They are declared in `src/landings.ts`: a rule that picks the games, plus an address,
+a title and one sentence per language. A page is published only when at least five
+games match, so nothing has to be done when the catalogue grows. The pages link to
+each other under "More ideas" and are listed in the sitemap.

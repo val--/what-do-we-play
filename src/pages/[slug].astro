@@ -1,0 +1,8 @@
+---
+import Catalog from '../components/Catalog.astro';
+import { published } from '../landings';
+
+export const getStaticPaths = () => published.map((landing) => ({ params: { slug: landing.en.slug }, props: { key: landing.key } }));
+const landing = published.find((l) => l.key === Astro.props.key);
+---
+<Catalog locale="en" landing={landing} />

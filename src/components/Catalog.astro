@@ -8,8 +8,12 @@ import status from '../data/status.json';
 import { readdirSync } from 'node:fs';
 import { strings, TYPES, AUDIENCES, LANGUAGES, type Locale } from '../i18n';
 
-interface Props { locale: Locale }
-const { locale } = Astro.props;
+import { published, pathOf, type Landing } from '../landings';
+
+// Without `landing` this is the home page with every game; with one, a page by need (src/landings.ts).
+interface Props { locale: Locale; landing?: Landing }
+const { locale, landing } = Astro.props;
+const page = landing?.[locale];
 const t = strings[locale];
 
 type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string; added?: string };
@@ -19,7 +23,7 @@ const fmt = (iso?: string | null, month: 'long' | 'short' = 'long') =>
   iso ? new Date(iso).toLocaleDateString(dateLocale, { day: 'numeric', month, year: 'numeric', timeZone: 'UTC' }) : null;
 
 const visible = games
-  .filter((g) => st[g.id]?.state !== 'archived')
+  .filter((g) => st[g.id]?.state !== 'archived' && (!landing || landing.match(g)))
   .map((g) => ({ ...g, offline: st[g.id]?.state === 'offline', offlineSince: st[g.id]?.offlineSince, lastOk: st[g.id]?.lastOk, added: st[g.id]?.added ?? '' }))
   .sort((a, b) => Number(a.offline) - Number(b.offline));
 
@@ -36,10 +40,13 @@ let covers = new Set<string>();
 try { covers = new Set(readdirSync('public/covers').map((f) => f.replace(/.webp$/, ''))); } catch {}
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const otherHref = locale === 'en' ? `${base}/fr/` : `${base}/`;
-const canonical = new URL(locale === 'en' ? `${base}/` : `${base}/fr/`, Astro.site);
+const other = locale === 'en' ? 'fr' : 'en';
+const otherHref = base + pathOf(other, landing);
+const canonical = new URL(base + pathOf(locale, landing), Astro.site);
 const alternate = new URL(otherHref, Astro.site);
-const home = new URL(`${base}/`, Astro.site);
+const home = new URL(base + pathOf('en', landing), Astro.site);
+const metaTitle = page ? `${page.h1} — WhatDoWePlay` : t.metaTitle;
+const metaDesc = page ? `${page.lead} ${t.pageDesc(visible.length)}` : t.metaDesc;
 // Share image, drawn by scripts/og/make.mjs.
 const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
 const durations = [10, 20, 30];
@@ -55,8 +62,8 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{t.metaTitle}</title>
-    <meta name="description" content={t.metaDesc} />
+    <title>{metaTitle}</title>
+    <meta name="description" content={metaDesc} />
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={locale === 'en' ? 'fr' : 'en'} href={alternate} />
     <link rel="alternate" hreflang={locale} href={canonical} />
@@ -65,8 +72,8 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
     <meta property="og:site_name" content="WhatDoWePlay" />
     <meta property="og:url" content={canonical} />
     <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_GB'} />
-    <meta property="og:title" content={t.metaTitle} />
-    <meta property="og:description" content={t.metaDesc} />
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDesc} />
     <meta property="og:image" content={ogImage} />
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
@@ -96,8 +103,10 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
     <main>
       <section class="hero">
         <div>
-          <h1>{t.titleA}<span class="mark">{t.titleMark}</span>{t.titleEnd}</h1>
-          <p class="lead">{t.lead}</p>
+          {page
+            ? <h1 class="need">{page.h1}</h1>
+            : <h1>{t.titleA}<span class="mark">{t.titleMark}</span>{t.titleEnd}</h1>}
+          <p class="lead">{page ? page.lead : t.lead}</p>
         </div>
         <svg class="art" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <g class="sparks"><path d="M150 22l6-16M166 30l14-12M172 46l18-4" /></g>
@@ -217,6 +226,14 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
         ))}
       </ol>
       <p class="none" id="none" hidden>{t.none}</p>
+
+      <nav class="browse" aria-labelledby="browse-title">
+        <h2 id="browse-title">{t.browse}</h2>
+        <ul>
+          {landing && <li><a class="all" href={base + pathOf(locale)}>{t.allGames}</a></li>}
+          {published.filter((l) => l !== landing).map((l) => <li><a href={base + pathOf(locale, l)}>{l[locale].label}</a></li>)}
+        </ul>
+      </nav>
 
       <ul class="perks">
         {t.perks.map((p, i) => <li><Icon name={perkIcons[i]} />{p}</li>)}
