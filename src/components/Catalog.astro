@@ -120,7 +120,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
         </svg>
       </section>
 
-      <form class="panel" id="filters" autocomplete="off">
+      <form class="panel" id="filters" autocomplete="off" data-preset={landing?.filter} data-home={base + pathOf(locale)}>
         <div class="panel-head">
           <h2><Icon name="sliders" />{t.filterTitle}</h2>
           <button type="button" id="reset"><Icon name="reset" />{t.reset}</button>

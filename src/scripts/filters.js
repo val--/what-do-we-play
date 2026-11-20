@@ -14,6 +14,19 @@ const list = document.getElementById('games');
 const sort = document.getElementById('sort');
 const search = document.getElementById('q');
 
+// A page by need (src/landings.ts) holds only its own games and shows its rule as ticked boxes:
+// the preset. It stays out of the URL. As soon as the visitor changes one of those boxes,
+// the page no longer holds the right games, so we go to the home page with the filters as they are.
+const preset = [...new URLSearchParams(form.dataset.preset || '')];
+const home = form.dataset.home;
+const presetHeld = (state) => preset.every(([key, value]) =>
+  key in GROUPS ? state[key].join(',') === value : FLAGS.includes(key) ? state[key] : state[key] === value);
+function withoutPreset(state) {
+  const rest = { ...state };
+  for (const [key] of preset) rest[key] = key in GROUPS ? [] : FLAGS.includes(key) ? false : '';
+  return rest;
+}
+
 // Same folding as the build: lower case, no accents.
 const plain = (s) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 
@@ -53,6 +66,7 @@ function toQuery(state) {
 
 function fillForm(query) {
   const q = new URLSearchParams(query);
+  for (const [key, value] of preset) q.set(key, value);
   search.value = q.get('q') || '';
   form.elements.n.value = q.get('n') || '';
   form.elements.t.value = q.get('t') || '';
@@ -66,7 +80,7 @@ function fillForm(query) {
 function matches(el, state) {
   const d = el.dataset;
   // Every word typed must appear somewhere in the game's text.
-  if (state.q && !plain(state.q).split(/s+/).every((word) => d.search.includes(word))) return false;
+  if (state.q && !plain(state.q).split(/\s+/).every((word) => d.search.includes(word))) return false;
   const n = Number(state.n);
   if (n && (n < Number(d.min) || n > Number(d.max))) return false;
   if (state.t && Number(d.dmin) > Number(state.t)) return false;
@@ -79,6 +93,11 @@ function matches(el, state) {
 
 function apply() {
   const state = readForm();
+  if (!presetHeld(state)) {
+    const all = toQuery(state);
+    location.assign(all ? `${home}?${all}` : home);
+    return;
+  }
   let shown = 0;
   for (const el of games) {
     const ok = matches(el, state);
@@ -89,7 +108,7 @@ function apply() {
   count.textContent = shown === 0 ? zero : shown === 1 ? one : many.replace('{n}', shown);
   none.hidden = shown !== 0;
 
-  const query = toQuery(state);
+  const query = toQuery(withoutPreset(state));
   history.replaceState(null, '', query ? `?${query}` : location.pathname);
   langSwitch.href = query ? `${switchHref}?${query}` : switchHref;
 }
@@ -97,6 +116,12 @@ function apply() {
 fillForm(location.search);
 paintFavs();
 apply();
+// Coming back with the browser's Back button can bring the page as it was left: put it in order again.
+addEventListener('pageshow', (e) => {
+  if (!e.persisted) return;
+  fillForm(location.search);
+  apply();
+});
 form.addEventListener('input', apply);
 search.addEventListener('input', apply);
 form.addEventListener('submit', (e) => e.preventDefault());
