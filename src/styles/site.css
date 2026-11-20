@@ -86,7 +86,7 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .top { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
 .brand { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--head); font-weight: 800; font-size: 1.35rem; letter-spacing: -.01em; text-decoration: none; }
 .brand .icon { width: 1.5em; height: 1.5em; color: var(--green); }
-/* Language choice: both languages shown, the current one filled. */
+/* Language choice: every language shown, the current one filled. */
 .lang-nav {
   display: inline-flex; align-items: center; gap: .15rem; height: 2.3rem; padding: 0 .25rem; font-weight: 650; font-size: .88rem;
   background: var(--card); border: 1.5px solid var(--line); border-radius: 999px;

@@ -60,11 +60,11 @@ When you find no supporting statement for a fact, you MUST use its default below
 
 ## 4. Write the entries
 
-Append each selected game to src/data/games.json, following exactly the shape and allowed values of the existing entries (id, name, url, keyword, types, languages, audience, players, duration, free, noAccount, mobile, sharedScreen, desc.en, desc.fr, tested).
+Append each selected game to src/data/games.json, following exactly the shape and allowed values of the existing entries (id, name, url, keyword, types, languages, audience, players, duration, free, noAccount, mobile, sharedScreen, desc.en, desc.fr, desc.es, tested).
 
 - `tested` is always null: nobody has played it yet.
 - `keyword` must be a lowercase word that actually appears in the HTML you fetched from `url` (usually the game's name), because the link checker searches for it.
-- Write `desc.en` and `desc.fr` yourself in one or two plain sentences, in the tone of the existing ones. Do not copy marketing text. When the game is partly paid or needs an account for the host, say so in the description, as the existing entries for Kahoot! and Jackbox Games do.
+- Write `desc.en`, `desc.fr` and `desc.es` yourself in one or two plain sentences, in the tone of the existing ones. The Spanish must read naturally to both Spanish and Latin American readers: prefer neutral words ("teléfono", "PC", "sala", "anfitrión", "registro") over regional ones ("móvil", "celular", "ordenador", "computadora"). Do not copy marketing text. When the game is partly paid or needs an account for the host, say so in the description, as the existing entries for Kahoot! and Jackbox Games do.
 - Only use type, language and audience values that already exist in src/i18n.ts. Include `kids` in the audience only when the content is clearly suitable and there is no open public chat with strangers.
 
 ## 5. Fetch the thumbnails

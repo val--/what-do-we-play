@@ -1,4 +1,4 @@
-// Renders the share image (Open Graph) in both languages from scripts/og/card.html.
+// Renders the share image (Open Graph) in each language from scripts/og/card.html.
 // Needs Chrome or Edge on this machine; run it by hand after editing card.html:
 //   node scripts/og/make.mjs
 import { execFileSync } from 'node:child_process';
@@ -18,7 +18,7 @@ const browsers = [
 const browser = browsers.find((p) => p && existsSync(p));
 if (!browser) throw new Error('No Chrome or Edge found; set CHROME to its path.');
 
-for (const lang of ['en', 'fr']) {
+for (const lang of ['en', 'fr', 'es']) {
   const out = path.resolve(here, `../../public/og-${lang}.png`);
   const url = `${pathToFileURL(path.join(here, 'card.html'))}?lang=${lang}`;
   execFileSync(browser, [

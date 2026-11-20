@@ -1,4 +1,17 @@
-export type Locale = 'en' | 'fr';
+// The languages the site is published in. To add one: list it here and in SITES, add its block
+// to `strings`, its texts in src/landings.ts, a `desc` in every game of src/data/games.json,
+// and its three page files under src/pages/<code>/ (copy those of `es`).
+export const LOCALES = ['en', 'fr', 'es'] as const;
+export type Locale = (typeof LOCALES)[number];
+// Per language: address prefix, folder of the game pages, date format and Open Graph code.
+export const SITES: Record<Locale, { prefix: string; games: string; date: string; og: string }> = {
+  en: { prefix: '', games: 'games', date: 'en-GB', og: 'en_GB' },
+  fr: { prefix: '/fr', games: 'jeux', date: 'fr-FR', og: 'fr_FR' },
+  es: { prefix: '/es', games: 'juegos', date: 'es-ES', og: 'es_ES' },
+};
+// One value per language, e.g. a page's address in each.
+export const perLocale = <T>(make: (locale: Locale) => T) =>
+  Object.fromEntries(LOCALES.map((l) => [l, make(l)])) as Record<Locale, T>;
 
 export const TYPES = ['drawing', 'quiz', 'words', 'bluff', 'board', 'geography', 'music', 'humor', 'arcade', 'collection'] as const;
 export const AUDIENCES = ['kids', 'family', 'friends', 'coworkers'] as const;
@@ -142,5 +155,74 @@ export const strings = {
     },
     langNav: 'Langue',
     selfName: 'Français',
+  },
+  es: {
+    htmlLang: 'es',
+    titleA: '¿A qué ', titleMark: 'jugamos', titleEnd: '?',
+    lead: 'Encuentra rápido un juego online para jugar en grupo, con la familia, los amigos o tu equipo de trabajo.',
+    filterTitle: 'Filtrar los juegos',
+    favOnly: 'Mis favoritos',
+    fav: 'Añadir a favoritos',
+    search: 'Buscar un juego',
+    toDark: 'Cambiar al tema oscuro',
+    toLight: 'Cambiar al tema claro',
+    sortBy: 'Ordenar por',
+    sorts: { '': 'Nuestra selección', new: 'Más recientes', az: 'A–Z', short: 'Más cortos', big: 'Grupos grandes' },
+    added: (n: number, d: string) => `+${n} ${n === 1 ? 'juego añadido' : 'juegos añadidos'} el ${d}`,
+    isNew: 'Nuevo',
+    linksChecked: (d: string) => `Enlaces comprobados el ${d}`,
+    perks: ['Enlaces comprobados cada día', 'Sin registro (la mayoría)', 'PC y teléfono', 'Familia, amigos o trabajo'],
+    title: '¿A qué jugamos?',
+    metaTitle: 'Juegos online para jugar con amigos, en familia o en equipo — WhatDoWePlay',
+    metaDesc:
+      'Juegos online para jugar con amigos, en familia o con compañeros de trabajo, a distancia o en la misma habitación. La mayoría son gratis. Filtra por número de jugadores, idioma, público y duración. Sin instalar nada.',
+    intro: (n: number) =>
+      `${n} juegos que funcionan en una pestaña del navegador. Compartes un enlace y todos juegan. Marca lo que encaja con tu grupo.`,
+    weAre: 'Número de jugadores',
+    players: 'jugadores',
+    weHave: 'Duración de una partida',
+    anyTime: 'Cualquiera',
+    minutes: (m: number) => `≤ ${m} min`,
+    forWhom: 'Público',
+    inLang: 'Idioma',
+    kind: 'Tipo de juego',
+    also: 'Práctico',
+    flags: { free: 'Gratis', noaccount: 'Sin registro', phone: 'En el teléfono', noscreen: 'Sin compartir pantalla' },
+    audience: { kids: 'Niños', family: 'Familia', friends: 'Amigos', coworkers: 'Compañeros de trabajo' },
+    types: {
+      drawing: 'dibujo', quiz: 'quiz', words: 'palabras', bluff: 'engaño', board: 'tablero y cartas',
+      geography: 'geografía', music: 'música', humor: 'humor', arcade: 'arcade', collection: 'varios juegos',
+    },
+    languages: { en: 'inglés', fr: 'francés', es: 'español', de: 'alemán', it: 'italiano', pt: 'portugués' },
+    count: (n: number) => (n === 0 ? 'Ningún juego encontrado' : n === 1 ? '1 juego encontrado' : `${n} juegos encontrados`),
+    reset: 'Restablecer',
+    none: 'Nada cumple todo eso. Desmarca una o dos casillas.',
+    playersLabel: 'jugadores',
+    min: 'min',
+    paid: 'de pago',
+    account: 'registro obligatorio',
+    noPhone: 'solo en PC',
+    screen: 'compartir pantalla',
+    play: 'Jugar',
+    offline: 'Fuera de línea',
+    offlineSince: (d: string) => `no responde desde el ${d}`,
+    foot: 'Los datos pueden cambiar: compruébalos en el sitio del juego.',
+    browse: 'Más ideas',
+    allGames: 'Todos los juegos',
+    pageDesc: (n: number) => `${n} juegos elegidos a mano, enlaces comprobados cada día.`,
+    open: (name: string) => `Abrir ${name}`,
+    gameTitle: (name: string) => `${name}: información y juegos parecidos — WhatDoWePlay`,
+    gameDesc: (players: string, minutes: string) => `${players} jugadores, ${minutes}.`,
+    linkChecked: (d: string) => `Enlace comprobado el ${d}`,
+    testedOn: (d: string) => `Probado por nosotros el ${d}`,
+    inLists: (name: string) => `${name} aparece en estas selecciones`,
+    similarTo: (name: string) => `Juegos parecidos a ${name}`,
+    fact: {
+      price: 'Precio', paid: 'De pago', account: 'Cuenta', noAccount: 'Sin registro', needsAccount: 'Registro obligatorio',
+      devices: 'Dispositivos', anyDevice: 'PC y teléfono', computerOnly: 'Solo en PC',
+      screen: 'Compartir pantalla', screenYes: 'Necesario', screenNo: 'No hace falta',
+    },
+    langNav: 'Idioma',
+    selfName: 'Español',
   },
 };

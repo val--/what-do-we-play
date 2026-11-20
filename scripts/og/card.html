@@ -47,9 +47,10 @@ p { margin-top: 30px; font-size: 31px; line-height: 1.35; color: #4a5573; }
 <script>
 const text = {
   en: { a: 'What do we ', mark: 'play', end: '?', lead: 'Browser games to play together, with family, friends or your team.', pills: ['Free', 'No sign-up', 'Nothing to install'] },
+  es: { a: '¿A qué ', mark: 'jugamos', end: '?', lead: 'Juegos de navegador para jugar en grupo, con la familia, los amigos o tu equipo.', pills: ['Gratis', 'Sin registro', 'Sin instalar nada'] },
   fr: { a: 'On ', mark: 'joue', end: ' à quoi ?', lead: 'Des jeux à plusieurs dans le navigateur, en famille, entre amis ou entre collègues.', pills: ['Gratuit', 'Sans compte', 'Rien à installer'] },
 };
-const t = text[new URLSearchParams(location.search).get('lang') === 'fr' ? 'fr' : 'en'];
+const t = text[new URLSearchParams(location.search).get('lang')] || text.en;
 const h = document.getElementById('title');
 h.append(t.a);
 const m = document.createElement('span'); m.className = 'mark'; m.textContent = t.mark; h.append(m, t.end);

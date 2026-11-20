@@ -2,7 +2,7 @@
 import Base from './Base.astro';
 import GameCard from './GameCard.astro';
 import Icon from './Icon.astro';
-import { strings, TYPES, AUDIENCES, LANGUAGES, type Locale } from '../i18n';
+import { strings, perLocale, TYPES, AUDIENCES, LANGUAGES, type Locale } from '../i18n';
 import { entries, lastCheck, daysAgo, formatDate } from '../catalogue';
 import { published, pathOf, type Landing } from '../landings';
 
@@ -23,7 +23,7 @@ const metaDesc = page ? `${page.lead} ${t.pageDesc(visible.length)}` : t.metaDes
 const durations = [10, 20, 30];
 const perkIcons = ['shield', 'check', 'monitor', 'users'];
 ---
-<Base locale={locale} title={metaTitle} desc={metaDesc} paths={{ en: pathOf('en', landing), fr: pathOf('fr', landing) }}>
+<Base locale={locale} title={metaTitle} desc={metaDesc} paths={perLocale((l) => pathOf(l, landing))}>
   <section class="hero">
     <div>
       {page

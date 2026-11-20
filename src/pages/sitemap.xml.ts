@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import status from '../data/status.json';
+import { LOCALES, perLocale } from '../i18n';
 import { published, pathOf } from '../landings';
 import { entries as games, gamePath } from '../catalogue';
 
@@ -13,17 +14,16 @@ export const GET: APIRoute = ({ site }) => {
     .pop()
     ?.slice(0, 10);
   const pages = [
-    ...[undefined, ...published].map((landing) => ({ en: pathOf('en', landing), fr: pathOf('fr', landing) })),
-    ...games.map((g) => ({ en: gamePath('en', g.id), fr: gamePath('fr', g.id) })),
+    ...[undefined, ...published].map((landing) => perLocale((l) => pathOf(l, landing))),
+    ...games.map((g) => perLocale((l) => gamePath(l, g.id))),
   ];
   const entries = pages.flatMap((paths) => {
-    const en = new URL(base + paths.en, site).href;
-    const fr = new URL(base + paths.fr, site).href;
-    return [en, fr].map((loc) => `  <url>
-    <loc>${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
-    <xhtml:link rel="alternate" hreflang="en" href="${en}"/>
-    <xhtml:link rel="alternate" hreflang="fr" href="${fr}"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="${en}"/>
+    const url = perLocale((l) => new URL(base + paths[l], site).href);
+    const alternates = LOCALES.map((l) => `    <xhtml:link rel="alternate" hreflang="${l}" href="${url[l]}"/>`).join('\n');
+    return LOCALES.map((l) => `  <url>
+    <loc>${url[l]}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
+${alternates}
+    <xhtml:link rel="alternate" hreflang="x-default" href="${url.en}"/>
   </url>`);
   });
   const xml = `<?xml version="1.0" encoding="UTF-8"?>

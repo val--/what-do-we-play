@@ -12,7 +12,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "One player draws a word, everyone else races to guess it in the chat.",
-      "fr": "Un joueur dessine un mot, les autres tentent de le deviner dans le chat."
+      "fr": "Un joueur dessine un mot, les autres tentent de le deviner dans le chat.",
+      "es": "Un jugador dibuja una palabra y los demás intentan adivinarla en el chat."
     },
     "tested": null
   },
@@ -29,7 +30,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "The telephone game with drawings: write a sentence, draw it, describe the drawing, and laugh at the result.",
-      "fr": "Le téléphone arabe dessiné : on écrit une phrase, on la dessine, on décrit le dessin, et on rit du résultat."
+      "fr": "Le téléphone arabe dessiné : on écrit une phrase, on la dessine, on décrit le dessin, et on rit du résultat.",
+      "es": "El teléfono descompuesto con dibujos: escribes una frase, alguien la dibuja, otro describe el dibujo, y al final todos se ríen del resultado."
     },
     "tested": null
   },
@@ -46,7 +48,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Draw and guess in themed rooms, from the makers of Gartic Phone.",
-      "fr": "Dessiner et deviner dans des salons à thème, par les créateurs de Gartic Phone."
+      "fr": "Dessiner et deviner dans des salons à thème, par les créateurs de Gartic Phone.",
+      "es": "Dibujar y adivinar en salas temáticas, de los creadores de Gartic Phone."
     },
     "tested": null
   },
@@ -63,7 +66,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A simple draw-and-guess game with private rooms.",
-      "fr": "Un jeu de dessin à deviner tout simple, avec salons privés."
+      "fr": "Un jeu de dessin à deviner tout simple, avec salons privés.",
+      "es": "Un juego muy sencillo de dibujar y adivinar, con salas privadas."
     },
     "tested": null
   },
@@ -80,7 +84,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Draw-and-guess with richer drawing tools and custom word lists.",
-      "fr": "Dessin à deviner avec des outils de dessin plus riches et des listes de mots personnalisées."
+      "fr": "Dessin à deviner avec des outils de dessin plus riches et des listes de mots personnalisées.",
+      "es": "Dibujar y adivinar con herramientas de dibujo más completas y listas de palabras personalizadas."
     },
     "tested": null
   },
@@ -97,7 +102,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Telephone with pictures, built for phones: everyone plays on their own device.",
-      "fr": "Le téléphone arabe en images, pensé pour le téléphone : chacun joue sur son appareil."
+      "fr": "Le téléphone arabe en images, pensé pour le téléphone : chacun joue sur son appareil.",
+      "es": "El teléfono descompuesto con dibujos, pensado para el teléfono: cada uno juega en su dispositivo."
     },
     "tested": null
   },
@@ -114,7 +120,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Everyone captions the same meme template, then the group votes for the funniest.",
-      "fr": "Tout le monde légende le même mème, puis le groupe vote pour le plus drôle."
+      "fr": "Tout le monde légende le même mème, puis le groupe vote pour le plus drôle.",
+      "es": "Todos ponen texto al mismo meme y el grupo vota por el más gracioso."
     },
     "tested": null
   },  {
@@ -130,7 +137,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Everyone answers the same twelve silly prompts on their own phone, then the group votes for the best answer. A set of question packs is free; extra packs and writing your own questions need a one-time paid pass for the host.",
-      "fr": "Chacun répond sur son téléphone aux douze mêmes questions farfelues, puis le groupe vote pour la meilleure réponse. Une série de paquets de questions est gratuite ; les paquets supplémentaires et les questions personnalisées demandent un pass payant, acheté une seule fois par l'hôte."
+      "fr": "Chacun répond sur son téléphone aux douze mêmes questions farfelues, puis le groupe vote pour la meilleure réponse. Une série de paquets de questions est gratuite ; les paquets supplémentaires et les questions personnalisées demandent un pass payant, acheté une seule fois par l'hôte.",
+      "es": "Cada uno responde en su teléfono a las mismas doce preguntas absurdas y el grupo vota por la mejor respuesta. Hay una serie de paquetes de preguntas gratis; los paquetes adicionales y las preguntas propias requieren un pase de pago, que el anfitrión compra una sola vez."
     },
     "tested": null
   },
@@ -148,7 +156,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Two quick games: BombParty (find a word before the bomb explodes) and PopSauce (picture and trivia quiz).",
-      "fr": "Deux jeux rapides : BombParty (trouver un mot avant l'explosion) et PopSauce (quiz d'images et de culture générale)."
+      "fr": "Deux jeux rapides : BombParty (trouver un mot avant l'explosion) et PopSauce (quiz d'images et de culture générale).",
+      "es": "Dos juegos rápidos: BombParty (encontrar una palabra antes de que explote la bomba) y PopSauce (quiz de imágenes y cultura general)."
     },
     "tested": null
   },
@@ -165,7 +174,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A single room with a dozen party games: drawing, quiz, word and bluffing games.",
-      "fr": "Un seul salon et une douzaine de jeux de soirée : dessin, quiz, mots et bluff."
+      "fr": "Un seul salon et une douzaine de jeux de soirée : dessin, quiz, mots et bluff.",
+      "es": "Una sola sala y una docena de juegos de fiesta: dibujo, quiz, palabras y engaño."
     },
     "tested": null
   },
@@ -182,7 +192,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A collection of small multiplayer games: drawing, hangman, chess, checkers and more.",
-      "fr": "Une collection de petits jeux à plusieurs : dessin, pendu, échecs, dames et d'autres."
+      "fr": "Une collection de petits jeux à plusieurs : dessin, pendu, échecs, dames et d'autres.",
+      "es": "Una colección de juegos pequeños para varios jugadores: dibujo, ahorcado, ajedrez, damas y más."
     },
     "tested": null
   },
@@ -199,7 +210,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A party lobby for phones: gather everyone once, then hop between dozens of browser party games.",
-      "fr": "Un salon pour téléphones : on réunit le groupe une fois, puis on passe d'un jeu de soirée à l'autre."
+      "fr": "Un salon pour téléphones : on réunit le groupe une fois, puis on passe d'un jeu de soirée à l'autre.",
+      "es": "Una sala para teléfonos: se reúne al grupo una vez y se pasa de un juego de fiesta a otro."
     },
     "tested": null
   },
@@ -216,7 +228,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Social deduction games (Spyfall, Avalon, Codewords, Werewolf...) played on everyone's phone.",
-      "fr": "Jeux de déduction sociale (Spyfall, Avalon, Codewords, Loup-garou...) joués sur le téléphone de chacun."
+      "fr": "Jeux de déduction sociale (Spyfall, Avalon, Codewords, Loup-garou...) joués sur le téléphone de chacun.",
+      "es": "Juegos de deducción social (Spyfall, Avalon, Codewords, Hombres lobo...) que se juegan en el teléfono de cada uno."
     },
     "tested": null
   },
@@ -233,7 +246,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Everyone knows the location except the spy, who must work it out from the questions asked.",
-      "fr": "Tout le monde connaît le lieu sauf l'espion, qui doit le deviner à partir des questions posées."
+      "fr": "Tout le monde connaît le lieu sauf l'espion, qui doit le deviner à partir des questions posées.",
+      "es": "Todos conocen el lugar menos el espía, que tiene que adivinarlo a partir de las preguntas que se hacen."
     },
     "tested": null
   },
@@ -250,7 +264,8 @@
     "free": true, "noAccount": false, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Online Werewolf with many roles, text or voice games.",
-      "fr": "Le Loup-garou en ligne, avec de nombreux rôles, en parties écrites ou vocales."
+      "fr": "Le Loup-garou en ligne, avec de nombreux rôles, en parties écrites ou vocales.",
+      "es": "Los Hombres lobo online, con muchos roles, en partidas escritas o por voz."
     },
     "tested": null
   },
@@ -267,7 +282,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "The official online Codenames: two teams, one-word clues, find your agents first.",
-      "fr": "La version officielle de Codenames : deux équipes, des indices en un mot, retrouver ses agents en premier."
+      "fr": "La version officielle de Codenames : deux équipes, des indices en un mot, retrouver ses agents en premier.",
+      "es": "La versión oficial online de Codenames: dos equipos, pistas de una sola palabra, y gana quien encuentra primero a sus agentes."
     },
     "tested": null
   },
@@ -285,7 +301,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "An online take on Wavelength: give a clue that places a hidden target on a scale between two opposites.",
-      "fr": "Une adaptation en ligne de Wavelength : donner un indice qui situe une cible cachée entre deux opposés."
+      "fr": "Une adaptation en ligne de Wavelength : donner un indice qui situe une cible cachée entre deux opposés.",
+      "es": "Una adaptación online de Wavelength: dar una pista que sitúe un objetivo oculto entre dos opuestos."
     },
     "tested": null
   },
@@ -302,7 +319,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Taboo, charades and password in three rounds, designed for video calls.",
-      "fr": "Taboo, mimes et mot unique en trois manches, conçu pour les appels vidéo."
+      "fr": "Taboo, mimes et mot unique en trois manches, conçu pour les appels vidéo.",
+      "es": "Tabú, mímica y contraseña en tres rondas, pensado para videollamadas."
     },
     "tested": null
   },
@@ -319,7 +337,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "One letter, several categories, a timer: find a word for each before time runs out.",
-      "fr": "Le petit bac : une lettre, plusieurs catégories, un chrono, et un mot à trouver pour chacune."
+      "fr": "Le petit bac : une lettre, plusieurs catégories, un chrono, et un mot à trouver pour chacune.",
+      "es": "El Stop o Tutti Frutti: una letra, varias categorías, un cronómetro, y una palabra que encontrar para cada una."
     },
     "tested": null
   },
@@ -336,7 +355,8 @@
     "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "A typing race: invite friends to a private track and see who types the quote fastest.",
-      "fr": "Une course de frappe au clavier : on invite ses amis sur une piste privée, le plus rapide gagne."
+      "fr": "Une course de frappe au clavier : on invite ses amis sur une piste privée, le plus rapide gagne.",
+      "es": "Una carrera de mecanografía: invitas a tus amigos a una pista privada y gana quien escribe más rápido."
     },
     "tested": null
   },  {
@@ -352,7 +372,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A French take on Wordle in the style of the TV show Motus: create a private room, share the link and race to find the same words. Free rooms hold 6 players; bigger rooms need the host to be a paying supporter.",
-      "fr": "Le Motus en ligne : on crée un salon privé, on partage le lien et tout le monde cherche les mêmes mots le plus vite possible. Les salons gratuits accueillent 6 joueurs ; au-delà, l'hôte doit être membre payant."
+      "fr": "Le Motus en ligne : on crée un salon privé, on partage le lien et tout le monde cherche les mêmes mots le plus vite possible. Les salons gratuits accueillent 6 joueurs ; au-delà, l'hôte doit être membre payant.",
+      "es": "Un juego francés al estilo de Wordle: se crea una sala privada, se comparte el enlace y todos buscan las mismas palabras lo más rápido posible. Las salas gratis admiten 6 jugadores; para más, el anfitrión tiene que ser miembro de pago."
     },
     "tested": null
   },  {
@@ -368,7 +389,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "The official online version of the cooperative word game: you see everyone's letter but your own, and clues made from the others' letters help each player work out theirs. Bring your own voice or video call.",
-      "fr": "La version officielle en ligne du jeu de mots coopératif : on voit la lettre de chacun sauf la sienne, et des indices formés avec les lettres des autres aident chaque joueur à deviner la sienne. Prévoir un appel vocal ou vidéo à côté."
+      "fr": "La version officielle en ligne du jeu de mots coopératif : on voit la lettre de chacun sauf la sienne, et des indices formés avec les lettres des autres aident chaque joueur à deviner la sienne. Prévoir un appel vocal ou vidéo à côté.",
+      "es": "La versión oficial online del juego cooperativo de palabras: ves la letra de todos menos la tuya, y las pistas formadas con las letras de los demás ayudan a cada jugador a adivinar la suya. Hace falta una llamada de voz o de video aparte."
     },
     "tested": null
   },  {
@@ -384,7 +406,8 @@
     "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "Wordle as a battle royale: everyone guesses five-letter words at once, wrong guesses cost health and the last player standing wins. Small Blitz games or a big Royale lobby.",
-      "fr": "Wordle façon battle royale : tout le monde cherche des mots de cinq lettres en même temps, chaque erreur coûte des points de vie et le dernier debout gagne. En petit comité (Blitz) ou en grand salon (Royale)."
+      "fr": "Wordle façon battle royale : tout le monde cherche des mots de cinq lettres en même temps, chaque erreur coûte des points de vie et le dernier debout gagne. En petit comité (Blitz) ou en grand salon (Royale).",
+      "es": "Wordle en modo battle royale: todos buscan palabras de cinco letras a la vez, cada error cuesta puntos de vida y gana el último en pie. En grupo pequeño (Blitz) o en sala grande (Royale)."
     },
     "tested": null
   },
@@ -404,7 +427,8 @@
     "free": false, "noAccount": false, "mobile": true, "sharedScreen": true,
     "desc": {
       "en": "The classic live quiz: the host shares the questions on screen, players answer on their phones. Host account needed; the free plan is limited.",
-      "fr": "Le quiz en direct classique : l'hôte affiche les questions, les joueurs répondent sur leur téléphone. Compte nécessaire pour l'hôte ; l'offre gratuite est limitée."
+      "fr": "Le quiz en direct classique : l'hôte affiche les questions, les joueurs répondent sur leur téléphone. Compte nécessaire pour l'hôte ; l'offre gratuite est limitée.",
+      "es": "El quiz en directo de siempre: el anfitrión muestra las preguntas y los jugadores responden desde su teléfono. El anfitrión necesita una cuenta; el plan gratuito es limitado."
     },
     "tested": null
   },
@@ -421,7 +445,8 @@
     "free": true, "noAccount": false, "mobile": true, "sharedScreen": true,
     "desc": {
       "en": "Quizzes wrapped in mini-games, popular in classrooms. The host needs an account.",
-      "fr": "Des quiz habillés en mini-jeux, très utilisés en classe. L'hôte a besoin d'un compte."
+      "fr": "Des quiz habillés en mini-jeux, très utilisés en classe. L'hôte a besoin d'un compte.",
+      "es": "Quiz presentados como minijuegos, muy usados en clase. El anfitrión necesita una cuenta."
     },
     "tested": null
   },
@@ -438,7 +463,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": true,
     "desc": {
       "en": "Trivia and party games for video calls: one person shares the screen, everyone joins from their phone.",
-      "fr": "Quiz et jeux de soirée pour la visio : une personne partage son écran, les autres rejoignent sur leur téléphone."
+      "fr": "Quiz et jeux de soirée pour la visio : une personne partage son écran, les autres rejoignent sur leur téléphone.",
+      "es": "Quiz y juegos de fiesta para videollamadas: una persona comparte su pantalla y los demás se unen desde su teléfono."
     },
     "tested": null
   },  {
@@ -454,7 +480,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "An online buzzer for your own quiz night: the host reads the questions, everyone buzzes from their phone and the site shows who was first. You bring the questions.",
-      "fr": "Un buzzer en ligne pour votre propre soirée quiz : l'hôte lit les questions, chacun buzze depuis son téléphone et le site indique qui a été le plus rapide. Les questions sont à préparer soi-même."
+      "fr": "Un buzzer en ligne pour votre propre soirée quiz : l'hôte lit les questions, chacun buzze depuis son téléphone et le site indique qui a été le plus rapide. Les questions sont à préparer soi-même.",
+      "es": "Un pulsador online para tu propia noche de quiz: el anfitrión lee las preguntas, cada uno pulsa desde su teléfono y el sitio indica quién fue el más rápido. Las preguntas las preparas tú."
     },
     "tested": null
   },  {
@@ -470,7 +497,8 @@
     "free": true, "noAccount": true, "mobile": false, "sharedScreen": true,
     "desc": {
       "en": "Jeopardy-style quiz boards: build your own or pick one of millions made by others, show it on one screen and keep score by team. Players have no device; the host reads and awards the points.",
-      "fr": "Des grilles de quiz façon Jeopardy : on crée la sienne ou on en choisit une parmi des millions, on l'affiche sur un écran et on compte les points par équipe. Les joueurs n'ont pas d'appareil ; l'hôte lit et attribue les points."
+      "fr": "Des grilles de quiz façon Jeopardy : on crée la sienne ou on en choisit une parmi des millions, on l'affiche sur un écran et on compte les points par équipe. Les joueurs n'ont pas d'appareil ; l'hôte lit et attribue les points.",
+      "es": "Tableros de quiz al estilo Jeopardy: creas el tuyo o eliges uno entre millones, lo muestras en una pantalla y llevas los puntos por equipos. Los jugadores no necesitan dispositivo; el anfitrión lee y reparte los puntos."
     },
     "tested": null
   },  {
@@ -486,7 +514,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Short races where the right answer makes your car, penguin or tractor go faster: times tables, sums, spelling. Children can set up a private game with a password. In English, for primary school children.",
-      "fr": "De courtes courses où la bonne réponse fait avancer sa voiture, son pingouin ou son tracteur : tables de multiplication, calcul, orthographe. Les enfants peuvent créer une partie privée avec un mot de passe. En anglais, pour les élèves de primaire."
+      "fr": "De courtes courses où la bonne réponse fait avancer sa voiture, son pingouin ou son tracteur : tables de multiplication, calcul, orthographe. Les enfants peuvent créer une partie privée avec un mot de passe. En anglais, pour les élèves de primaire.",
+      "es": "Carreras cortas en las que la respuesta correcta hace avanzar tu coche, tu pingüino o tu tractor: tablas de multiplicar, cálculo, ortografía. Los niños pueden crear una partida privada con contraseña. En inglés, para alumnos de primaria."
     },
     "tested": null
   },
@@ -506,7 +535,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A music blind test: guess the song or the artist faster than the others.",
-      "fr": "Un blind test musical : trouver le titre ou l'artiste plus vite que les autres."
+      "fr": "Un blind test musical : trouver le titre ou l'artiste plus vite que les autres.",
+      "es": "Un juego de adivinar canciones: encontrar el título o el artista antes que los demás."
     },
     "tested": null
   },  {
@@ -522,7 +552,8 @@
     "free": true, "noAccount": false, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "A French multiplayer music blind test with themed rooms (2000s, Disney, French songs, rock...). Free and volunteer-run, but everyone needs a free account to play; you can then create a private room and give its name or password to your friends.",
-      "fr": "Un blind test musical multijoueur avec des salles à thème (années 2000, Disney, chanson française, rock...). Gratuit et tenu par des bénévoles, mais chaque joueur doit créer un compte gratuit ; on peut ensuite créer une salle privée et donner son nom ou son mot de passe à ses amis."
+      "fr": "Un blind test musical multijoueur avec des salles à thème (années 2000, Disney, chanson française, rock...). Gratuit et tenu par des bénévoles, mais chaque joueur doit créer un compte gratuit ; on peut ensuite créer une salle privée et donner son nom ou son mot de passe à ses amis.",
+      "es": "Un juego francés de adivinar canciones con salas temáticas (años 2000, Disney, canción francesa, rock...). Gratis y mantenido por voluntarios, pero cada jugador tiene que crear una cuenta gratuita; después se puede crear una sala privada y dar su nombre o su contraseña a los amigos."
     },
     "tested": null
   },  {
@@ -538,7 +569,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A real-time music blind test: 15 clips of 25 seconds, type the title and the artist before the others. Private rooms by link, with your own Spotify or Deezer playlists.",
-      "fr": "Un blind test musical en temps réel : 15 extraits de 25 secondes, il faut taper le titre et l'artiste avant les autres. Salons privés par simple lien, avec vos propres playlists Spotify ou Deezer."
+      "fr": "Un blind test musical en temps réel : 15 extraits de 25 secondes, il faut taper le titre et l'artiste avant les autres. Salons privés par simple lien, avec vos propres playlists Spotify ou Deezer.",
+      "es": "Un juego de adivinar canciones en tiempo real: 15 fragmentos de 25 segundos, y hay que escribir el título y el artista antes que los demás. Salas privadas con un simple enlace, con tus propias listas de Spotify o Deezer."
     },
     "tested": null
   },  {
@@ -554,7 +586,8 @@
     "free": true, "noAccount": false, "mobile": true, "sharedScreen": true,
     "desc": {
       "en": "A French music blind test where each phone becomes a buzzer: the host's device plays the 30 clips, everyone else joins with a code and no sign-up. The host needs a free account to create a game.",
-      "fr": "Un blind test musical où le téléphone de chacun sert de buzzer : l'appareil de l'hôte diffuse les 30 extraits, les autres rejoignent avec un code, sans inscription. L'hôte doit créer un compte gratuit pour lancer une partie."
+      "fr": "Un blind test musical où le téléphone de chacun sert de buzzer : l'appareil de l'hôte diffuse les 30 extraits, les autres rejoignent avec un code, sans inscription. L'hôte doit créer un compte gratuit pour lancer une partie.",
+      "es": "Un juego francés de adivinar canciones en el que el teléfono de cada uno sirve de pulsador: el dispositivo del anfitrión reproduce los 30 fragmentos y los demás se unen con un código, sin registro. El anfitrión tiene que crear una cuenta gratuita para iniciar una partida."
     },
     "tested": null
   },
@@ -574,7 +607,8 @@
     "free": false, "noAccount": false, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Dropped somewhere in Street View, guess where you are. Party mode requires a paid subscription for the host.",
-      "fr": "Lâché quelque part dans Street View, il faut deviner où l'on est. Le mode groupe demande un abonnement payant pour l'hôte."
+      "fr": "Lâché quelque part dans Street View, il faut deviner où l'on est. Le mode groupe demande un abonnement payant pour l'hôte.",
+      "es": "Apareces en algún lugar de Street View y tienes que adivinar dónde estás. El modo para grupos requiere una suscripción de pago del anfitrión."
     },
     "tested": null
   },
@@ -591,7 +625,8 @@
     "free": true, "noAccount": false, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A free, donation-funded alternative to GeoGuessr, with multiplayer lobbies.",
-      "fr": "Une alternative gratuite à GeoGuessr, financée par les dons, avec des salons multijoueurs."
+      "fr": "Une alternative gratuite à GeoGuessr, financée par les dons, avec des salons multijoueurs.",
+      "es": "Una alternativa gratuita a GeoGuessr, financiada con donaciones, con salas multijugador."
     },
     "tested": null
   },  {
@@ -607,7 +642,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A free, ad-supported GeoGuessr-style game: guess where the street view was taken, in private parties or duels, without signing up.",
-      "fr": "Un jeu gratuit à la GeoGuessr, financé par la publicité : deviner où la vue de rue a été prise, en partie privée ou en duel, sans inscription."
+      "fr": "Un jeu gratuit à la GeoGuessr, financé par la publicité : deviner où la vue de rue a été prise, en partie privée ou en duel, sans inscription.",
+      "es": "Un juego gratuito al estilo de GeoGuessr, financiado con publicidad: adivinar dónde se tomó la vista de calle, en partida privada o en duelo, sin registro."
     },
     "tested": null
   },  {
@@ -623,7 +659,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "The successor to City Guesser: watch a video walk through a city somewhere in the world and guess where it is on the map. Create a room, share the six-digit code, up to 250 players.",
-      "fr": "Le successeur de City Guesser : on regarde une promenade filmée dans une ville quelque part dans le monde et on devine où elle se trouve sur la carte. On crée un salon, on partage le code à six chiffres, jusqu'à 250 joueurs."
+      "fr": "Le successeur de City Guesser : on regarde une promenade filmée dans une ville quelque part dans le monde et on devine où elle se trouve sur la carte. On crée un salon, on partage le code à six chiffres, jusqu'à 250 joueurs.",
+      "es": "El sucesor de City Guesser: se ve un paseo grabado por una ciudad de algún lugar del mundo y se adivina dónde está en el mapa. Se crea una sala y se comparte el código de seis cifras, hasta 250 jugadores."
     },
     "tested": null
   },
@@ -642,7 +679,8 @@
     "free": true, "noAccount": false, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Hundreds of board games with the rules enforced for you. Free for most games; some need one premium player at the table.",
-      "fr": "Des centaines de jeux de société dont les règles sont appliquées automatiquement. Gratuit pour la plupart ; certains exigent un joueur premium à la table."
+      "fr": "Des centaines de jeux de société dont les règles sont appliquées automatiquement. Gratuit pour la plupart ; certains exigent un joueur premium à la table.",
+      "es": "Cientos de juegos de mesa en los que las reglas se aplican solas. Gratis en la mayoría; algunos exigen un jugador premium en la mesa."
     },
     "tested": null
   },
@@ -659,7 +697,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A settlers-style board game of trading and building, playable as a guest.",
-      "fr": "Un jeu de plateau de commerce et de construction à la manière des colons, jouable en invité."
+      "fr": "Un jeu de plateau de commerce et de construction à la manière des colons, jouable en invité.",
+      "es": "Un juego de mesa de comercio y construcción al estilo de los colonos, que se puede jugar como invitado."
     },
     "tested": null
   },
@@ -676,7 +715,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A property-trading board game in the browser: buy cities, build, bankrupt your friends.",
-      "fr": "Un jeu de plateau d'achat de propriétés dans le navigateur : acheter des villes, construire, ruiner ses amis."
+      "fr": "Un jeu de plateau d'achat de propriétés dans le navigateur : acheter des villes, construire, ruiner ses amis.",
+      "es": "Un juego de mesa de compra de propiedades en el navegador: comprar ciudades, construir y arruinar a tus amigos."
     },
     "tested": null
   },
@@ -693,7 +733,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Pen-and-paper classics for two: tic-tac-toe, battleship, connect four, with tournaments for groups.",
-      "fr": "Les classiques papier-crayon à deux : morpion, bataille navale, puissance 4, avec des tournois pour les groupes."
+      "fr": "Les classiques papier-crayon à deux : morpion, bataille navale, puissance 4, avec des tournois pour les groupes.",
+      "es": "Los clásicos de lápiz y papel para dos: tres en raya, batalla naval, cuatro en línea, con torneos para grupos."
     },
     "tested": null
   },
@@ -710,7 +751,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A virtual card table: the cards move, the rules are up to you. Many ready-made games.",
-      "fr": "Une table de cartes virtuelle : les cartes bougent, les règles sont à vous. Nombreux jeux prêts à l'emploi."
+      "fr": "Une table de cartes virtuelle : les cartes bougent, les règles sont à vous. Nombreux jeux prêts à l'emploi.",
+      "es": "Una mesa de cartas virtual: las cartas se mueven y las reglas las pones tú. Muchos juegos ya preparados."
     },
     "tested": null
   },
@@ -727,7 +769,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Dozens of classic card games (Hearts, Spades, Rummy, Crazy Eights...) with private tables.",
-      "fr": "Des dizaines de jeux de cartes classiques (Dame de pique, Rami, Huit américain...) avec tables privées."
+      "fr": "Des dizaines de jeux de cartes classiques (Dame de pique, Rami, Huit américain...) avec tables privées.",
+      "es": "Decenas de juegos de cartas clásicos (Corazones, Picas, Rummy, Ocho loco...) con mesas privadas."
     },
     "tested": null
   },
@@ -744,7 +787,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "The card game Set in real time: spot three matching cards before anyone else.",
-      "fr": "Le jeu de cartes Set en temps réel : repérer trois cartes qui vont ensemble avant les autres."
+      "fr": "Le jeu de cartes Set en temps réel : repérer trois cartes qui vont ensemble avant les autres.",
+      "es": "El juego de cartas Set en tiempo real: encontrar tres cartas que formen un conjunto antes que los demás."
     },
     "tested": null
   },  {
@@ -760,7 +804,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Free chess with no ads: create a game, send the link to a friend and play, no sign-up needed.",
-      "fr": "Des échecs gratuits et sans publicité : on crée une partie, on envoie le lien à un ami et on joue, sans inscription."
+      "fr": "Des échecs gratuits et sans publicité : on crée une partie, on envoie le lien à un ami et on joue, sans inscription.",
+      "es": "Ajedrez gratis y sin publicidad: creas una partida, le envías el enlace a un amigo y juegan, sin registro."
     },
     "tested": null
   },  {
@@ -776,7 +821,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Around forty board and card games (Azul, Yahtzee, Uno-style, Hearts, Ludo...): pick a room name, share it, and everyone plays on their own device. Free with light ads.",
-      "fr": "Une quarantaine de jeux de plateau et de cartes (Azul, Yahtzee, façon Uno, Dame de pique, petits chevaux...) : on choisit un nom de salon, on le partage, et chacun joue sur son appareil. Gratuit, avec un peu de publicité."
+      "fr": "Une quarantaine de jeux de plateau et de cartes (Azul, Yahtzee, façon Uno, Dame de pique, petits chevaux...) : on choisit un nom de salon, on le partage, et chacun joue sur son appareil. Gratuit, avec un peu de publicité.",
+      "es": "Unos cuarenta juegos de mesa y de cartas (Azul, Yahtzee, al estilo Uno, Corazones, parchís...): se elige un nombre de sala, se comparte, y cada uno juega en su dispositivo. Gratis, con algo de publicidad."
     },
     "tested": null
   },  {
@@ -792,7 +838,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Trick-taking card games (Hearts, Spades, Euchre, Bridge, 500, Pinochle...) at a private table with built-in video chat. Free with a short ad before each game.",
-      "fr": "Des jeux de cartes à plis (Dame de pique, Spades, Euchre, Bridge, 500, Pinochle...) à une table privée, avec visio intégrée. Gratuit, avec une courte publicité avant chaque partie."
+      "fr": "Des jeux de cartes à plis (Dame de pique, Spades, Euchre, Bridge, 500, Pinochle...) à une table privée, avec visio intégrée. Gratuit, avec une courte publicité avant chaque partie.",
+      "es": "Juegos de cartas de bazas (Corazones, Picas, Euchre, Bridge, 500, Pinochle...) en una mesa privada, con videollamada integrada. Gratis, con un anuncio corto antes de cada partida."
     },
     "tested": null
   },  {
@@ -808,7 +855,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Classic card and board games (Hearts, Spades, Rummy, Yahtzee, Backgammon...) with no login: create a private table and share it with friends. Paid for by ads.",
-      "fr": "Des classiques de cartes et de plateau (Dame de pique, Rami, Yahtzee, Backgammon...) sans connexion : on crée une table privée et on la partage avec ses amis. Financé par la publicité."
+      "fr": "Des classiques de cartes et de plateau (Dame de pique, Rami, Yahtzee, Backgammon...) sans connexion : on crée une table privée et on la partage avec ses amis. Financé par la publicité.",
+      "es": "Clásicos de cartas y de mesa (Corazones, Picas, Rummy, Yahtzee, Backgammon...) sin iniciar sesión: creas una mesa privada y la compartes con tus amigos. Financiado con publicidad."
     },
     "tested": null
   },  {
@@ -824,7 +872,8 @@
     "free": true, "noAccount": false, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "A virtual table with over 2,500 modern board games; you move the pieces yourself, rules are not enforced. Many games are free, others need a subscription; the host needs an account. Best on a computer.",
-      "fr": "Une table virtuelle avec plus de 2 500 jeux de société modernes ; on déplace soi-même les pièces, les règles ne sont pas appliquées. Beaucoup de jeux sont gratuits, d'autres demandent un abonnement ; l'hôte a besoin d'un compte. À privilégier sur ordinateur."
+      "fr": "Une table virtuelle avec plus de 2 500 jeux de société modernes ; on déplace soi-même les pièces, les règles ne sont pas appliquées. Beaucoup de jeux sont gratuits, d'autres demandent un abonnement ; l'hôte a besoin d'un compte. À privilégier sur ordinateur.",
+      "es": "Una mesa virtual con más de 2500 juegos de mesa modernos; las piezas las mueves tú y las reglas no se aplican solas. Muchos juegos son gratis y otros requieren una suscripción; el anfitrión necesita una cuenta. Mejor en PC."
     },
     "tested": null
   },  {
@@ -840,7 +889,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Bingo for a video call: the host reads out the numbers the caller draws, everyone marks a card on their own device. Free up to 30 players, paid beyond.",
-      "fr": "Un bingo pour la visio : l'hôte annonce les numéros tirés par le site, chacun coche sa grille sur son appareil. Gratuit jusqu'à 30 joueurs, payant au-delà."
+      "fr": "Un bingo pour la visio : l'hôte annonce les numéros tirés par le site, chacun coche sa grille sur son appareil. Gratuit jusqu'à 30 joueurs, payant au-delà.",
+      "es": "Un bingo para videollamadas: el anfitrión anuncia los números que saca el sitio y cada uno marca su cartón en su dispositivo. Gratis hasta 30 jugadores, de pago a partir de ahí."
     },
     "tested": null
   },
@@ -863,7 +913,8 @@
     "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "Falling-block battles in private rooms, playable as a guest. Keyboard required.",
-      "fr": "Des duels de blocs qui tombent en salons privés, jouables en invité. Clavier nécessaire."
+      "fr": "Des duels de blocs qui tombent en salons privés, jouables en invité. Clavier nécessaire.",
+      "es": "Duelos de bloques que caen, en salas privadas, que se pueden jugar como invitado. Hace falta teclado."
     },
     "tested": null
   },
@@ -880,7 +931,8 @@
     "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "Minimalist top-down football: push the ball, score, argue about it. Keyboard required.",
-      "fr": "Du football minimaliste vu de dessus : pousser le ballon, marquer, contester. Clavier nécessaire."
+      "fr": "Du football minimaliste vu de dessus : pousser le ballon, marquer, contester. Clavier nécessaire.",
+      "es": "Fútbol minimalista visto desde arriba: empujar el balón, marcar y discutir la jugada. Hace falta teclado."
     },
     "tested": null
   },
@@ -897,7 +949,8 @@
     "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "Physics brawls: bump the other balls off the level. Keyboard required.",
-      "fr": "Des bagarres physiques : pousser les autres billes hors du niveau. Clavier nécessaire."
+      "fr": "Des bagarres physiques : pousser les autres billes hors du niveau. Clavier nécessaire.",
+      "es": "Peleas con física: empujar las otras bolas fuera del nivel. Hace falta teclado."
     },
     "tested": null
   },
@@ -914,7 +967,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Three-minute kart battles with cartoon weapons, in private rooms.",
-      "fr": "Des batailles de karts de trois minutes avec des armes de dessin animé, en salons privés."
+      "fr": "Des batailles de karts de trois minutes avec des armes de dessin animé, en salons privés.",
+      "es": "Batallas de karts de tres minutos con armas de dibujos animados, en salas privadas."
     },
     "tested": null
   },  {
@@ -930,7 +984,8 @@
     "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
     "desc": {
       "en": "The original 2009 Minecraft, official and playable in the browser without an account: pick a username, send your friends the link and build together, up to ten players. The game ends for everyone when the host leaves. Keyboard required.",
-      "fr": "Le Minecraft d'origine de 2009, officiel et jouable dans le navigateur sans compte : on choisit un pseudo, on envoie le lien à ses amis et on construit ensemble, jusqu'à dix joueurs. La partie s'arrête pour tout le monde quand l'hôte la quitte. Clavier nécessaire."
+      "fr": "Le Minecraft d'origine de 2009, officiel et jouable dans le navigateur sans compte : on choisit un pseudo, on envoie le lien à ses amis et on construit ensemble, jusqu'à dix joueurs. La partie s'arrête pour tout le monde quand l'hôte la quitte. Clavier nécessaire.",
+      "es": "El Minecraft original de 2009, oficial y jugable en el navegador sin cuenta: eliges un nombre, envías el enlace a tus amigos y construyen juntos, hasta diez jugadores. La partida termina para todos cuando el anfitrión sale. Hace falta teclado."
     },
     "tested": null
   },
@@ -948,7 +1003,8 @@
     "free": false, "noAccount": true, "mobile": true, "sharedScreen": true,
     "desc": {
       "en": "The party-pack reference. One person buys and runs the game and shares the screen; everyone else joins from a phone browser.",
-      "fr": "La référence des jeux de soirée. Une personne achète et lance le jeu puis partage son écran ; les autres rejoignent depuis le navigateur de leur téléphone."
+      "fr": "La référence des jeux de soirée. Une personne achète et lance le jeu puis partage son écran ; les autres rejoignent depuis le navigateur de leur téléphone.",
+      "es": "La referencia de los juegos de fiesta. Una persona compra y abre el juego y comparte su pantalla; los demás se unen desde el navegador de su teléfono."
     },
     "tested": null
   },  {
@@ -964,7 +1020,8 @@
     "free": false, "noAccount": true, "mobile": true, "sharedScreen": true,
     "desc": {
       "en": "A game console in the browser: one big screen shows the game, and each player's phone becomes the controller. Racing, sports and party games, no sign-up. The free version is limited to two players with waiting breaks; more players and the full catalogue need the AirConsole Hero subscription, which one person in the group is enough to hold.",
-      "fr": "Une console de jeu dans le navigateur : un grand écran affiche le jeu et le téléphone de chacun sert de manette. Courses, sport et jeux de soirée, sans inscription. La version gratuite est limitée à deux joueurs, avec des pauses d'attente ; au-delà, et pour tout le catalogue, il faut l'abonnement AirConsole Hero, qu'une seule personne du groupe suffit à détenir."
+      "fr": "Une console de jeu dans le navigateur : un grand écran affiche le jeu et le téléphone de chacun sert de manette. Courses, sport et jeux de soirée, sans inscription. La version gratuite est limitée à deux joueurs, avec des pauses d'attente ; au-delà, et pour tout le catalogue, il faut l'abonnement AirConsole Hero, qu'une seule personne du groupe suffit à détenir.",
+      "es": "Una consola de juegos en el navegador: una pantalla grande muestra el juego y el teléfono de cada uno sirve de mando. Carreras, deportes y juegos de fiesta, sin registro. La versión gratuita está limitada a dos jugadores, con pausas de espera; para más jugadores y para todo el catálogo hace falta la suscripción AirConsole Hero, y basta con que la tenga una persona del grupo."
     },
     "tested": null
   },
@@ -982,7 +1039,8 @@
     "free": false, "noAccount": false, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Icebreakers and meeting games built for remote teams. Partly paid; the host needs an account.",
-      "fr": "Brise-glaces et jeux de réunion conçus pour les équipes à distance. En partie payant ; l'hôte a besoin d'un compte."
+      "fr": "Brise-glaces et jeux de réunion conçus pour les équipes à distance. En partie payant ; l'hôte a besoin d'un compte.",
+      "es": "Juegos para romper el hielo y para reuniones, pensados para equipos a distancia. En parte de pago; el anfitrión necesita una cuenta."
     },
     "tested": null
   },
@@ -999,7 +1057,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "Dropped at a random spot on Street View, everyone guesses where they are on a map. Free with ads; the host shares a link to start a private party.",
-      "fr": "Déposé au hasard dans Street View, chacun devine sur une carte où il se trouve. Gratuit avec publicités ; l'hôte partage un lien pour lancer une partie privée."
+      "fr": "Déposé au hasard dans Street View, chacun devine sur une carte où il se trouve. Gratuit avec publicités ; l'hôte partage un lien pour lancer une partie privée.",
+      "es": "Apareces en un punto al azar de Street View y cada uno adivina en un mapa dónde está. Gratis con publicidad; el anfitrión comparte un enlace para iniciar una partida privada."
     },
     "tested": null
   },
@@ -1017,7 +1076,8 @@
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A category appears and everyone types an answer in turn to pass the pufferfish before it pops; rarer answers earn extra lives. Free with ads; host a room and share its four-letter code.",
-      "fr": "Une catégorie s'affiche et chacun tape une réponse à son tour pour passer le poisson-globe avant qu'il n'éclate ; les réponses rares rapportent des vies. Gratuit avec publicités ; on crée un salon et on partage son code à quatre lettres."
+      "fr": "Une catégorie s'affiche et chacun tape une réponse à son tour pour passer le poisson-globe avant qu'il n'éclate ; les réponses rares rapportent des vies. Gratuit avec publicités ; on crée un salon et on partage son code à quatre lettres.",
+      "es": "Aparece una categoría y cada uno escribe una respuesta por turno para pasar el pez globo antes de que explote; las respuestas poco comunes dan vidas extra. Gratis con publicidad; se crea una sala y se comparte su código de cuatro letras."
     },
     "tested": "2026-11-20"
   }

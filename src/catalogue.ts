@@ -2,7 +2,7 @@
 import { readdirSync } from 'node:fs';
 import games from './data/games.json';
 import status from './data/status.json';
-import type { Locale } from './i18n';
+import { SITES, type Locale } from './i18n';
 
 type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string; added?: string };
 const st = status as Record<string, St>;
@@ -27,11 +27,11 @@ export const isNew = (g: Entry) => g.added !== '' && daysAgo(g.added) <= 14;
 export const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
 export const formatDate = (locale: Locale, iso?: string | null, month: 'long' | 'short' = 'long', year = true) =>
   iso
-    ? new Date(iso).toLocaleDateString(locale === 'fr' ? 'fr-FR' : 'en-GB', { day: 'numeric', month, year: year ? 'numeric' : undefined, timeZone: 'UTC' })
+    ? new Date(iso).toLocaleDateString(SITES[locale].date, { day: 'numeric', month, year: year ? 'numeric' : undefined, timeZone: 'UTC' })
     : null;
 
 // Address of a game's own page, without the site's base.
-export const gamePath = (locale: Locale, id: string) => `${locale === 'fr' ? '/fr/jeux' : '/games'}/${id}/`;
+export const gamePath = (locale: Locale, id: string) => `${SITES[locale].prefix}/${SITES[locale].games}/${id}/`;
 
 // Similar games, by one rule for the whole catalogue: at least one kind in common, then
 // 3 points per shared kind, 1 per shared audience, 1 if some group size suits both.

@@ -5,8 +5,8 @@ const games = [...document.querySelectorAll('#games > .game')];
 const count = document.getElementById('count');
 const reset = document.getElementById('reset');
 const none = document.getElementById('none');
-const langSwitch = document.querySelector('[data-lang-switch]');
-const switchHref = langSwitch.getAttribute('href');
+// The links to the other languages keep the filters: remember each one's own address.
+const langSwitches = [...document.querySelectorAll('[data-lang-switch]')].map((link) => ({ link, href: link.getAttribute('href') }));
 
 const GROUPS = { for: 'for', lang: 'langs', type: 'types' };
 const FLAGS = ['free', 'noaccount', 'phone', 'noscreen'];
@@ -110,7 +110,7 @@ function apply() {
 
   const query = toQuery(withoutPreset(state));
   history.replaceState(null, '', query ? `?${query}` : location.pathname);
-  langSwitch.href = query ? `${switchHref}?${query}` : switchHref;
+  for (const { link, href } of langSwitches) link.href = query ? `${href}?${query}` : href;
 }
 
 fillForm(location.search);

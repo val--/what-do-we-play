@@ -4,7 +4,7 @@
 import Base from './Base.astro';
 import GameCard from './GameCard.astro';
 import Icon from './Icon.astro';
-import { strings, type Locale } from '../i18n';
+import { strings, perLocale, type Locale } from '../i18n';
 import { covers, range, formatDate, gamePath, similar, type Entry } from '../catalogue';
 import { published, pathOf } from '../landings';
 
@@ -37,7 +37,7 @@ const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-ti
   locale={locale}
   title={t.gameTitle(g.name)}
   desc={`${g.desc[locale]} ${t.gameDesc(players, minutes)}`}
-  paths={{ en: gamePath('en', g.id), fr: gamePath('fr', g.id) }}
+  paths={perLocale((l) => gamePath(l, g.id))}
 >
   <p class="crumb"><a href={base + pathOf(locale)}>← {t.allGames}</a></p>
 

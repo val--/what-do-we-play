@@ -5,17 +5,14 @@ import '@fontsource-variable/outfit';
 import '@fontsource-variable/dm-sans';
 import '../styles/site.css';
 import Icon from './Icon.astro';
-import { strings, type Locale } from '../i18n';
+import { strings, LOCALES, SITES, type Locale } from '../i18n';
 
 interface Props { locale: Locale; title: string; desc: string; paths: Record<Locale, string> }
 const { locale, title, desc, paths } = Astro.props;
 const t = strings[locale];
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const other = locale === 'en' ? 'fr' : 'en';
-const otherHref = base + paths[other];
 const canonical = new URL(base + paths[locale], Astro.site);
-const alternate = new URL(otherHref, Astro.site);
 const fallback = new URL(base + paths.en, Astro.site);
 // Share image, drawn by scripts/og/make.mjs.
 const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
@@ -28,13 +25,12 @@ const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
     <title>{title}</title>
     <meta name="description" content={desc} />
     <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={other} href={alternate} />
-    <link rel="alternate" hreflang={locale} href={canonical} />
+    {LOCALES.map((l) => <link rel="alternate" hreflang={l} href={new URL(base + paths[l], Astro.site)} />)}
     <link rel="alternate" hreflang="x-default" href={fallback} />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="WhatDoWePlay" />
     <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_GB'} />
+    <meta property="og:locale" content={SITES[locale].og} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={desc} />
     <meta property="og:image" content={ogImage} />
@@ -50,15 +46,15 @@ const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
   </head>
   <body>
     <header class="top">
-      <a class="brand" href={locale === 'en' ? `${base}/` : `${base}/fr/`}><Icon name="gamepad" />WhatDoWePlay</a>
+      <a class="brand" href={`${base}${SITES[locale].prefix}/`}><Icon name="gamepad" />WhatDoWePlay</a>
       <div class="tools">
         <button type="button" class="theme" data-theme-toggle data-to-dark={t.toDark} data-to-light={t.toLight} hidden>
           <span class="to-dark"><Icon name="moon" /></span><span class="to-light"><Icon name="sun" /></span>
         </button>
         <nav class="lang-nav" aria-label={t.langNav}>
-          {(['en', 'fr'] as const).map((l) => l === locale
+          {LOCALES.map((l) => l === locale
             ? <span aria-current="true" title={strings[l].selfName}>{l.toUpperCase()}</span>
-            : <a href={otherHref} hreflang={l} lang={l} title={strings[l].selfName} data-lang-switch>{l.toUpperCase()}</a>)}
+            : <a href={base + paths[l]} hreflang={l} lang={l} title={strings[l].selfName} data-lang-switch>{l.toUpperCase()}</a>)}
         </nav>
       </div>
     </header>

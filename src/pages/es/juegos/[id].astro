@@ -1,0 +1,8 @@
+---
+import GamePage from '../../../components/GamePage.astro';
+import { entries } from '../../../catalogue';
+
+export const getStaticPaths = () => entries.map((g) => ({ params: { id: g.id } }));
+const g = entries.find((e) => e.id === Astro.params.id)!;
+---
+<GamePage locale="es" g={g} />

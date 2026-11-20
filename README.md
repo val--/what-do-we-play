@@ -2,9 +2,9 @@
 
 A directory of multiplayer games that run in a web browser, for families, friends and team icebreakers. Filter by group size, language, audience and time, then share a link: nothing to install.
 
-**Live site: https://whatdoweplay.games/** (also [in French](https://whatdoweplay.games/fr/))
+**Live site: https://whatdoweplay.games/** (also [in French](https://whatdoweplay.games/fr/) and [in Spanish](https://whatdoweplay.games/es/))
 
-It is a static site built with [Astro](https://astro.build), in English and French, with combinable filters, a daily link check and a weekly agent that proposes new games.
+It is a static site built with [Astro](https://astro.build), in English, French and Spanish, with combinable filters, a daily link check and a weekly agent that proposes new games.
 
 ## Commands
 
@@ -79,7 +79,7 @@ Game names, logos and preview images belong to their respective owners. They are
 ## Pages by need
 
 Besides the two home pages, the site builds one page per kind of game or situation
-("drawing games", "games for large groups", "free, no sign-up"…), in both languages.
+("drawing games", "games for large groups", "free, no sign-up"…), in every language.
 They exist so that people searching for a precise need can land on a matching list.
 
 They are declared in `src/landings.ts`: a rule that picks the games, plus an address,
@@ -89,10 +89,18 @@ each other under "More ideas" and are listed in the sitemap.
 
 ## A page per game
 
-Every listed game also has its own page (`/games/<id>/`, `/fr/jeux/<id>/`): what the
+Every listed game also has its own page (`/games/<id>/`, `/fr/jeux/<id>/`, `/es/juegos/<id>/`): what the
 catalogue knows about it, the pages by need it belongs to, and six similar games.
 "Similar" is one rule for the whole catalogue, in `src/catalogue.ts`: at least one kind
 in common, then the games sharing the most kinds and audiences come first.
 
 The pieces: `src/catalogue.ts` (the data every page reads), `Base.astro` (the shell),
 `GameCard.astro` (a card), `Catalog.astro` (a list with filters), `GamePage.astro`.
+
+## Languages
+
+The site is published in English, French and Spanish. The list is `LOCALES` in `src/i18n.ts`,
+and the comment above it says what a new language needs: its interface texts, its texts in
+`src/landings.ts`, a description of every game in `src/data/games.json`, and three page files.
+The project's maintainer reads English and French; the Spanish is written with the help of an
+AI assistant, so corrections from native speakers are welcome.
