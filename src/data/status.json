@@ -427,5 +427,13 @@
     "lastOk": "2026-11-20",
     "lastResult": "HTTP 200",
     "added": "2026-11-19"
+  },
+  "puffer-party": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
   }
 }
