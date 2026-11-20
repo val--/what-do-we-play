@@ -2,7 +2,14 @@
 import { readdirSync } from 'node:fs';
 import games from './data/games.json';
 import status from './data/status.json';
-import { SITES, type Locale } from './i18n';
+import { LOCALES, SITES, type Locale } from './i18n';
+
+// A game must be described in every language the site is published in: stop the build otherwise,
+// rather than publish a page with a hole in it.
+for (const g of games) {
+  const missing = LOCALES.filter((l) => !(g.desc as Record<string, string>)[l]?.trim());
+  if (missing.length) throw new Error(`games.json: "${g.id}" has no description in: ${missing.join(', ')}`);
+}
 
 type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string; added?: string };
 const st = status as Record<string, St>;
