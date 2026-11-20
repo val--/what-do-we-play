@@ -435,5 +435,123 @@
     "lastOk": "2026-11-20",
     "lastResult": "HTTP 200",
     "added": "2026-11-20"
+  },
+  "drawize": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "stopots": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "pinturillo": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "trivialonline": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "what-the-tune": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "foony": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "jigsaw-explorer": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastResult": "HTTP 403",
+    "added": "2026-11-20"
+  },
+  "openguessr": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "alone-together": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "gaming-couch": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "curvytron": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "imposter-online": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastResult": "HTTP 403",
+    "added": "2026-11-20"
+  },
+  "lets-fib": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "music-quizly": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
+  },
+  "cross-with-friends": {
+    "state": "online",
+    "fails": 0,
+    "lastChecked": "2026-11-20",
+    "lastOk": "2026-11-20",
+    "lastResult": "HTTP 200",
+    "added": "2026-11-20"
   }
 }
