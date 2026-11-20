@@ -107,7 +107,11 @@ await Promise.all(
   Array.from({ length: CONCURRENCY }, async () => {
     for (let game; (game = queue.shift()); ) {
       const outcome = await check(game);
-      next[game.id] = nextStatus(status[game.id], outcome, today);
+      const prev = status[game.id];
+      next[game.id] = nextStatus(prev, outcome, today);
+      // Stamped once, the first time the robot sees a game; games of the launch catalogue have none.
+      const added = prev ? prev.added : today;
+      if (added) next[game.id].added = added;
       console.log(`${outcome.result.padEnd(7)} ${next[game.id].state.padEnd(8)} ${game.id.padEnd(18)} ${outcome.detail}`);
     }
   }),

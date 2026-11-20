@@ -162,7 +162,7 @@ legend .icon, .field .icon { color: var(--soft); }
 /* Count and sort */
 .tally { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: .4rem 1rem; margin: 1.5rem 0 .8rem; }
 .tally strong { font-family: var(--head); font-size: 1.25rem; font-weight: 700; }
-.verified { display: inline-flex; align-items: center; gap: .35rem; margin-right: auto; font-size: .85rem; font-weight: 600; color: var(--green-ink); }
+.verified { display: inline-flex; align-items: center; gap: .35rem; font-size: .85rem; font-weight: 600; color: var(--green-ink); }
 .search { display: flex; align-items: center; gap: .45rem; padding: .3rem .65rem; background: var(--field); border: 1.5px solid var(--line); border-radius: 10px; color: var(--soft); }
 .search:hover, .search:focus-within { border-color: var(--green); }
 .search input { width: 11rem; font: inherit; font-size: .9rem; color: var(--ink); background: none; border: 0; outline: 0; padding: 0; }
@@ -201,7 +201,10 @@ legend .icon, .field .icon { color: var(--soft); }
 
 .body { padding: .25rem 0; min-width: 0; }
 .body h2 { margin: 0; font-family: var(--head); font-size: 1.3rem; font-weight: 700; line-height: 1.2; }
+.fresh { margin-right: auto; font-size: .85rem; font-weight: 600; color: var(--soft); }
+.verified:last-of-type { margin-right: auto; }
 .body h2 a { text-decoration: none; }
+.new { margin-left: .5rem; padding: .1rem .5rem; font-family: var(--body); font-size: .68rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; vertical-align: .2em; color: var(--amber-ink); background: var(--amber-tint); border-radius: 999px; }
 .body h2 a:hover { color: var(--green-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .18em; }
 .body p { margin: .2rem 0 .55rem; color: var(--soft); font-size: .95rem; line-height: 1.4; }
 .meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.1rem; font-weight: 600; font-size: .9rem; }

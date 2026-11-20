@@ -27,6 +27,7 @@ function paintFavs() {
 
 const SORTS = {
   '': (a, b) => a.dataset.i - b.dataset.i,
+  new: (a, b) => b.dataset.added.localeCompare(a.dataset.added) || a.dataset.i - b.dataset.i,
   az: (a, b) => a.dataset.name.localeCompare(b.dataset.name),
   short: (a, b) => a.dataset.dmin - b.dataset.dmin || a.dataset.i - b.dataset.i,
   big: (a, b) => b.dataset.max - a.dataset.max || a.dataset.i - b.dataset.i,

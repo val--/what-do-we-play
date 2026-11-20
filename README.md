@@ -51,6 +51,7 @@ Filter labels and all site text live in [src/i18n.ts](src/i18n.ts).
 - 3 failures in a row: the game is marked **Offline** and moves to the end of the list.
 - 30 days offline: the entry is archived (hidden from the site, kept in the data).
 - One successful visit puts the game back online, even when archived.
+- The first time the checker sees a game it stamps it with an `added` date in `status.json`. The site uses it for the "+N games added on …" line, the "New" tag (14 days) and the "Newest first" sort. Games of the launch catalogue have no date.
 - A bot refusal (HTTP 401, 403, 429) counts neither as a failure nor as a success.
 
 - When a live page announces a new version, a move or a shutdown, the sentence is recorded as a `notice` in `status.json` and printed in the run log. It never changes a game's state; the weekly agent reviews these notices.

@@ -51,7 +51,8 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "jklm": {
     "state": "online",
@@ -141,21 +142,24 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "letter-jam": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "squabble": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "kahoot": {
     "state": "online",
@@ -182,21 +186,24 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "jeopardylabs": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "arcademics": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "songtrivia": {
     "state": "online",
@@ -210,21 +217,24 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "blindtest-gg": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "blindz": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "geoguessr": {
     "state": "online",
@@ -245,14 +255,16 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "maponica": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "board-game-arena": {
     "state": "online",
@@ -307,42 +319,48 @@
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
-    "lastResult": "HTTP 403"
+    "lastResult": "HTTP 403",
+    "added": "2026-11-19"
   },
   "buddyboardgames": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "trickster-cards": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "cardgames-io": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "tabletopia": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "my-free-bingo-cards": {
     "state": "online",
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "tetrio": {
     "state": "online",
@@ -377,7 +395,8 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "jackbox": {
     "state": "online",
@@ -391,7 +410,8 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   },
   "brightful": {
     "state": "online",
@@ -405,6 +425,7 @@
     "fails": 0,
     "lastChecked": "2026-11-20",
     "lastOk": "2026-11-20",
-    "lastResult": "HTTP 200"
+    "lastResult": "HTTP 200",
+    "added": "2026-11-19"
   }
 }

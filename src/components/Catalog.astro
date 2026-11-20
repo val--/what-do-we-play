@@ -12,7 +12,7 @@ interface Props { locale: Locale }
 const { locale } = Astro.props;
 const t = strings[locale];
 
-type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string };
+type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string; added?: string };
 const st = status as Record<string, St>;
 const dateLocale = locale === 'fr' ? 'fr-FR' : 'en-GB';
 const fmt = (iso?: string | null, month: 'long' | 'short' = 'long') =>
@@ -20,10 +20,15 @@ const fmt = (iso?: string | null, month: 'long' | 'short' = 'long') =>
 
 const visible = games
   .filter((g) => st[g.id]?.state !== 'archived')
-  .map((g) => ({ ...g, offline: st[g.id]?.state === 'offline', offlineSince: st[g.id]?.offlineSince, lastOk: st[g.id]?.lastOk }))
+  .map((g) => ({ ...g, offline: st[g.id]?.state === 'offline', offlineSince: st[g.id]?.offlineSince, lastOk: st[g.id]?.lastOk, added: st[g.id]?.added ?? '' }))
   .sort((a, b) => Number(a.offline) - Number(b.offline));
 
 const lastCheck = Object.values(st).map((s) => s.lastChecked ?? '').sort().pop() || null;
+// Latest arrivals: the daily robot stamps each game the first time it sees it (status.json, `added`).
+const daysAgo = (iso: string) => (Date.now() - Date.parse(iso)) / 864e5;
+const lastAdded = visible.map((g) => g.added).sort().pop() || '';
+const lastBatch = lastAdded && daysAgo(lastAdded) <= 30 ? visible.filter((g) => g.added === lastAdded).length : 0;
+const isNew = (g: (typeof visible)[number]) => g.added !== '' && daysAgo(g.added) <= 14;
 const usedTypes = TYPES.filter((x) => visible.some((g) => g.types.includes(x)));
 
 // Thumbnails fetched by scripts/fetch-covers.mjs; games without a file keep the coloured tile.
@@ -150,6 +155,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
       <div class="tally">
         <strong id="count" aria-live="polite" data-one={t.count(1)} data-many={t.count(2).replace('2', '{n}')} data-zero={t.count(0)}>{t.count(visible.length)}</strong>
         {lastCheck && <span class="verified"><Icon name="shield" />{t.linksChecked(fmt(lastCheck, 'short') ?? '')}</span>}
+        {lastBatch > 0 && <span class="fresh">{t.added(lastBatch, new Date(lastAdded).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short', timeZone: 'UTC' }))}</span>}
         <label class="search"><Icon name="search" /><input type="search" id="q" placeholder={t.search} aria-label={t.search} autocomplete="off" /></label>
         <label class="sort">{t.sortBy}
           <select id="sort">
@@ -172,6 +178,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
             data-min={g.players.min}
             data-max={g.players.max}
             data-dmin={g.duration.min}
+            data-added={g.added}
             data-free={g.free ? 1 : 0}
             data-noaccount={g.noAccount ? 1 : 0}
             data-phone={g.mobile ? 1 : 0}
@@ -183,7 +190,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
                 : <span>{g.name}</span>}
             </a>
             <div class="body">
-              <h2><a href={g.url} target="_blank" rel="noopener">{g.name}</a></h2>
+              <h2><a href={g.url} target="_blank" rel="noopener">{g.name}</a>{isNew(g) && <span class="new">{t.isNew}</span>}</h2>
               <p>{g.desc[locale]}</p>
               <ul class="meta">
                 <li><Icon name="users" />{range(g.players.min, g.players.max)}</li>
