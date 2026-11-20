@@ -70,7 +70,11 @@ To stop a refused game from being proposed again, add its address to [src/data/r
 
 ## Thumbnails and trademarks
 
-Game names, logos and preview images belong to their respective owners. They are shown only to identify and link to each game. If you publish one of these games and want its image removed, open an issue.
+Game names, logos, preview images and screenshots belong to their respective owners. They are shown only to identify, describe and link to each game. If you publish one of these games and want an image removed, open an issue.
+
+## Screenshots
+
+A game's page can show screenshots taken by the owner while playing. Drop the image files into `screenshots/` at the root of the project, each named after the game's id (`skribbl.png`, `skribbl 2.png`), and run `npm run shots`: the script resizes them into `public/shots/` and moves the originals to `screenshots/done/`. The `screenshots/` folder is not committed. Check that a screenshot shows no real name or private chat before adding it.
 
 ## Search engines and link previews
 

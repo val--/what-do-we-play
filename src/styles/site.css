@@ -274,6 +274,12 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 .checks { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: .8rem 0 0; font-size: .85rem; font-weight: 600; color: var(--soft); }
 .checks span { display: inline-flex; align-items: center; gap: .4rem; }
 .checks .icon { color: var(--green-ink); }
+.shots { margin-top: 2rem; }
+.shots h2 { margin: 0 0 .8rem; font-family: var(--head); font-weight: 750; font-size: 1.4rem; }
+.shots ul { display: grid; grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr)); gap: .8rem; }
+.shots a { display: block; overflow: hidden; background: var(--line); border: 1.5px solid var(--line); border-radius: 12px; transition: border-color .12s; }
+.shots a:hover { border-color: var(--green); }
+.shots img { display: block; width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
 .alike { margin-top: 2rem; }
 .alike h2 { margin: 0 0 .8rem; font-family: var(--head); font-weight: 750; font-size: 1.4rem; }
 

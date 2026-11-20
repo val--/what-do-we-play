@@ -5,7 +5,7 @@ import Base from './Base.astro';
 import GameCard from './GameCard.astro';
 import Icon from './Icon.astro';
 import { strings, perLocale, type Locale } from '../i18n';
-import { covers, range, formatDate, gamePath, similar, type Entry } from '../catalogue';
+import { covers, range, formatDate, gamePath, similar, shotsOf, type Entry } from '../catalogue';
 import { published, pathOf } from '../landings';
 
 interface Props { locale: Locale; g: Entry }
@@ -31,6 +31,7 @@ const checked = formatDate(locale, g.lastOk);
 const tested = formatDate(locale, g.tested);
 const lists = published.filter((l) => l.match(g));
 const alike = similar(g);
+const shots = shotsOf(g.id);
 const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-title': g.name };
 ---
 <Base
@@ -63,6 +64,17 @@ const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-ti
     {checked && !g.offline && <span><Icon name="shield" />{t.linkChecked(checked)}</span>}
     {tested && <span><Icon name="check" />{t.testedOn(tested)}</span>}
   </p>
+
+  {shots.length > 0 && (
+    <section class="shots">
+      <h2>{t.shots}</h2>
+      <ul>
+        {shots.map((file, i) => (
+          <li><a href={`${base}/shots/${file}`} target="_blank" rel="noopener"><img src={`${base}/shots/${file}`} alt={t.shotAlt(g.name, i + 1)} loading="lazy" decoding="async" /></a></li>
+        ))}
+      </ul>
+    </section>
+  )}
 
   {lists.length > 0 && (
     <nav class="browse" aria-labelledby="lists-title">

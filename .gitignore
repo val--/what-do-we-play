@@ -3,3 +3,5 @@ dist/
 .astro/
 .claude/
 *.log
+# The owner's original screenshots; the resized copies live in public/shots/.
+screenshots/

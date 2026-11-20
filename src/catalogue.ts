@@ -27,6 +27,14 @@ export const lastCheck = Object.values(st).map((s) => s.lastChecked ?? '').sort(
 export let covers = new Set<string>();
 try { covers = new Set(readdirSync('public/covers').map((f) => f.replace(/\.webp$/, ''))); } catch {}
 
+// Screenshots taken by the owner, prepared by scripts/make-shots.mjs: public/shots/<id>-<n>.webp.
+let shotFiles: string[] = [];
+try { shotFiles = readdirSync('public/shots'); } catch {}
+export const shotsOf = (id: string) =>
+  shotFiles
+    .filter((f) => f.startsWith(`${id}-`) && /^\d+\.webp$/.test(f.slice(id.length + 1)))
+    .sort((a, b) => parseInt(a.slice(id.length + 1)) - parseInt(b.slice(id.length + 1)));
+
 // Latest arrivals: the daily robot stamps each game the first time it sees it (status.json, `added`).
 export const daysAgo = (iso: string) => (Date.now() - Date.parse(iso)) / 864e5;
 export const isNew = (g: Entry) => g.added !== '' && daysAgo(g.added) <= 14;

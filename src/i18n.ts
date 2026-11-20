@@ -79,6 +79,8 @@ export const strings = {
     testedOn: (d: string) => `Played by us on ${d}`,
     inLists: (name: string) => `${name} is in these lists`,
     similarTo: (name: string) => `Games similar to ${name}`,
+    shots: 'Screenshots',
+    shotAlt: (name: string, n: number) => `${name}, screenshot ${n}`,
     fact: {
       price: 'Price', paid: 'Paid', account: 'Account', noAccount: 'No sign-up needed', needsAccount: 'Sign-up needed',
       devices: 'Devices', anyDevice: 'Computer and phone', computerOnly: 'Computer only',
@@ -148,6 +150,8 @@ export const strings = {
     testedOn: (d: string) => `Testé par nos soins le ${d}`,
     inLists: (name: string) => `${name} fait partie de ces sélections`,
     similarTo: (name: string) => `Jeux similaires à ${name}`,
+    shots: "Captures d'écran",
+    shotAlt: (name: string, n: number) => `${name}, capture ${n}`,
     fact: {
       price: 'Prix', paid: 'Payant', account: 'Compte', noAccount: "Pas d'inscription", needsAccount: 'Inscription requise',
       devices: 'Appareils', anyDevice: 'Ordinateur et téléphone', computerOnly: 'Ordinateur seulement',
@@ -217,6 +221,8 @@ export const strings = {
     testedOn: (d: string) => `Probado por nosotros el ${d}`,
     inLists: (name: string) => `${name} aparece en estas selecciones`,
     similarTo: (name: string) => `Juegos parecidos a ${name}`,
+    shots: 'Capturas de pantalla',
+    shotAlt: (name: string, n: number) => `${name}, captura ${n}`,
     fact: {
       price: 'Precio', paid: 'De pago', account: 'Cuenta', noAccount: 'Sin registro', needsAccount: 'Registro obligatorio',
       devices: 'Dispositivos', anyDevice: 'PC y teléfono', computerOnly: 'Solo en PC',
