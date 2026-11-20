@@ -1002,5 +1002,23 @@
       "fr": "Déposé au hasard dans Street View, chacun devine sur une carte où il se trouve. Gratuit avec publicités ; l'hôte partage un lien pour lancer une partie privée."
     },
     "tested": null
+  },
+  {
+    "id": "puffer-party",
+    "cover": false,
+    "name": "Puffer Party",
+    "url": "https://krillion.io/party",
+    "keyword": "puffer",
+    "types": ["words"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 5, "max": 15 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A category appears and everyone types an answer in turn to pass the pufferfish before it pops; rarer answers earn extra lives. Free with ads; host a room and share its four-letter code.",
+      "fr": "Une catégorie s'affiche et chacun tape une réponse à son tour pour passer le poisson-globe avant qu'il n'éclate ; les réponses rares rapportent des vies. Gratuit avec publicités ; on crée un salon et on partage son code à quatre lettres."
+    },
+    "tested": null
   }
 ]
