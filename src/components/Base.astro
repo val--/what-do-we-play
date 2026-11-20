@@ -1,0 +1,76 @@
+---
+// The shell every page shares: head, header with theme and language choice, footer.
+// `paths` gives this page's address in each language, without the site's base.
+import '@fontsource-variable/outfit';
+import '@fontsource-variable/dm-sans';
+import '../styles/site.css';
+import Icon from './Icon.astro';
+import { strings, type Locale } from '../i18n';
+
+interface Props { locale: Locale; title: string; desc: string; paths: Record<Locale, string> }
+const { locale, title, desc, paths } = Astro.props;
+const t = strings[locale];
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+const other = locale === 'en' ? 'fr' : 'en';
+const otherHref = base + paths[other];
+const canonical = new URL(base + paths[locale], Astro.site);
+const alternate = new URL(otherHref, Astro.site);
+const fallback = new URL(base + paths.en, Astro.site);
+// Share image, drawn by scripts/og/make.mjs.
+const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
+---
+<!doctype html>
+<html lang={t.htmlLang}>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+    <link rel="alternate" hreflang={other} href={alternate} />
+    <link rel="alternate" hreflang={locale} href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={fallback} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WhatDoWePlay" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_GB'} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href={`${base}/sitemap.xml`} />
+    <!-- Visit counter: no cookies, nothing personal stored. It ignores localhost by itself. -->
+    <script is:inline data-goatcounter="https://whatdoweplay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
+    <!-- Applies a theme chosen earlier before the page paints, to avoid a flash. -->
+    <script is:inline>try { var th = localStorage.getItem('wdwp:theme'); if (th === 'light' || th === 'dark') document.documentElement.dataset.theme = th; } catch (e) {}</script>
+    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
+  </head>
+  <body>
+    <header class="top">
+      <a class="brand" href={locale === 'en' ? `${base}/` : `${base}/fr/`}><Icon name="gamepad" />WhatDoWePlay</a>
+      <div class="tools">
+        <button type="button" class="theme" data-theme-toggle data-to-dark={t.toDark} data-to-light={t.toLight} hidden>
+          <span class="to-dark"><Icon name="moon" /></span><span class="to-light"><Icon name="sun" /></span>
+        </button>
+        <nav class="lang-nav" aria-label={t.langNav}>
+          {(['en', 'fr'] as const).map((l) => l === locale
+            ? <span aria-current="true" title={strings[l].selfName}>{l.toUpperCase()}</span>
+            : <a href={otherHref} hreflang={l} lang={l} title={strings[l].selfName} data-lang-switch>{l.toUpperCase()}</a>)}
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <slot />
+    </main>
+
+    <footer>
+      <p>{t.foot}</p>
+    </footer>
+
+    <script src="../scripts/theme.js"></script>
+  </body>
+</html>

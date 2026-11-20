@@ -1,0 +1,84 @@
+---
+// A game's own page: what the catalogue knows about it, the pages by need it belongs to,
+// and similar games (rule in src/catalogue.ts).
+import Base from './Base.astro';
+import GameCard from './GameCard.astro';
+import Icon from './Icon.astro';
+import { strings, type Locale } from '../i18n';
+import { covers, range, formatDate, gamePath, similar, type Entry } from '../catalogue';
+import { published, pathOf } from '../landings';
+
+interface Props { locale: Locale; g: Entry }
+const { locale, g } = Astro.props;
+const t = strings[locale];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+const players = range(g.players.min, g.players.max);
+const minutes = `${range(g.duration.min, g.duration.max)} min`;
+const names = <K extends string>(keys: string[], table: Record<K, string>) => keys.map((k) => table[k as K]).join(', ');
+const facts: [string, string][] = [
+  [t.weAre, players],
+  [t.weHave, minutes],
+  [t.inLang, names(g.languages, t.languages)],
+  [t.kind, names(g.types, t.types)],
+  [t.forWhom, names(g.audience, t.audience)],
+  [t.fact.price, g.free ? t.flags.free : t.fact.paid],
+  [t.fact.account, g.noAccount ? t.fact.noAccount : t.fact.needsAccount],
+  [t.fact.devices, g.mobile ? t.fact.anyDevice : t.fact.computerOnly],
+  [t.fact.screen, g.sharedScreen ? t.fact.screenYes : t.fact.screenNo],
+];
+const checked = formatDate(locale, g.lastOk);
+const tested = formatDate(locale, g.tested);
+const lists = published.filter((l) => l.match(g));
+const alike = similar(g);
+const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-title': g.name };
+---
+<Base
+  locale={locale}
+  title={t.gameTitle(g.name)}
+  desc={`${g.desc[locale]} ${t.gameDesc(players, minutes)}`}
+  paths={{ en: gamePath('en', g.id), fr: gamePath('fr', g.id) }}
+>
+  <p class="crumb"><a href={base + pathOf(locale)}>← {t.allGames}</a></p>
+
+  <article class="sheet">
+    <a class:list={['cover', `k-${g.types[0]}`, { photo: covers.has(g.id) }]} href={g.url} {...counted} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+      {covers.has(g.id)
+        ? <img src={`${base}/covers/${g.id}.webp`} alt="" width="480" height="300" decoding="async" />
+        : <span>{g.name}</span>}
+    </a>
+    <div>
+      <h1 class="need">{g.name}</h1>
+      <p class="lead">{g.desc[locale]}</p>
+      {g.offline
+        ? <p class="notice"><span class="pill down">{t.offline}</span> {t.offlineSince(formatDate(locale, g.offlineSince) ?? '')}</p>
+        : <a class="go" href={g.url} {...counted} target="_blank" rel="noopener">{t.open(g.name)}</a>}
+    </div>
+  </article>
+
+  <dl class="facts">
+    {facts.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
+  </dl>
+  <p class="checks">
+    {checked && !g.offline && <span><Icon name="shield" />{t.linkChecked(checked)}</span>}
+    {tested && <span><Icon name="check" />{t.testedOn(tested)}</span>}
+  </p>
+
+  {lists.length > 0 && (
+    <nav class="browse" aria-labelledby="lists-title">
+      <h2 id="lists-title">{t.inLists(g.name)}</h2>
+      <ul>
+        {lists.map((l) => <li><a href={base + pathOf(locale, l)}>{l[locale].label}</a></li>)}
+      </ul>
+    </nav>
+  )}
+
+  {alike.length > 0 && (
+    <section class="alike">
+      <h2>{t.similarTo(g.name)}</h2>
+      <ol class="games">
+        {alike.map((s, i) => <GameCard g={s} i={i} locale={locale} fav={false} />)}
+      </ol>
+    </section>
+  )}
+</Base>

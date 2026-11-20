@@ -1,0 +1,66 @@
+---
+// One game as a card. The data-* attributes are what the filters read (src/scripts/filters.js).
+// `fav={false}` leaves out the favourite button, on pages that do not load the filters.
+import Icon from './Icon.astro';
+import { strings, type Locale } from '../i18n';
+import { covers, isNew, range, formatDate, gamePath, type Entry } from '../catalogue';
+
+interface Props { g: Entry; i: number; locale: Locale; fav?: boolean }
+const { g, i, locale, fav = true } = Astro.props;
+const t = strings[locale];
+const base = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+// Text the search box looks into: name, description, kinds and languages, without accents.
+const plain = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+const searchText = plain([g.name, g.desc[locale], ...g.types.map((x) => t.types[x as keyof typeof t.types]), ...g.languages.map((l) => t.languages[l as keyof typeof t.languages])].join(' '));
+// The visit counter (GoatCounter) also counts clicks on links carrying these attributes:
+// one line per game, "open/<id>", the same in both languages.
+const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-title': g.name };
+---
+<li
+  class:list={['game', { off: g.offline }]}
+  data-id={g.id}
+  data-i={i}
+  data-name={g.name.toLowerCase()}
+  data-search={searchText}
+  data-langs={g.languages.join(' ')}
+  data-for={g.audience.join(' ')}
+  data-types={g.types.join(' ')}
+  data-min={g.players.min}
+  data-max={g.players.max}
+  data-dmin={g.duration.min}
+  data-added={g.added}
+  data-free={g.free ? 1 : 0}
+  data-noaccount={g.noAccount ? 1 : 0}
+  data-phone={g.mobile ? 1 : 0}
+  data-noscreen={g.sharedScreen ? 0 : 1}
+>
+  <a class:list={['cover', `k-${g.types[0]}`, { photo: covers.has(g.id) }]} href={g.url} {...counted} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+    {covers.has(g.id)
+      ? <img src={`${base}/covers/${g.id}.webp`} alt="" width="480" height="300" loading="lazy" decoding="async" />
+      : <span>{g.name}</span>}
+  </a>
+  <div class="body">
+    <h2><a href={g.url} {...counted} target="_blank" rel="noopener">{g.name}</a>{isNew(g) && <span class="new">{t.isNew}</span>}</h2>
+    <p>{g.desc[locale]}</p>
+    <ul class="meta">
+      <li><Icon name="users" />{range(g.players.min, g.players.max)}</li>
+      <li><Icon name="clock" />{range(g.duration.min, g.duration.max)} min</li>
+      <li class="langs">{g.languages.map((l) => <b>{l}</b>)}</li>
+    </ul>
+    <ul class="tags">
+      {g.types.map((x) => <li class={`k-${x}`}><i class="dot"></i>{t.types[x as keyof typeof t.types]}</li>)}
+      {[!g.free && t.paid, !g.noAccount && t.account, !g.mobile && t.noPhone, g.sharedScreen && t.screen].filter(Boolean).map((c) => <li class="warn">{c}</li>)}
+    </ul>
+    <a class="more" href={base + gamePath(locale, g.id)}>{t.details}</a>
+  </div>
+  <div class="side">
+    {fav && <button type="button" class="fav" aria-pressed="false" aria-label={`${t.fav} : ${g.name}`} title={t.fav}><Icon name="heart" /></button>}
+    <div class="state">
+      {g.offline && <span class="pill down">{t.offline}</span>}
+      {g.offline && <small>{t.offlineSince(formatDate(locale, g.offlineSince, 'short') ?? '')}</small>}
+      {!g.offline && g.free && <span class="pill"><Icon name="check" />{t.flags.free}</span>}
+      {!g.offline && g.noAccount && <span class="pill"><Icon name="check" />{t.flags.noaccount}</span>}
+    </div>
+  </div>
+</li>

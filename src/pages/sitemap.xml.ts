@@ -1,8 +1,9 @@
 import type { APIRoute } from 'astro';
 import status from '../data/status.json';
 import { published, pathOf } from '../landings';
+import { entries as games, gamePath } from '../catalogue';
 
-// One entry per page and language: the home page, then the pages by need (src/landings.ts).
+// One entry per page and language: the home page, the pages by need (src/landings.ts), then each game's page.
 // They change when the daily link check runs.
 export const GET: APIRoute = ({ site }) => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -11,9 +12,13 @@ export const GET: APIRoute = ({ site }) => {
     .sort()
     .pop()
     ?.slice(0, 10);
-  const entries = [undefined, ...published].flatMap((landing) => {
-    const en = new URL(base + pathOf('en', landing), site).href;
-    const fr = new URL(base + pathOf('fr', landing), site).href;
+  const pages = [
+    ...[undefined, ...published].map((landing) => ({ en: pathOf('en', landing), fr: pathOf('fr', landing) })),
+    ...games.map((g) => ({ en: gamePath('en', g.id), fr: gamePath('fr', g.id) })),
+  ];
+  const entries = pages.flatMap((paths) => {
+    const en = new URL(base + paths.en, site).href;
+    const fr = new URL(base + paths.fr, site).href;
     return [en, fr].map((loc) => `  <url>
     <loc>${loc}</loc>${lastmod ? `\n    <lastmod>${lastmod}</lastmod>` : ''}
     <xhtml:link rel="alternate" hreflang="en" href="${en}"/>

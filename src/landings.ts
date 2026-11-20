@@ -1,11 +1,10 @@
 // Pages by need: one page per kind of game or situation, in both languages, built from the catalogue.
 // To add one, add an entry below. A page is published only once enough games match (MIN_GAMES),
 // so a thin category appears by itself the day the catalogue fills it.
-import games from './data/games.json';
-import status from './data/status.json';
+import { entries, type Entry } from './catalogue';
 import type { Locale } from './i18n';
 
-export type Game = (typeof games)[number];
+export type Game = Entry;
 type Text = { slug: string; label: string; h1: string; lead: string };
 // `filter` is the same rule written as the filter panel's query (see src/scripts/filters.js):
 // the page shows those boxes ticked, and unticking them leads back to the full list.
@@ -130,11 +129,8 @@ export const landings: Landing[] = [
   },
 ];
 
-const st = status as Record<string, { state?: string }>;
-const listed = games.filter((g) => st[g.id]?.state !== 'archived');
-
 // The pages that have enough games today.
-export const published = landings.filter((l) => listed.filter(l.match).length >= MIN_GAMES);
+export const published = landings.filter((l) => entries.filter(l.match).length >= MIN_GAMES);
 
 // Address of a page, without the site's base: '/fr/jeux-de-dessin/'. No landing gives the home page.
 export const pathOf = (locale: Locale, landing?: Landing) =>

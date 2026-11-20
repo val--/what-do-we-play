@@ -86,3 +86,13 @@ They are declared in `src/landings.ts`: a rule that picks the games, plus an add
 a title and one sentence per language. A page is published only when at least five
 games match, so nothing has to be done when the catalogue grows. The pages link to
 each other under "More ideas" and are listed in the sitemap.
+
+## A page per game
+
+Every listed game also has its own page (`/games/<id>/`, `/fr/jeux/<id>/`): what the
+catalogue knows about it, the pages by need it belongs to, and six similar games.
+"Similar" is one rule for the whole catalogue, in `src/catalogue.ts`: at least one kind
+in common, then the games sharing the most kinds and audiences come first.
+
+The pieces: `src/catalogue.ts` (the data every page reads), `Base.astro` (the shell),
+`GameCard.astro` (a card), `Catalog.astro` (a list with filters), `GamePage.astro`.

@@ -1,13 +1,9 @@
 ---
-import '@fontsource-variable/outfit';
-import '@fontsource-variable/dm-sans';
-import '../styles/site.css';
+import Base from './Base.astro';
+import GameCard from './GameCard.astro';
 import Icon from './Icon.astro';
-import games from '../data/games.json';
-import status from '../data/status.json';
-import { readdirSync } from 'node:fs';
 import { strings, TYPES, AUDIENCES, LANGUAGES, type Locale } from '../i18n';
-
+import { entries, lastCheck, daysAgo, formatDate } from '../catalogue';
 import { published, pathOf, type Landing } from '../landings';
 
 // Without `landing` this is the home page with every game; with one, a page by need (src/landings.ts).
@@ -16,238 +12,108 @@ const { locale, landing } = Astro.props;
 const page = landing?.[locale];
 const t = strings[locale];
 
-type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string; added?: string };
-const st = status as Record<string, St>;
-const dateLocale = locale === 'fr' ? 'fr-FR' : 'en-GB';
-const fmt = (iso?: string | null, month: 'long' | 'short' = 'long') =>
-  iso ? new Date(iso).toLocaleDateString(dateLocale, { day: 'numeric', month, year: 'numeric', timeZone: 'UTC' }) : null;
-
-const visible = games
-  .filter((g) => st[g.id]?.state !== 'archived' && (!landing || landing.match(g)))
-  .map((g) => ({ ...g, offline: st[g.id]?.state === 'offline', offlineSince: st[g.id]?.offlineSince, lastOk: st[g.id]?.lastOk, added: st[g.id]?.added ?? '' }))
-  .sort((a, b) => Number(a.offline) - Number(b.offline));
-
-const lastCheck = Object.values(st).map((s) => s.lastChecked ?? '').sort().pop() || null;
-// Latest arrivals: the daily robot stamps each game the first time it sees it (status.json, `added`).
-const daysAgo = (iso: string) => (Date.now() - Date.parse(iso)) / 864e5;
+const visible = entries.filter((g) => !landing || landing.match(g));
 const lastAdded = visible.map((g) => g.added).sort().pop() || '';
 const lastBatch = lastAdded && daysAgo(lastAdded) <= 30 ? visible.filter((g) => g.added === lastAdded).length : 0;
-const isNew = (g: (typeof visible)[number]) => g.added !== '' && daysAgo(g.added) <= 14;
 const usedTypes = TYPES.filter((x) => visible.some((g) => g.types.includes(x)));
 
-// Thumbnails fetched by scripts/fetch-covers.mjs; games without a file keep the coloured tile.
-let covers = new Set<string>();
-try { covers = new Set(readdirSync('public/covers').map((f) => f.replace(/.webp$/, ''))); } catch {}
-
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
-const other = locale === 'en' ? 'fr' : 'en';
-const otherHref = base + pathOf(other, landing);
-const canonical = new URL(base + pathOf(locale, landing), Astro.site);
-const alternate = new URL(otherHref, Astro.site);
-const home = new URL(base + pathOf('en', landing), Astro.site);
 const metaTitle = page ? `${page.h1} — WhatDoWePlay` : t.metaTitle;
 const metaDesc = page ? `${page.lead} ${t.pageDesc(visible.length)}` : t.metaDesc;
-// Share image, drawn by scripts/og/make.mjs.
-const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
 const durations = [10, 20, 30];
 const perkIcons = ['shield', 'check', 'monitor', 'users'];
-// Text the search box looks into: name, description, kinds and languages, without accents.
-const plain = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-const searchText = (g: (typeof visible)[number]) =>
-  plain([g.name, g.desc[locale], ...g.types.map((x) => t.types[x as keyof typeof t.types]), ...g.languages.map((l) => t.languages[l as keyof typeof t.languages])].join(' '));
-// The visit counter (GoatCounter) also counts clicks on links carrying these attributes:
-// one line per game, "open/<id>", the same in both languages.
-const counted = (g: { id: string; name: string }) => ({ 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-title': g.name });
-const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
 ---
-<!doctype html>
-<html lang={t.htmlLang}>
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>{metaTitle}</title>
-    <meta name="description" content={metaDesc} />
-    <link rel="canonical" href={canonical} />
-    <link rel="alternate" hreflang={locale === 'en' ? 'fr' : 'en'} href={alternate} />
-    <link rel="alternate" hreflang={locale} href={canonical} />
-    <link rel="alternate" hreflang="x-default" href={home} />
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="WhatDoWePlay" />
-    <meta property="og:url" content={canonical} />
-    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_GB'} />
-    <meta property="og:title" content={metaTitle} />
-    <meta property="og:description" content={metaDesc} />
-    <meta property="og:image" content={ogImage} />
-    <meta property="og:image:width" content="1200" />
-    <meta property="og:image:height" content="630" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <link rel="sitemap" href={`${base}/sitemap.xml`} />
-    <!-- Visit counter: no cookies, nothing personal stored. It ignores localhost by itself. -->
-    <script is:inline data-goatcounter="https://whatdoweplay.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
-    <!-- Applies a theme chosen earlier before the page paints, to avoid a flash. -->
-    <script is:inline>try { var th = localStorage.getItem('wdwp:theme'); if (th === 'light' || th === 'dark') document.documentElement.dataset.theme = th; } catch (e) {}</script>
-    <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
-  </head>
-  <body>
-    <header class="top">
-      <a class="brand" href={locale === 'en' ? `${base}/` : `${base}/fr/`}><Icon name="gamepad" />WhatDoWePlay</a>
-      <div class="tools">
-        <button type="button" class="theme" data-theme-toggle data-to-dark={t.toDark} data-to-light={t.toLight} hidden>
-          <span class="to-dark"><Icon name="moon" /></span><span class="to-light"><Icon name="sun" /></span>
-        </button>
-        <nav class="lang-nav" aria-label={t.langNav}>
-          {(['en', 'fr'] as const).map((l) => l === locale
-            ? <span aria-current="true" title={strings[l].selfName}>{l.toUpperCase()}</span>
-            : <a href={otherHref} hreflang={l} lang={l} title={strings[l].selfName} data-lang-switch>{l.toUpperCase()}</a>)}
-        </nav>
+<Base locale={locale} title={metaTitle} desc={metaDesc} paths={{ en: pathOf('en', landing), fr: pathOf('fr', landing) }}>
+  <section class="hero">
+    <div>
+      {page
+        ? <h1 class="need">{page.h1}</h1>
+        : <h1>{t.titleA}<span class="mark">{t.titleMark}</span>{t.titleEnd}</h1>}
+      <p class="lead">{page ? page.lead : t.lead}</p>
+    </div>
+    <svg class="art" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <g class="sparks"><path d="M150 22l6-16M166 30l14-12M172 46l18-4" /></g>
+      <g transform="rotate(-8 100 85)">
+        <rect x="42" y="34" width="112" height="76" rx="8" />
+        <path d="M22 112h152l-8 16H30z" />
+        <circle cx="98" cy="62" r="8" /><path d="M84 88c0-9 6-14 14-14s14 5 14 14" />
+        <circle cx="72" cy="68" r="6" /><path d="M60 88c0-7 5-11 12-11" />
+        <circle cx="124" cy="68" r="6" /><path d="M136 88c0-7-5-11-12-11" />
+      </g>
+    </svg>
+  </section>
+
+  <form class="panel" id="filters" autocomplete="off" data-preset={landing?.filter} data-home={base + pathOf(locale)}>
+    <div class="panel-head">
+      <h2><Icon name="sliders" />{t.filterTitle}</h2>
+      <button type="button" id="reset"><Icon name="reset" />{t.reset}</button>
+    </div>
+
+    <fieldset>
+      <legend><Icon name="users" />{t.forWhom}</legend>
+      <div class="chips">
+        {AUDIENCES.map((a) => <label class="chip"><input type="checkbox" name="for" value={a} /><span>{t.audience[a]}</span></label>)}
       </div>
-    </header>
-
-    <main>
-      <section class="hero">
-        <div>
-          {page
-            ? <h1 class="need">{page.h1}</h1>
-            : <h1>{t.titleA}<span class="mark">{t.titleMark}</span>{t.titleEnd}</h1>}
-          <p class="lead">{page ? page.lead : t.lead}</p>
-        </div>
-        <svg class="art" viewBox="0 0 200 150" fill="none" stroke="currentColor" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <g class="sparks"><path d="M150 22l6-16M166 30l14-12M172 46l18-4" /></g>
-          <g transform="rotate(-8 100 85)">
-            <rect x="42" y="34" width="112" height="76" rx="8" />
-            <path d="M22 112h152l-8 16H30z" />
-            <circle cx="98" cy="62" r="8" /><path d="M84 88c0-9 6-14 14-14s14 5 14 14" />
-            <circle cx="72" cy="68" r="6" /><path d="M60 88c0-7 5-11 12-11" />
-            <circle cx="124" cy="68" r="6" /><path d="M136 88c0-7-5-11-12-11" />
-          </g>
-        </svg>
-      </section>
-
-      <form class="panel" id="filters" autocomplete="off" data-preset={landing?.filter} data-home={base + pathOf(locale)}>
-        <div class="panel-head">
-          <h2><Icon name="sliders" />{t.filterTitle}</h2>
-          <button type="button" id="reset"><Icon name="reset" />{t.reset}</button>
-        </div>
-
-        <fieldset>
-          <legend><Icon name="users" />{t.forWhom}</legend>
-          <div class="chips">
-            {AUDIENCES.map((a) => <label class="chip"><input type="checkbox" name="for" value={a} /><span>{t.audience[a]}</span></label>)}
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend><Icon name="gamepad" />{t.kind}</legend>
-          <div class="chips">
-            {usedTypes.map((x) => <label class={`chip k-${x}`}><input type="checkbox" name="type" value={x} /><span><i class="dot"></i>{t.types[x]}</span></label>)}
-          </div>
-        </fieldset>
-        <fieldset>
-          <legend><Icon name="globe" />{t.inLang}</legend>
-          <div class="chips">
-            {LANGUAGES.map((l) => <label class="chip"><input type="checkbox" name="lang" value={l} /><span>{t.languages[l]}</span></label>)}
-          </div>
-        </fieldset>
-
-        <div class="pair">
-          <label class="field"><span><Icon name="users" />{t.weAre}</span>
-            <input type="number" name="n" min="1" max="99" inputmode="numeric" placeholder="8" />
-          </label>
-          <label class="field"><span><Icon name="clock" />{t.weHave}</span>
-            <select name="t">
-              <option value="">{t.anyTime}</option>
-              {durations.map((d) => <option value={d}>{t.minutes(d)}</option>)}
-            </select>
-          </label>
-        </div>
-
-        <div class="flags">
-          {(['free', 'noaccount', 'phone', 'noscreen'] as const).map((f) => <label class="box"><input type="checkbox" name={f} value="1" /><span>{t.flags[f]}</span></label>)}
-          <label class="box favs"><input type="checkbox" name="favs" value="1" /><span><Icon name="heart" />{t.favOnly}</span></label>
-        </div>
-      </form>
-
-      <div class="tally">
-        <strong id="count" aria-live="polite" data-one={t.count(1)} data-many={t.count(2).replace('2', '{n}')} data-zero={t.count(0)}>{t.count(visible.length)}</strong>
-        {lastCheck && <span class="verified"><Icon name="shield" />{t.linksChecked(fmt(lastCheck, 'short') ?? '')}</span>}
-        {lastBatch > 0 && <span class="fresh">{t.added(lastBatch, new Date(lastAdded).toLocaleDateString(dateLocale, { day: 'numeric', month: 'short', timeZone: 'UTC' }))}</span>}
-        <label class="search"><Icon name="search" /><input type="search" id="q" placeholder={t.search} aria-label={t.search} autocomplete="off" /></label>
-        <label class="sort">{t.sortBy}
-          <select id="sort">
-            {Object.entries(t.sorts).map(([v, label]) => <option value={v}>{label}</option>)}
-          </select>
-        </label>
+    </fieldset>
+    <fieldset>
+      <legend><Icon name="gamepad" />{t.kind}</legend>
+      <div class="chips">
+        {usedTypes.map((x) => <label class={`chip k-${x}`}><input type="checkbox" name="type" value={x} /><span><i class="dot"></i>{t.types[x]}</span></label>)}
       </div>
+    </fieldset>
+    <fieldset>
+      <legend><Icon name="globe" />{t.inLang}</legend>
+      <div class="chips">
+        {LANGUAGES.map((l) => <label class="chip"><input type="checkbox" name="lang" value={l} /><span>{t.languages[l]}</span></label>)}
+      </div>
+    </fieldset>
 
-      <ol class="games" id="games">
-        {visible.map((g, i) => (
-          <li
-            class:list={['game', { off: g.offline }]}
-            data-id={g.id}
-            data-i={i}
-            data-name={g.name.toLowerCase()}
-            data-search={searchText(g)}
-            data-langs={g.languages.join(' ')}
-            data-for={g.audience.join(' ')}
-            data-types={g.types.join(' ')}
-            data-min={g.players.min}
-            data-max={g.players.max}
-            data-dmin={g.duration.min}
-            data-added={g.added}
-            data-free={g.free ? 1 : 0}
-            data-noaccount={g.noAccount ? 1 : 0}
-            data-phone={g.mobile ? 1 : 0}
-            data-noscreen={g.sharedScreen ? 0 : 1}
-          >
-            <a class:list={['cover', `k-${g.types[0]}`, { photo: covers.has(g.id) }]} href={g.url} {...counted(g)} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
-              {covers.has(g.id)
-                ? <img src={`${base}/covers/${g.id}.webp`} alt="" width="480" height="300" loading="lazy" decoding="async" />
-                : <span>{g.name}</span>}
-            </a>
-            <div class="body">
-              <h2><a href={g.url} {...counted(g)} target="_blank" rel="noopener">{g.name}</a>{isNew(g) && <span class="new">{t.isNew}</span>}</h2>
-              <p>{g.desc[locale]}</p>
-              <ul class="meta">
-                <li><Icon name="users" />{range(g.players.min, g.players.max)}</li>
-                <li><Icon name="clock" />{range(g.duration.min, g.duration.max)} min</li>
-                <li class="langs">{g.languages.map((l) => <b>{l}</b>)}</li>
-              </ul>
-              <ul class="tags">
-                {g.types.map((x) => <li class={`k-${x}`}><i class="dot"></i>{t.types[x as keyof typeof t.types]}</li>)}
-                {[!g.free && t.paid, !g.noAccount && t.account, !g.mobile && t.noPhone, g.sharedScreen && t.screen].filter(Boolean).map((c) => <li class="warn">{c}</li>)}
-              </ul>
-            </div>
-            <div class="side">
-              <button type="button" class="fav" aria-pressed="false" aria-label={`${t.fav} : ${g.name}`} title={t.fav}><Icon name="heart" /></button>
-              <div class="state">
-                {g.offline && <span class="pill down">{t.offline}</span>}
-                {g.offline && <small>{t.offlineSince(fmt(g.offlineSince, 'short') ?? '')}</small>}
-                {!g.offline && g.free && <span class="pill"><Icon name="check" />{t.flags.free}</span>}
-                {!g.offline && g.noAccount && <span class="pill"><Icon name="check" />{t.flags.noaccount}</span>}
-              </div>
-            </div>
-          </li>
-        ))}
-      </ol>
-      <p class="none" id="none" hidden>{t.none}</p>
+    <div class="pair">
+      <label class="field"><span><Icon name="users" />{t.weAre}</span>
+        <input type="number" name="n" min="1" max="99" inputmode="numeric" placeholder="8" />
+      </label>
+      <label class="field"><span><Icon name="clock" />{t.weHave}</span>
+        <select name="t">
+          <option value="">{t.anyTime}</option>
+          {durations.map((d) => <option value={d}>{t.minutes(d)}</option>)}
+        </select>
+      </label>
+    </div>
 
-      <nav class="browse" aria-labelledby="browse-title">
-        <h2 id="browse-title">{t.browse}</h2>
-        <ul>
-          {landing && <li><a class="all" href={base + pathOf(locale)}>{t.allGames}</a></li>}
-          {published.filter((l) => l !== landing).map((l) => <li><a href={base + pathOf(locale, l)}>{l[locale].label}</a></li>)}
-        </ul>
-      </nav>
+    <div class="flags">
+      {(['free', 'noaccount', 'phone', 'noscreen'] as const).map((f) => <label class="box"><input type="checkbox" name={f} value="1" /><span>{t.flags[f]}</span></label>)}
+      <label class="box favs"><input type="checkbox" name="favs" value="1" /><span><Icon name="heart" />{t.favOnly}</span></label>
+    </div>
+  </form>
 
-      <ul class="perks">
-        {t.perks.map((p, i) => <li><Icon name={perkIcons[i]} />{p}</li>)}
-      </ul>
-    </main>
+  <div class="tally">
+    <strong id="count" aria-live="polite" data-one={t.count(1)} data-many={t.count(2).replace('2', '{n}')} data-zero={t.count(0)}>{t.count(visible.length)}</strong>
+    {lastCheck && <span class="verified"><Icon name="shield" />{t.linksChecked(formatDate(locale, lastCheck, 'short') ?? '')}</span>}
+    {lastBatch > 0 && <span class="fresh">{t.added(lastBatch, formatDate(locale, lastAdded, 'short', false) ?? '')}</span>}
+    <label class="search"><Icon name="search" /><input type="search" id="q" placeholder={t.search} aria-label={t.search} autocomplete="off" /></label>
+    <label class="sort">{t.sortBy}
+      <select id="sort">
+        {Object.entries(t.sorts).map(([v, label]) => <option value={v}>{label}</option>)}
+      </select>
+    </label>
+  </div>
 
-    <footer>
-      <p>{t.foot}</p>
-    </footer>
+  <ol class="games" id="games">
+    {visible.map((g, i) => <GameCard g={g} i={i} locale={locale} />)}
+  </ol>
+  <p class="none" id="none" hidden>{t.none}</p>
 
-    <script src="../scripts/filters.js"></script>
-    <script src="../scripts/theme.js"></script>
-  </body>
-</html>
+  <nav class="browse" aria-labelledby="browse-title">
+    <h2 id="browse-title">{t.browse}</h2>
+    <ul>
+      {landing && <li><a class="all" href={base + pathOf(locale)}>{t.allGames}</a></li>}
+      {published.filter((l) => l !== landing).map((l) => <li><a href={base + pathOf(locale, l)}>{l[locale].label}</a></li>)}
+    </ul>
+  </nav>
+
+  <ul class="perks">
+    {t.perks.map((p, i) => <li><Icon name={perkIcons[i]} />{p}</li>)}
+  </ul>
+
+  <script src="../scripts/filters.js"></script>
+</Base>
