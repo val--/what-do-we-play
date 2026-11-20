@@ -74,7 +74,7 @@ Game names, logos, preview images and screenshots belong to their respective own
 
 ## Screenshots
 
-A game's page can show screenshots taken by the owner while playing. Drop the image files into `screenshots/` at the root of the project, each named after the game's id (`skribbl.png`, `skribbl 2.png`), and run `npm run shots`: the script resizes them into `public/shots/` and moves the originals to `screenshots/done/`. The `screenshots/` folder is not committed. Check that a screenshot shows no real name or private chat before adding it.
+A game's page can show screenshots taken by the owner while playing. `screenshots/` at the root of the project holds one folder per game, named after its id. Drop image files into a game's folder and run `npm run shots`: the script resizes them into `public/shots/`, moves the originals to the game's `done` folder, and creates the folder of any new game. The `screenshots/` folder is not committed. Check that a screenshot shows no real name or private chat before adding it.
 
 ## Search engines and link previews
 
