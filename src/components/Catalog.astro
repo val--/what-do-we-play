@@ -67,12 +67,24 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="sitemap" href={`${base}/sitemap.xml`} />
+    <!-- Applies a theme chosen earlier before the page paints, to avoid a flash. -->
+    <script is:inline>try { var th = localStorage.getItem('wdwp:theme'); if (th === 'light' || th === 'dark') document.documentElement.dataset.theme = th; } catch (e) {}</script>
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   </head>
   <body>
     <header class="top">
       <a class="brand" href={locale === 'en' ? `${base}/` : `${base}/fr/`}><Icon name="gamepad" />WhatDoWePlay</a>
-      <a class="switch" href={otherHref} data-lang-switch><Icon name="globe" />{t.other}</a>
+      <div class="tools">
+        <button type="button" class="theme" data-theme-toggle data-to-dark={t.toDark} data-to-light={t.toLight} hidden>
+          <span class="to-dark"><Icon name="moon" /></span><span class="to-light"><Icon name="sun" /></span>
+        </button>
+        <nav class="langs" aria-label={t.langNav}>
+          <Icon name="globe" />
+          {(['en', 'fr'] as const).map((l) => l === locale
+            ? <span aria-current="true" title={strings[l].selfName}>{l.toUpperCase()}</span>
+            : <a href={otherHref} hreflang={l} lang={l} title={strings[l].selfName} data-lang-switch>{l.toUpperCase()}</a>)}
+        </nav>
+      </div>
     </header>
 
     <main>
@@ -208,5 +220,6 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
     </footer>
 
     <script src="../scripts/filters.js"></script>
+    <script src="../scripts/theme.js"></script>
   </body>
 </html>

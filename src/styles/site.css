@@ -1,5 +1,6 @@
 /* Light, rounded, colourful: white cards, green accent, one colour per kind of game. */
 :root {
+  color-scheme: light;
   --bg: #f5f8f6;
   --card: #ffffff;
   --ink: #111a36;
@@ -28,8 +29,11 @@
   --k-arcade: #4640d1;
   --k-collection: #334260;
 }
+/* Dark colours follow the device, unless the visitor chose a theme with the header button
+   (data-theme on <html>, see src/scripts/theme.js). Keep the two lists below identical. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --bg: #0e1424;
     --card: #171f33;
     --ink: #eef2fa;
@@ -45,6 +49,23 @@
     --amber-tint: #3d3013;
     --shadow: 0 1px 2px rgb(0 0 0 / .3);
   }
+}
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e1424;
+  --card: #171f33;
+  --ink: #eef2fa;
+  --soft: #a3adc2;
+  --line: #2a3450;
+  --field: #111829;
+  --green: #35c476;
+  --green-ink: #7fe3ab;
+  --green-tint: #123a27;
+  --red: #ff7385;
+  --red-tint: #46192190;
+  --amber-ink: #f3cc73;
+  --amber-tint: #3d3013;
+  --shadow: 0 1px 2px rgb(0 0 0 / .3);
 }
 .k-drawing { --k: var(--k-drawing); } .k-quiz { --k: var(--k-quiz); } .k-words { --k: var(--k-words); }
 .k-bluff { --k: var(--k-bluff); } .k-board { --k: var(--k-board); } .k-geography { --k: var(--k-geography); }
@@ -65,11 +86,23 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .top { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; padding-bottom: 1rem; }
 .brand { display: inline-flex; align-items: center; gap: .55rem; font-family: var(--head); font-weight: 800; font-size: 1.35rem; letter-spacing: -.01em; text-decoration: none; }
 .brand .icon { width: 1.5em; height: 1.5em; color: var(--green); }
-.switch {
-  display: inline-flex; align-items: center; gap: .4rem; padding: .4rem .8rem; font-weight: 600; font-size: .9rem;
-  text-decoration: none; background: var(--card); border: 1.5px solid var(--line); border-radius: 999px;
+/* Language choice: both languages shown, the current one filled. */
+.langs {
+  display: inline-flex; align-items: center; gap: .15rem; height: 2.3rem; padding: 0 .25rem 0 .6rem; font-weight: 650; font-size: .88rem;
+  background: var(--card); border: 1.5px solid var(--line); border-radius: 999px;
 }
-.switch:hover { border-color: var(--green); color: var(--green-ink); }
+.langs .icon { margin-right: .2rem; color: var(--soft); }
+.langs a, .langs span { padding: .22rem .55rem; border-radius: 999px; text-decoration: none; }
+.langs span { background: var(--green-tint); color: var(--green-ink); }
+.langs a { color: var(--soft); }
+.langs a:hover { color: var(--green-ink); }
+.theme:hover { border-color: var(--green); color: var(--green-ink); }
+.tools { display: flex; align-items: center; gap: .5rem; }
+.theme {
+  display: inline-grid; place-items: center; width: 2.3rem; height: 2.3rem; padding: 0; font: inherit; color: inherit; cursor: pointer;
+  background: var(--card); border: 1.5px solid var(--line); border-radius: 999px;
+}
+.theme[data-mode="dark"] .to-dark, .theme[data-mode="light"] .to-light { display: none; }
 
 /* Hero */
 .hero { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 1.75rem 0 1.5rem; }
