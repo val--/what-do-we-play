@@ -204,7 +204,7 @@ legend .icon, .field .icon { color: var(--soft); }
 .fresh { margin-right: auto; font-size: .85rem; font-weight: 600; color: var(--soft); }
 .verified:last-of-type { margin-right: auto; }
 .body h2 a { text-decoration: none; }
-.new { margin-left: .5rem; padding: .1rem .5rem; font-family: var(--body); font-size: .68rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; vertical-align: .2em; color: var(--amber-ink); background: var(--amber-tint); border-radius: 999px; }
+.new { display: inline-block; margin-left: .5rem; padding: .1rem .5rem; font-family: var(--body); font-size: .68rem; font-weight: 700; letter-spacing: .03em; text-transform: uppercase; vertical-align: .2em; color: var(--amber-ink); background: var(--amber-tint); border-radius: 999px; }
 .body h2 a:hover { color: var(--green-ink); text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: .18em; }
 .body p { margin: .2rem 0 .55rem; color: var(--soft); font-size: .95rem; line-height: 1.4; }
 .meta { display: flex; flex-wrap: wrap; align-items: center; gap: .35rem 1.1rem; font-weight: 600; font-size: .9rem; }
@@ -244,8 +244,15 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 .browse a.all { background: var(--green-tint); border-color: transparent; color: var(--green-ink); }
 
 /* A game's own page */
-.more { display: inline-block; margin-top: .5rem; font-size: .8rem; font-weight: 650; color: var(--green-ink); text-decoration: none; }
-.more:hover { text-decoration: underline; text-underline-offset: .18em; }
+/* The whole card is the link to the game's page; what sits in .side stays clickable above it. */
+.game { position: relative; }
+.to-page::after { content: ''; position: absolute; inset: 0; border-radius: 16px; }
+.side > * { position: relative; z-index: 1; }
+.play, .go { color: #fff; background: var(--green-ink); text-decoration: none; transition: transform .12s, filter .12s; }
+.play:hover, .go:hover { transform: translateY(-1px); filter: brightness(1.08); }
+:root[data-theme="dark"] :is(.play, .go) { color: #0e1424; }
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.play, .go) { color: #0e1424; } }
+.play { display: inline-flex; align-items: center; gap: .4rem; padding: .42rem .9rem .42rem 1rem; font-family: var(--head); font-weight: 750; font-size: .95rem; border-radius: 999px; }
 .crumb { margin: .5rem 0 0; font-size: .9rem; font-weight: 600; }
 .crumb a { color: var(--soft); text-decoration: none; }
 .crumb a:hover { color: var(--green-ink); }
@@ -254,11 +261,8 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 .sheet .cover span { font-size: 2rem; }
 .go {
   display: inline-block; margin-top: 1.1rem; padding: .7rem 1.4rem; font-family: var(--head); font-weight: 750; font-size: 1.05rem;
-  color: #fff; background: var(--green-ink); border-radius: 999px; text-decoration: none; transition: transform .12s;
+  border-radius: 999px;
 }
-.go:hover { transform: translateY(-1px); }
-:root[data-theme="dark"] .go { color: #0e1424; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .go { color: #0e1424; } }
 .notice { margin: 1.1rem 0 0; font-size: .9rem; color: var(--soft); }
 .facts {
   display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 0; overflow: hidden;
@@ -293,6 +297,7 @@ footer p { max-width: 44rem; margin: 0 0 .4rem; }
   .side { grid-column: 1 / -1; flex-direction: row; align-items: center; justify-content: flex-start; padding: 0 .1rem; }
   .fav { position: absolute; top: .45rem; right: .45rem; }
   .state { flex-direction: row; align-items: center; gap: .6rem; }
+  .play { margin-left: auto; }
   .search { order: 3; flex: 1 1 100%; }
   .search input { width: 100%; }
   .perks { grid-template-columns: 1fr 1fr; }
