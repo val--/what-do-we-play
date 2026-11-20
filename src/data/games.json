@@ -1013,12 +1013,12 @@
     "languages": ["en"],
     "audience": ["family", "friends", "coworkers"],
     "players": { "min": 2, "max": 10 },
-    "duration": { "min": 5, "max": 15 },
+    "duration": { "min": 5, "max": 10 },
     "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
     "desc": {
       "en": "A category appears and everyone types an answer in turn to pass the pufferfish before it pops; rarer answers earn extra lives. Free with ads; host a room and share its four-letter code.",
       "fr": "Une catégorie s'affiche et chacun tape une réponse à son tour pour passer le poisson-globe avant qu'il n'éclate ; les réponses rares rapportent des vies. Gratuit avec publicités ; on crée un salon et on partage son code à quatre lettres."
     },
-    "tested": null
+    "tested": "2026-11-20"
   }
 ]
