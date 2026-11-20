@@ -55,6 +55,9 @@ const perkIcons = ['shield', 'check', 'monitor', 'users'];
 const plain = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
 const searchText = (g: (typeof visible)[number]) =>
   plain([g.name, g.desc[locale], ...g.types.map((x) => t.types[x as keyof typeof t.types]), ...g.languages.map((l) => t.languages[l as keyof typeof t.languages])].join(' '));
+// The visit counter (GoatCounter) also counts clicks on links carrying these attributes:
+// one line per game, "open/<id>", the same in both languages.
+const counted = (g: { id: string; name: string }) => ({ 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-title': g.name });
 const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
 ---
 <!doctype html>
@@ -195,13 +198,13 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
             data-phone={g.mobile ? 1 : 0}
             data-noscreen={g.sharedScreen ? 0 : 1}
           >
-            <a class:list={['cover', `k-${g.types[0]}`, { photo: covers.has(g.id) }]} href={g.url} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+            <a class:list={['cover', `k-${g.types[0]}`, { photo: covers.has(g.id) }]} href={g.url} {...counted(g)} target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
               {covers.has(g.id)
                 ? <img src={`${base}/covers/${g.id}.webp`} alt="" width="480" height="300" loading="lazy" decoding="async" />
                 : <span>{g.name}</span>}
             </a>
             <div class="body">
-              <h2><a href={g.url} target="_blank" rel="noopener">{g.name}</a>{isNew(g) && <span class="new">{t.isNew}</span>}</h2>
+              <h2><a href={g.url} {...counted(g)} target="_blank" rel="noopener">{g.name}</a>{isNew(g) && <span class="new">{t.isNew}</span>}</h2>
               <p>{g.desc[locale]}</p>
               <ul class="meta">
                 <li><Icon name="users" />{range(g.players.min, g.players.max)}</li>
