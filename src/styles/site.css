@@ -252,7 +252,7 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 .play:hover, .go:hover { transform: translateY(-1px); filter: brightness(1.08); }
 :root[data-theme="dark"] :is(.play, .go) { color: #0e1424; }
 @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) :is(.play, .go) { color: #0e1424; } }
-.play { display: inline-flex; align-items: center; gap: .4rem; padding: .42rem .9rem .42rem 1rem; font-family: var(--head); font-weight: 750; font-size: .95rem; border-radius: 999px; }
+.play { margin-top: auto; display: inline-flex; align-items: center; gap: .4rem; padding: .42rem .9rem .42rem 1rem; font-family: var(--head); font-weight: 750; font-size: .95rem; border-radius: 999px; }
 .crumb { margin: .5rem 0 0; font-size: .9rem; font-weight: 600; }
 .crumb a { color: var(--soft); text-decoration: none; }
 .crumb a:hover { color: var(--green-ink); }

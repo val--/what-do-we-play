@@ -61,8 +61,6 @@ const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-ti
     <div class="state">
       {g.offline && <span class="pill down">{t.offline}</span>}
       {g.offline && <small>{t.offlineSince(formatDate(locale, g.offlineSince, 'short') ?? '')}</small>}
-      {!g.offline && g.free && <span class="pill"><Icon name="check" />{t.flags.free}</span>}
-      {!g.offline && g.noAccount && <span class="pill"><Icon name="check" />{t.flags.noaccount}</span>}
     </div>
     {!g.offline && <a class="play" href={g.url} {...counted} target="_blank" rel="noopener" aria-label={t.open(g.name)}>{t.play}<Icon name="out" /></a>}
   </div>
