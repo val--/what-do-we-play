@@ -78,7 +78,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
         <button type="button" class="theme" data-theme-toggle data-to-dark={t.toDark} data-to-light={t.toLight} hidden>
           <span class="to-dark"><Icon name="moon" /></span><span class="to-light"><Icon name="sun" /></span>
         </button>
-        <nav class="langs" aria-label={t.langNav}>
+        <nav class="lang-nav" aria-label={t.langNav}>
           <Icon name="globe" />
           {(['en', 'fr'] as const).map((l) => l === locale
             ? <span aria-current="true" title={strings[l].selfName}>{l.toUpperCase()}</span>
