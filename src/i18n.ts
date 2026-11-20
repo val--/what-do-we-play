@@ -22,9 +22,9 @@ export const strings = {
     linksChecked: (d: string) => `Links checked on ${d}`,
     perks: ['Links checked every day', 'No sign-up (most of them)', 'Computer and phone', 'Family, friends or work'],
     title: 'What do we play?',
-    metaTitle: 'WhatDoWePlay — browser games to play together',
+    metaTitle: 'Online games to play with friends, family or your team — WhatDoWePlay',
     metaDesc:
-      'A hand-picked list of multiplayer browser games for families, friends and team icebreakers. Filter by group size, language, audience and time. Nothing to install.',
+      'Online games to play with friends, family or coworkers, remotely or in the same room. Most are free. Filter by group size, language, audience and time. Nothing to install.',
     intro: (n: number) =>
       `${n} games that run in a browser tab. Share a link, everybody's in. Tick what fits your group.`,
     weAre: 'Number of players',
@@ -79,9 +79,9 @@ export const strings = {
     linksChecked: (d: string) => `Liens vérifiés le ${d}`,
     perks: ['Liens vérifiés chaque jour', 'Sans inscription (la plupart)', 'Ordinateur et mobile', 'Famille, amis ou entreprise'],
     title: 'On joue à quoi ?',
-    metaTitle: 'WhatDoWePlay — des jeux à plusieurs dans le navigateur',
+    metaTitle: 'Jeux en ligne entre amis, en famille ou en équipe — WhatDoWePlay',
     metaDesc:
-      "Une liste choisie de jeux multijoueurs sur navigateur, pour la famille, les amis ou briser la glace entre collègues. Filtres par nombre de joueurs, langue, public et durée. Rien à installer.",
+      'Des jeux en ligne pour jouer entre amis, en famille ou entre collègues, à distance ou dans la même pièce. La plupart sont gratuits. Filtres par nombre de joueurs, langue, public et durée. Rien à installer.',
     intro: (n: number) =>
       `${n} jeux qui tiennent dans un onglet de navigateur. On partage un lien et tout le monde joue. Cochez ce qui correspond à votre groupe.`,
     weAre: 'Nombre de joueurs',

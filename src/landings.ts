@@ -73,6 +73,13 @@ export const landings: Landing[] = [
       lead: 'Des jeux où il faut mentir sans se faire prendre, ou trouver qui ment.' },
   },
   {
+    key: 'family', match: (g) => g.audience.includes('family'), filter: 'for=family',
+    en: { slug: 'family-games', label: 'Family', h1: 'Online games to play as a family',
+      lead: 'Games for all ages, to play at home or with relatives far away.' },
+    fr: { slug: 'jeux-en-famille', label: 'Famille', h1: 'Jeux en ligne en famille',
+      lead: 'Des jeux tous publics, à faire à la maison ou avec la famille à distance.' },
+  },
+  {
     key: 'kids', match: (g) => g.audience.includes('kids'), filter: 'for=kids',
     en: { slug: 'games-for-kids', label: 'Kids', h1: 'Online games for kids to play together',
       lead: 'Games with simple rules, suitable for children and playable as a family.' },
