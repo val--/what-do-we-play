@@ -51,11 +51,7 @@ export const strings = {
     play: 'Open',
     offline: 'Offline',
     offlineSince: (d: string) => `not responding since ${d}`,
-    footCheck: (d: string | null) =>
-      d
-        ? `A robot visits every link each day; last round on ${d}. A game that stops answering is marked Offline, then removed after 30 days.`
-        : 'A robot visits every link each day. A game that stops answering is marked Offline, then removed after 30 days.',
-    footNote: 'Player counts, prices and languages change without notice: check on the game itself before a big event.',
+    foot: "Details can change: check on the game's own site.",
     other: 'Français',
   },
   fr: {
@@ -104,11 +100,7 @@ export const strings = {
     play: 'Ouvrir',
     offline: 'Hors ligne',
     offlineSince: (d: string) => `ne répond plus depuis le ${d}`,
-    footCheck: (d: string | null) =>
-      d
-        ? `Un robot visite chaque lien tous les jours ; dernier passage le ${d}. Un jeu qui ne répond plus est marqué Hors ligne, puis retiré au bout de 30 jours.`
-        : 'Un robot visite chaque lien tous les jours. Un jeu qui ne répond plus est marqué Hors ligne, puis retiré au bout de 30 jours.',
-    footNote: "Nombre de joueurs, prix et langues changent sans prévenir : vérifiez sur le jeu lui-même avant un grand événement.",
+    foot: 'Les infos peuvent changer : vérifiez sur le site du jeu.',
     other: 'English',
   },
 };

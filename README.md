@@ -70,3 +70,7 @@ To stop a refused game from being proposed again, add its address to [src/data/r
 ## Thumbnails and trademarks
 
 Game names, logos and preview images belong to their respective owners. They are shown only to identify and link to each game. If you publish one of these games and want its image removed, open an issue.
+
+## Search engines and link previews
+
+`/sitemap.xml` and `/robots.txt` are generated at build time ([src/pages](src/pages)). The image shown when the site is shared (`public/og-en.png`, `public/og-fr.png`) is drawn from [scripts/og/card.html](scripts/og/card.html): after editing it, run `node scripts/og/make.mjs` (needs Chrome or Edge) and commit the two images.

@@ -1,0 +1,60 @@
+<!doctype html>
+<!-- Share image (Open Graph), 1200 x 630. Rendered to public/og-en.png and og-fr.png by scripts/og/make.mjs. -->
+<html>
+<head>
+<meta charset="utf-8">
+<style>
+@font-face { font-family: Outfit; font-weight: 100 900; src: url("../../node_modules/@fontsource-variable/outfit/files/outfit-latin-wght-normal.woff2") format("woff2"); }
+@font-face { font-family: "DM Sans"; font-weight: 100 1000; src: url("../../node_modules/@fontsource-variable/dm-sans/files/dm-sans-latin-wght-normal.woff2") format("woff2"); }
+* { box-sizing: border-box; margin: 0; }
+html, body { width: 1200px; height: 630px; overflow: hidden; }
+body { background: #f5f8f6; color: #111a36; font-family: "DM Sans", sans-serif; display: flex; align-items: center; padding: 0 0 0 80px; }
+.text { width: 620px; flex: none; }
+.brand { display: flex; align-items: center; gap: 12px; font: 700 30px Outfit, sans-serif; color: #137a40; }
+.brand svg { width: 40px; height: 40px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+h1 { margin-top: 34px; font: 800 84px/1.02 Outfit, sans-serif; letter-spacing: -.03em; white-space: nowrap; }
+.mark { padding-bottom: .12em; background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 12' preserveAspectRatio='none'%3E%3Cpath d='M2 8c18-7 34 4 54-1s38-6 62-1' fill='none' stroke='%2320a55a' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E") bottom / 100% .22em no-repeat; }
+p { margin-top: 30px; font-size: 31px; line-height: 1.35; color: #4a5573; }
+.pills { margin-top: 34px; display: flex; gap: 12px; }
+.pills span { padding: 9px 20px; border-radius: 99px; background: #dcf5e4; color: #137a40; font-weight: 600; font-size: 24px; }
+.stack { position: relative; flex: 1; height: 630px; }
+.card { position: absolute; left: 60px; width: 400px; padding: 16px; display: flex; gap: 18px; align-items: center; background: #fff; border-radius: 26px; box-shadow: 0 14px 34px rgba(17, 26, 54, .13); }
+.tile { width: 130px; height: 96px; flex: none; border-radius: 16px; display: grid; place-items: center; }
+.tile svg { width: 52px; height: 52px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+.lines { flex: 1; display: grid; gap: 12px; }
+.lines i { display: block; height: 16px; border-radius: 8px; background: #e3e8ef; }
+.lines i:first-child { height: 22px; width: 75%; background: #111a36; opacity: .82; }
+.lines i:last-child { width: 55%; }
+.c1 { top: 52px; transform: rotate(-4deg); }
+.c2 { top: 190px; left: 100px; transform: rotate(3deg); }
+.c3 { top: 328px; left: 50px; transform: rotate(-2deg); }
+.c4 { top: 466px; left: 110px; transform: rotate(4deg); }
+</style>
+</head>
+<body>
+<div class="text">
+  <div class="brand"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="11" rx="5.5"/><path d="M7 11v3M5.5 12.5h3"/><circle cx="16" cy="11.5" r=".6"/><circle cx="18" cy="13.5" r=".6"/></svg>WhatDoWePlay</div>
+  <h1 id="title"></h1>
+  <p id="lead"></p>
+  <div class="pills" id="pills"></div>
+</div>
+<div class="stack">
+  <div class="card c1"><div class="tile" style="background:#7c3aed"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19z"/><path d="M14 7l3 3"/></svg></div><div class="lines"><i></i><i></i><i></i></div></div>
+  <div class="card c2"><div class="tile" style="background:#2563eb"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9.5a2.5 2.5 0 1 1 3.5 2.3c-.7.4-1 1-1 1.7M12 17v.2"/></svg></div><div class="lines"><i></i><i></i><i></i></div></div>
+  <div class="card c3"><div class="tile" style="background:#0b93a3"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.8 3 2.8 15 0 18M12 3c-2.8 3-2.8 15 0 18"/></svg></div><div class="lines"><i></i><i></i><i></i></div></div>
+  <div class="card c4"><div class="tile" style="background:#d92b8c"><svg viewBox="0 0 24 24"><path d="M9 18V6l10-2v12"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg></div><div class="lines"><i></i><i></i><i></i></div></div>
+</div>
+<script>
+const text = {
+  en: { a: 'What do we ', mark: 'play', end: '?', lead: 'Browser games to play together, with family, friends or your team.', pills: ['Free', 'No sign-up', 'Nothing to install'] },
+  fr: { a: 'On ', mark: 'joue', end: ' à quoi ?', lead: 'Des jeux à plusieurs dans le navigateur, en famille, entre amis ou entre collègues.', pills: ['Gratuit', 'Sans compte', 'Rien à installer'] },
+};
+const t = text[new URLSearchParams(location.search).get('lang') === 'fr' ? 'fr' : 'en'];
+const h = document.getElementById('title');
+h.append(t.a);
+const m = document.createElement('span'); m.className = 'mark'; m.textContent = t.mark; h.append(m, t.end);
+document.getElementById('lead').textContent = t.lead;
+for (const p of t.pills) { const s = document.createElement('span'); s.textContent = p; document.getElementById('pills').append(s); }
+</script>
+</body>
+</html>

@@ -34,6 +34,9 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const otherHref = locale === 'en' ? `${base}/fr/` : `${base}/`;
 const canonical = new URL(locale === 'en' ? `${base}/` : `${base}/fr/`, Astro.site);
 const alternate = new URL(otherHref, Astro.site);
+const home = new URL(`${base}/`, Astro.site);
+// Share image, drawn by scripts/og/make.mjs.
+const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
 const durations = [10, 20, 30];
 const perkIcons = ['shield', 'check', 'monitor', 'users'];
 // Text the search box looks into: name, description, kinds and languages, without accents.
@@ -52,8 +55,18 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
     <link rel="canonical" href={canonical} />
     <link rel="alternate" hreflang={locale === 'en' ? 'fr' : 'en'} href={alternate} />
     <link rel="alternate" hreflang={locale} href={canonical} />
+    <link rel="alternate" hreflang="x-default" href={home} />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="WhatDoWePlay" />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale === 'fr' ? 'fr_FR' : 'en_GB'} />
     <meta property="og:title" content={t.metaTitle} />
     <meta property="og:description" content={t.metaDesc} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="sitemap" href={`${base}/sitemap.xml`} />
     <link rel="icon" type="image/svg+xml" href={`${base}/favicon.svg`} />
   </head>
   <body>
@@ -191,8 +204,7 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
     </main>
 
     <footer>
-      <p>{t.footCheck(fmt(lastCheck))}</p>
-      <p>{t.footNote}</p>
+      <p>{t.foot}</p>
     </footer>
 
     <script src="../scripts/filters.js"></script>
