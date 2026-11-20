@@ -1080,5 +1080,275 @@
       "es": "Aparece una categoría y cada uno escribe una respuesta por turno para pasar el pez globo antes de que explote; las respuestas poco comunes dan vidas extra. Gratis con publicidad; se crea una sala y se comparte su código de cuatro letras."
     },
     "tested": "2026-11-20"
+  },
+  {
+    "id": "drawize",
+    "name": "Drawize",
+    "url": "https://www.drawize.com/",
+    "keyword": "drawize",
+    "types": ["drawing"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 20 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Draw-and-guess with private rooms, a teams mode and a telephone-style drawing mode. Free with ads; paid passes take bigger groups.",
+      "fr": "Dessin à deviner avec salons privés, un mode par équipes et un mode téléphone arabe. Gratuit avec publicités ; des pass payants accueillent de plus grands groupes.",
+      "es": "Dibujar y adivinar con salas privadas, un modo por equipos y un modo de teléfono descompuesto. Gratis con publicidad; hay pases de pago para grupos más grandes."
+    },
+    "tested": null
+  },
+  {
+    "id": "stopots",
+    "name": "StopotS",
+    "url": "https://stopots.com/",
+    "keyword": "stopots",
+    "types": ["words"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 14 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "The categories game (Stop, Tutti Frutti) from the makers of Gartic: a random letter, a word to find for each category, then the group checks the answers. Free with ads; private rooms with a password.",
+      "fr": "Le petit bac par les créateurs de Gartic : une lettre au hasard, un mot à trouver par catégorie, puis le groupe valide les réponses. Gratuit avec publicités ; salons privés avec mot de passe.",
+      "es": "El Stop o Tutti Frutti de los creadores de Gartic: una letra al azar, una palabra por categoría, y el grupo valida las respuestas. Gratis con publicidad; salas privadas con contraseña."
+    },
+    "tested": null
+  },
+  {
+    "id": "pinturillo",
+    "name": "Pinturillo 2",
+    "url": "https://www.pinturillo2.com/",
+    "keyword": "pinturillo",
+    "types": ["drawing"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A Spanish draw-and-guess classic: one player draws a secret word, the others type their guesses. Free with ads; create a private room and share its code.",
+      "fr": "Un classique espagnol du dessin à deviner : un joueur dessine un mot secret, les autres écrivent leurs propositions. Gratuit avec publicités ; on crée une salle privée et on partage son code.",
+      "es": "Un clásico español de dibujar y adivinar: un jugador dibuja una palabra secreta y los demás escriben sus intentos. Gratis con publicidad; se crea una sala privada y se comparte su código."
+    },
+    "tested": null
+  },
+  {
+    "id": "trivialonline",
+    "name": "TrivialOnline.es",
+    "url": "https://trivialonline.es/",
+    "keyword": "trivialonline",
+    "types": ["quiz"],
+    "languages": ["es"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 1, "max": 12 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "A Spanish-language live trivia game: the host opens a room, picks the themes and the answer time, and everyone answers four-choice questions against the clock. Free with ads; join by link or five-letter code.",
+      "fr": "Un quiz en direct en espagnol : l'hôte ouvre une salle, choisit les thèmes et le temps de réponse, et chacun répond à des questions à quatre choix contre la montre. Gratuit avec publicités ; on rejoint par lien ou par code à cinq lettres.",
+      "es": "Un juego de preguntas en directo en español: el anfitrión abre una sala, elige los temas y el tiempo de respuesta, y todos responden preguntas de cuatro opciones contra el reloj. Gratis con publicidad; se entra con un enlace o un código de cinco letras."
+    },
+    "tested": null
+  },
+  {
+    "id": "what-the-tune",
+    "name": "What the Tune?!",
+    "url": "https://whatthetune.com/",
+    "keyword": "whatthetune",
+    "types": ["music"],
+    "languages": ["fr"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A French music blind test: type the title and the artist of each clip before the others. Free and without sign-up; create a private game and send the link to your friends.",
+      "fr": "Un blind test musical français : il faut taper le titre et l'artiste de chaque extrait avant les autres. Gratuit et sans inscription ; on crée une partie privée et on envoie le lien à ses amis.",
+      "es": "Un juego francés de adivinar canciones: hay que escribir el título y el artista de cada fragmento antes que los demás. Gratis y sin registro; se crea una partida privada y se envía el enlace a los amigos."
+    },
+    "tested": null
+  },
+  {
+    "id": "foony",
+    "name": "Foony",
+    "url": "https://foony.com/",
+    "keyword": "foony",
+    "types": ["collection", "arcade", "board"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 100 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A collection of real-time games in shared rooms: pool, mini golf, a co-op jigsaw, sudoku, a Uno-style card game, ludo and more. Free with ads; create a room and share its link. The number of players depends on the game.",
+      "fr": "Une collection de jeux en temps réel dans des salons partagés : billard, mini-golf, puzzle coopératif, sudoku, un jeu de cartes façon Uno, petits chevaux et d'autres. Gratuit avec publicités ; on crée un salon et on partage son lien. Le nombre de joueurs dépend du jeu.",
+      "es": "Una colección de juegos en tiempo real en salas compartidas: billar, minigolf, rompecabezas cooperativo, sudoku, un juego de cartas al estilo Uno, parchís y más. Gratis con publicidad; se crea una sala y se comparte su enlace. El número de jugadores depende del juego."
+    },
+    "tested": null
+  },
+  {
+    "id": "jigsaw-explorer",
+    "name": "Jigsaw Explorer",
+    "url": "https://www.jigsawexplorer.com/",
+    "keyword": "jigsawexplorer",
+    "types": ["board"],
+    "languages": ["en"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 1, "max": 20 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Online jigsaw puzzles to assemble together: open a puzzle, switch on multiplayer and share the game link; up to 20 people move the pieces at once. Free with ads. More comfortable on a computer or tablet than on a phone.",
+      "fr": "Des puzzles en ligne à assembler ensemble : on ouvre un puzzle, on active le mode multijoueur et on partage le lien ; jusqu'à 20 personnes déplacent les pièces en même temps. Gratuit avec publicités. Plus confortable sur ordinateur ou tablette que sur téléphone.",
+      "es": "Rompecabezas online para armar entre todos: se abre un rompecabezas, se activa el modo multijugador y se comparte el enlace; hasta 20 personas mueven las piezas a la vez. Gratis con publicidad. Más cómodo en PC o tableta que en el teléfono."
+    },
+    "tested": null
+  },
+  {
+    "id": "openguessr",
+    "name": "OpenGuessr",
+    "url": "https://openguessr.com/",
+    "keyword": "openguessr",
+    "types": ["geography"],
+    "languages": ["en", "fr", "es", "de", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "A free GeoGuessr-style game, paid for by ads: guess where the Street View image was taken. Multiplayer lobbies need no account.",
+      "fr": "Un jeu gratuit à la GeoGuessr, financé par la publicité : deviner où l'image Street View a été prise. Les salons multijoueurs ne demandent pas de compte.",
+      "es": "Un juego gratuito al estilo de GeoGuessr, financiado con publicidad: adivinar dónde se tomó la imagen de Street View. Las salas multijugador no requieren cuenta."
+    },
+    "tested": null
+  },
+  {
+    "id": "alone-together",
+    "name": "Alone Together",
+    "url": "https://www.enchambered.com/puzzles/alone-together/",
+    "keyword": "enchambered",
+    "types": ["board"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 2 },
+    "duration": { "min": 35, "max": 45 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A free cooperative escape room for two: each player sees a different screen and has to describe it to the other to solve the puzzles. Allow about 45 minutes and a voice call alongside. Easier to read on a computer or tablet.",
+      "fr": "Une salle d'évasion coopérative et gratuite pour deux : chacun voit un écran différent et doit le décrire à l'autre pour résoudre les énigmes. Compter environ 45 minutes, avec un appel vocal à côté. Plus lisible sur ordinateur ou tablette.",
+      "es": "Una sala de escape cooperativa y gratuita para dos: cada jugador ve una pantalla distinta y tiene que describírsela al otro para resolver los enigmas. Calcula unos 45 minutos, con una llamada de voz aparte. Se lee mejor en PC o tableta."
+    },
+    "tested": null
+  },
+  {
+    "id": "gaming-couch",
+    "name": "Gaming Couch",
+    "url": "https://play.gamingcouch.com/",
+    "keyword": "gamingcouch",
+    "types": ["collection", "arcade"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["kids", "family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 8 },
+    "duration": { "min": 15, "max": 25 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "A party console in the browser: a computer or TV shows short action games (races, arenas, platforms) and each phone becomes the gamepad. Free for now, no sign-up; up to 8 players.",
+      "fr": "Une console de soirée dans le navigateur : un ordinateur ou une télé affiche de courts jeux d'action (courses, arènes, plateformes) et chaque téléphone sert de manette. Gratuit pour l'instant, sans inscription ; jusqu'à 8 joueurs.",
+      "es": "Una consola de fiesta en el navegador: un PC o una tele muestra juegos de acción cortos (carreras, arenas, plataformas) y cada teléfono sirve de mando. Gratis por ahora y sin registro; hasta 8 jugadores."
+    },
+    "tested": null
+  },
+  {
+    "id": "curvytron",
+    "name": "Curvytron 2",
+    "url": "https://curvytron2.com/",
+    "keyword": "curvytron",
+    "types": ["arcade"],
+    "languages": ["en", "fr", "de"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 255 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Everyone steers a line that keeps growing; the last one not to crash wins the round. Free, no ads, no account: pick a name, create a room and share its link. Several players can share one keyboard.",
+      "fr": "Chacun dirige une ligne qui ne cesse de s'allonger ; le dernier à ne pas s'écraser gagne la manche. Gratuit, sans publicité ni compte : on choisit un pseudo, on crée un salon et on partage son lien. Plusieurs joueurs peuvent partager un clavier.",
+      "es": "Cada uno dirige una línea que no deja de crecer; gana la ronda el último que no choca. Gratis, sin publicidad ni cuenta: eliges un nombre, creas una sala y compartes su enlace. Varios jugadores pueden compartir un teclado."
+    },
+    "tested": null
+  },
+  {
+    "id": "imposter-online",
+    "name": "Imposter Online",
+    "url": "https://imposter.app/online/",
+    "keyword": "imposter",
+    "types": ["bluff"],
+    "languages": ["en", "es", "de"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 3, "max": 20 },
+    "duration": { "min": 10, "max": 20 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Everyone gets the same secret word except one imposter, who has to bluff through the clue rounds and survive the vote. Free, no account; up to 20 players, each on their own device.",
+      "fr": "Tout le monde reçoit le même mot secret sauf un imposteur, qui doit bluffer pendant les tours d'indices et échapper au vote. Gratuit, sans compte ; jusqu'à 20 joueurs, chacun sur son appareil.",
+      "es": "Todos reciben la misma palabra secreta menos un impostor, que tiene que disimular durante las rondas de pistas y librarse de la votación. Gratis y sin cuenta; hasta 20 jugadores, cada uno en su dispositivo."
+    },
+    "tested": null
+  },
+  {
+    "id": "lets-fib",
+    "name": "Let's Fib!",
+    "url": "https://letsfib.com/en/",
+    "keyword": "fib",
+    "types": ["bluff", "quiz"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 8 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "Everyone writes a believable fake answer to a trivia, picture or map question, then the group votes for the real one. Free; computer-controlled players fill in for small groups.",
+      "fr": "Chacun invente une fausse réponse crédible à une question de culture, d'image ou de carte, puis le groupe vote pour la vraie. Gratuit ; des joueurs contrôlés par l'ordinateur complètent les petits groupes.",
+      "es": "Cada uno inventa una respuesta falsa pero creíble a una pregunta de cultura, de imagen o de mapa, y el grupo vota por la verdadera. Gratis; jugadores controlados por la máquina completan los grupos pequeños."
+    },
+    "tested": null
+  },
+  {
+    "id": "music-quizly",
+    "name": "Music Quizly",
+    "url": "https://www.musicquizly.com/",
+    "keyword": "quizly",
+    "types": ["music"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 1000 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A song-guessing game on any public Spotify or Deezer playlist: the host picks the playlist, shares a room code, and everyone races to name the songs. Free with ads, no account.",
+      "fr": "Un blind test sur n'importe quelle playlist publique Spotify ou Deezer : l'hôte choisit la playlist, partage un code de salon, et chacun tente de trouver les titres avant les autres. Gratuit avec publicités, sans compte.",
+      "es": "Un juego de adivinar canciones con cualquier lista pública de Spotify o Deezer: el anfitrión elige la lista, comparte un código de sala y todos compiten por acertar las canciones. Gratis con publicidad, sin cuenta."
+    },
+    "tested": null
+  },
+  {
+    "id": "cross-with-friends",
+    "name": "Cross with Friends",
+    "url": "https://www.crosswithfriends.com/",
+    "keyword": "crosswithfriends",
+    "types": ["words"],
+    "languages": ["en"],
+    "audience": ["family", "friends", "coworkers"],
+    "players": { "min": 2, "max": 4 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": false, "sharedScreen": false,
+    "desc": {
+      "en": "Solve the same crossword together in real time: pick a puzzle, share the game link, and everyone fills the grid at once, with a chat. Free and open source; puzzles are in English.",
+      "fr": "Résoudre la même grille de mots croisés à plusieurs en temps réel : on choisit une grille, on partage le lien et tout le monde la remplit en même temps, avec un chat. Gratuit et open source ; les grilles sont en anglais.",
+      "es": "Resolver el mismo crucigrama entre todos en tiempo real: se elige uno, se comparte el enlace y todos rellenan la cuadrícula a la vez, con chat. Gratis y de código abierto; los crucigramas están en inglés."
+    },
+    "tested": null
   }
 ]
