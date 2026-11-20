@@ -79,7 +79,6 @@ const range = (a: number, b: number) => (a === b ? `${a}` : `${a} – ${b}`);
           <span class="to-dark"><Icon name="moon" /></span><span class="to-light"><Icon name="sun" /></span>
         </button>
         <nav class="lang-nav" aria-label={t.langNav}>
-          <Icon name="globe" />
           {(['en', 'fr'] as const).map((l) => l === locale
             ? <span aria-current="true" title={strings[l].selfName}>{l.toUpperCase()}</span>
             : <a href={otherHref} hreflang={l} lang={l} title={strings[l].selfName} data-lang-switch>{l.toUpperCase()}</a>)}

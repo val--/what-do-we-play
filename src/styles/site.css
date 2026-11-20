@@ -88,10 +88,9 @@ ul, ol { list-style: none; margin: 0; padding: 0; }
 .brand .icon { width: 1.5em; height: 1.5em; color: var(--green); }
 /* Language choice: both languages shown, the current one filled. */
 .lang-nav {
-  display: inline-flex; align-items: center; gap: .15rem; height: 2.3rem; padding: 0 .25rem 0 .6rem; font-weight: 650; font-size: .88rem;
+  display: inline-flex; align-items: center; gap: .15rem; height: 2.3rem; padding: 0 .25rem; font-weight: 650; font-size: .88rem;
   background: var(--card); border: 1.5px solid var(--line); border-radius: 999px;
 }
-.lang-nav .icon { margin-right: .2rem; color: var(--soft); }
 .lang-nav a, .lang-nav span { padding: .22rem .55rem; border-radius: 999px; text-decoration: none; }
 .lang-nav span { background: var(--green-tint); color: var(--green-ink); }
 .lang-nav a { color: var(--soft); }
