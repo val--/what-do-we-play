@@ -5,3 +5,5 @@ dist/
 *.log
 # The owner's original screenshots; the resized copies live in public/shots/.
 screenshots/
+# Search Console exports, kept on this computer only.
+analytics/
