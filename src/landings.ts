@@ -1,7 +1,7 @@
 // Pages by need: one page per kind of game or situation, in every language, built from the catalogue.
 // To add one, add an entry below. A page is published only once enough games match (MIN_GAMES),
 // so a thin category appears by itself the day the catalogue fills it.
-import { entries, type Entry } from './catalogue';
+import { entries, inspiredBy, isOfficial, type Entry } from './catalogue';
 import { SITES, type Locale } from './i18n';
 
 export type Game = Entry;
@@ -9,7 +9,8 @@ type Text = { slug: string; label: string; h1: string; lead: string };
 // `filter` is the same rule written as the filter panel's query (see src/scripts/filters.js):
 // the page shows those boxes ticked, and unticking them leads back to the full list.
 // Leave it out when the panel has no equivalent.
-export type Landing = { key: string; match: (g: Game) => boolean; filter?: string } & Record<Locale, Text>;
+// `like` is set on the pages built from `inspiredBy` (see likePages below): the game they are about.
+export type Landing = { key: string; match: (g: Game) => boolean; filter?: string; like?: string } & Record<Locale, Text>;
 
 export const MIN_GAMES = 5;
 const type = (x: string) => (g: Game) => g.types.includes(x);
@@ -172,6 +173,29 @@ export const landings: Landing[] = [
 
 // The pages that have enough games today.
 export const published = landings.filter((l) => entries.filter(l.match).length >= MIN_GAMES);
+
+// "Games like …": one page per published game that games of the catalogue are inspired by
+// (`inspiredBy` in games.json), listing those games and the original when it is in the catalogue.
+// Built by one rule, nothing to declare. A page exists as soon as one game other than the
+// publisher's own version matches.
+const slugify = (s: string) => s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+export const likePages: Landing[] = [...new Set(entries.flatMap(inspiredBy))]
+  .sort((a, b) => a.localeCompare(b))
+  .map((name) => ({
+    key: `like-${slugify(name)}`,
+    like: name,
+    match: (g: Game) => inspiredBy(g).includes(name) || g.name === name,
+    en: { slug: `games-like-${slugify(name)}`, label: name, h1: `Online games like ${name}`,
+      lead: `Browser games inspired by ${name}, to play together with nothing to install.` },
+    fr: { slug: `jeux-comme-${slugify(name)}`, label: name, h1: `Jeux en ligne comme ${name}`,
+      lead: `Des jeux sur navigateur inspirés de ${name}, à jouer à plusieurs sans rien installer.` },
+    es: { slug: `juegos-como-${slugify(name)}`, label: name, h1: `Juegos online como ${name}`,
+      lead: `Juegos de navegador inspirados en ${name}, para jugar en grupo sin instalar nada.` },
+  }))
+  .filter((page) => entries.some((g) => page.match(g) && !isOfficial(g)));
+
+// Every page that lists games, besides the home page.
+export const allPages = [...published, ...likePages];
 
 // Address of a page, without the site's base: '/fr/jeux-de-dessin/'. No landing gives the home page.
 export const pathOf = (locale: Locale, landing?: Landing) =>

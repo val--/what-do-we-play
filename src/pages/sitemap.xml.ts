@@ -1,10 +1,10 @@
 import type { APIRoute } from 'astro';
 import status from '../data/status.json';
 import { LOCALES, perLocale } from '../i18n';
-import { published, pathOf } from '../landings';
+import { allPages, pathOf } from '../landings';
 import { entries as games, gamePath } from '../catalogue';
 
-// One entry per page and language: the home page, the pages by need (src/landings.ts), then each game's page.
+// One entry per page and language: the home page, the pages by need and the "games like …" pages (src/landings.ts), then each game's page.
 // They change when the daily link check runs.
 export const GET: APIRoute = ({ site }) => {
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -14,7 +14,7 @@ export const GET: APIRoute = ({ site }) => {
     .pop()
     ?.slice(0, 10);
   const pages = [
-    ...[undefined, ...published].map((landing) => perLocale((l) => pathOf(l, landing))),
+    ...[undefined, ...allPages].map((landing) => perLocale((l) => pathOf(l, landing))),
     ...games.map((g) => perLocale((l) => gamePath(l, g.id))),
   ];
   const entries = pages.flatMap((paths) => {

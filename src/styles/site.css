@@ -273,7 +273,9 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 .facts dt { font-size: .78rem; font-weight: 650; color: var(--soft); }
 .facts dd { margin: .1rem 0 0; font-weight: 650; }
 .origin { margin: .6rem 0 0; font-size: .95rem; color: var(--soft); }
-.origin strong { color: var(--ink); font-weight: 650; }
+.origin strong, .origin a { color: var(--ink); font-weight: 650; }
+.origin a { text-decoration: underline; text-decoration-color: var(--green); text-decoration-thickness: 2px; text-underline-offset: .18em; }
+.origin a:hover { color: var(--green-ink); }
 .practical { display: flex; flex-wrap: wrap; gap: .4rem .5rem; margin-top: .9rem; }
 .practical li { display: inline-flex; align-items: center; gap: .35rem; padding: .22rem .75rem .22rem .6rem; font-size: .85rem; font-weight: 650; color: var(--green-ink); background: var(--green-tint); border-radius: 999px; }
 .practical .warn { padding-left: .75rem; color: var(--amber-ink); background: var(--amber-tint); }

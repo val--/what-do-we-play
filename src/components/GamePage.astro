@@ -6,7 +6,7 @@ import GameCard from './GameCard.astro';
 import Icon from './Icon.astro';
 import { strings, perLocale, type Locale } from '../i18n';
 import { covers, range, formatDate, gamePath, similar, shotsOf, inspiredBy, isOfficial, type Entry } from '../catalogue';
-import { published, pathOf } from '../landings';
+import { published, likePages, pathOf } from '../landings';
 
 interface Props { locale: Locale; g: Entry }
 const { locale, g } = Astro.props;
@@ -30,7 +30,8 @@ const practical: [boolean, string][] = [
   g.mobile ? [true, t.fact.anyDevice] : [false, t.fact.computerOnly],
   g.sharedScreen ? [false, t.fact.screenNeeded] : [true, t.flags.noscreen],
 ];
-const origin = inspiredBy(g).join(', ');
+// Each game it is inspired by, with its "games like …" page when there is one.
+const origins = inspiredBy(g).map((name) => ({ name, page: likePages.find((l) => l.like === name) }));
 const checked = formatDate(locale, g.lastOk);
 const tested = formatDate(locale, g.tested);
 const lists = published.filter((l) => l.match(g));
@@ -55,7 +56,11 @@ const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-ti
     <div>
       <h1 class="need">{g.name}</h1>
       <p class="lead">{g.desc[locale]}</p>
-      {origin && <p class="origin">{isOfficial(g) ? t.fact.officialOf : t.fact.inspiredBy} <strong>{origin}</strong></p>}
+      {origins.length > 0 && (
+        <p class="origin">{isOfficial(g) ? t.fact.officialOf : t.fact.inspiredBy}{' '}
+          {origins.map((o, i) => <>{i > 0 && ', '}{o.page ? <a href={base + pathOf(locale, o.page)}>{o.name}</a> : <strong>{o.name}</strong>}</>)}
+        </p>
+      )}
       {g.offline
         ? <p class="notice"><span class="pill down">{t.offline}</span> {t.offlineSince(formatDate(locale, g.offlineSince) ?? '')}</p>
         : <a class="go" href={g.url} {...counted} target="_blank" rel="noopener">{t.open(g.name)}</a>}

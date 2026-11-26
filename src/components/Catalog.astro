@@ -3,8 +3,8 @@ import Base from './Base.astro';
 import GameCard from './GameCard.astro';
 import Icon from './Icon.astro';
 import { strings, perLocale, TYPES, AUDIENCES, LANGUAGES, type Locale } from '../i18n';
-import { entries, lastCheck, daysAgo, formatDate } from '../catalogue';
-import { published, pathOf, type Landing } from '../landings';
+import { entries, lastCheck, daysAgo, formatDate, similar } from '../catalogue';
+import { published, likePages, pathOf, type Landing } from '../landings';
 
 // Without `landing` this is the home page with every game; with one, a page by need (src/landings.ts).
 interface Props { locale: Locale; landing?: Landing }
@@ -15,6 +15,8 @@ const t = strings[locale];
 const visible = entries.filter((g) => !landing || landing.match(g));
 const lastAdded = visible.map((g) => g.added).sort().pop() || '';
 const lastBatch = lastAdded && daysAgo(lastAdded) <= 30 ? visible.filter((g) => g.added === lastAdded).length : 0;
+// On a "games like …" page, which is often short: a few more games of the same kind.
+const also = landing?.like && visible.length ? similar(visible[0], 12).filter((g) => !visible.includes(g)).slice(0, 4) : [];
 const usedTypes = TYPES.filter((x) => visible.some((g) => g.types.includes(x)));
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -103,11 +105,27 @@ const perkIcons = ['shield', 'check', 'monitor', 'users'];
   </ol>
   <p class="none" id="none" hidden>{t.none}</p>
 
+  {also.length > 0 && (
+    <section class="alike">
+      <h2>{t.sameKind}</h2>
+      <ol class="games">
+        {also.map((g, i) => <GameCard g={g} i={i} locale={locale} fav={false} />)}
+      </ol>
+    </section>
+  )}
+
   <nav class="browse" aria-labelledby="browse-title">
     <h2 id="browse-title">{t.browse}</h2>
     <ul>
       {landing && <li><a class="all" href={base + pathOf(locale)}>{t.allGames}</a></li>}
       {published.filter((l) => l !== landing).map((l) => <li><a href={base + pathOf(locale, l)}>{l[locale].label}</a></li>)}
+    </ul>
+  </nav>
+
+  <nav class="browse" aria-labelledby="like-title">
+    <h2 id="like-title">{t.likeTitle}</h2>
+    <ul>
+      {likePages.filter((l) => l !== landing).map((l) => <li><a href={base + pathOf(locale, l)}>{l[locale].label}</a></li>)}
     </ul>
   </nav>
 

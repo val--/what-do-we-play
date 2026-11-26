@@ -95,6 +95,8 @@ a title and one sentence per language. A page is published only when at least fi
 games match, so nothing has to be done when the catalogue grows. The pages link to
 each other under "More ideas" and are listed in the sitemap.
 
+The same file also builds one "games like …" page per published game that games of the catalogue are inspired by (`inspiredBy` in `games.json`): `/games-like-monopoly/`, `/fr/jeux-comme-monopoly/`, `/es/juegos-como-monopoly/`. Nothing to declare: filling `inspiredBy` on a game is enough.
+
 ## A page per game
 
 Every listed game also has its own page (`/games/<id>/`, `/fr/jeux/<id>/`, `/es/juegos/<id>/`): what the
