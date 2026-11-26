@@ -272,6 +272,11 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 .facts div { padding: .75rem 1rem; box-shadow: 1px 0 0 var(--line), 0 1px 0 var(--line); }
 .facts dt { font-size: .78rem; font-weight: 650; color: var(--soft); }
 .facts dd { margin: .1rem 0 0; font-weight: 650; }
+.origin { margin: .6rem 0 0; font-size: .95rem; color: var(--soft); }
+.origin strong { color: var(--ink); font-weight: 650; }
+.practical { display: flex; flex-wrap: wrap; gap: .4rem .5rem; margin-top: .9rem; }
+.practical li { display: inline-flex; align-items: center; gap: .35rem; padding: .22rem .75rem .22rem .6rem; font-size: .85rem; font-weight: 650; color: var(--green-ink); background: var(--green-tint); border-radius: 999px; }
+.practical .warn { padding-left: .75rem; color: var(--amber-ink); background: var(--amber-tint); }
 .checks { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: .8rem 0 0; font-size: .85rem; font-weight: 600; color: var(--soft); }
 .checks span { display: inline-flex; align-items: center; gap: .4rem; }
 .checks .icon { color: var(--green-ink); }
@@ -294,6 +299,10 @@ footer p { max-width: 44rem; margin: 0 0 .4rem; }
 @media (max-width: 680px) {
   .top, main, footer { padding-left: .9rem; padding-right: .9rem; }
   .hero { padding-top: .75rem; }
+  /* Three languages and the theme button must fit beside the name on a narrow phone. */
+  .top { flex-wrap: wrap; gap: .4rem; }
+  .brand { font-size: 1.15rem; gap: .4rem; }
+  .lang-nav a, .lang-nav span { padding: .22rem .42rem; }
   .lead { font-size: 1.02rem; }
   .panel { padding: 1rem; }
   .box.favs { margin-left: 0; }
@@ -310,4 +319,5 @@ footer p { max-width: 44rem; margin: 0 0 .4rem; }
   .perks { grid-template-columns: 1fr 1fr; }
   .sheet { grid-template-columns: 1fr; gap: 1rem; }
   .facts { grid-template-columns: 1fr 1fr; }
+  .facts div:nth-child(3) { grid-column: 1 / -1; }
 }

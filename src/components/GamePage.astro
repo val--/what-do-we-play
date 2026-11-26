@@ -16,18 +16,21 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const players = range(g.players.min, g.players.max);
 const minutes = `${range(g.duration.min, g.duration.max)} min`;
 const names = <K extends string>(keys: string[], table: Record<K, string>) => keys.map((k) => table[k as K]).join(', ');
+// The three figures people look for first. Kind and audience are not repeated here:
+// the lists the game belongs to, further down, already say them.
 const facts: [string, string][] = [
   [t.weAre, players],
   [t.weHave, minutes],
   [t.inLang, names(g.languages, t.languages)],
-  [t.kind, names(g.types, t.types)],
-  [t.forWhom, names(g.audience, t.audience)],
-  [t.fact.price, g.free ? t.flags.free : t.fact.paid],
-  [t.fact.account, g.noAccount ? t.fact.noAccount : t.fact.needsAccount],
-  [t.fact.devices, g.mobile ? t.fact.anyDevice : t.fact.computerOnly],
-  [t.fact.screen, g.sharedScreen ? t.fact.screenYes : t.fact.screenNo],
 ];
-if (inspiredBy(g).length) facts.splice(4, 0, [isOfficial(g) ? t.fact.officialOf : t.fact.inspiredBy, inspiredBy(g).join(', ')]);
+// Practical points in one line: [fine as it is?, wording].
+const practical: [boolean, string][] = [
+  g.free ? [true, t.flags.free] : [false, t.fact.paid],
+  g.noAccount ? [true, t.fact.noAccount] : [false, t.fact.needsAccount],
+  g.mobile ? [true, t.fact.anyDevice] : [false, t.fact.computerOnly],
+  g.sharedScreen ? [false, t.fact.screenNeeded] : [true, t.flags.noscreen],
+];
+const origin = inspiredBy(g).join(', ');
 const checked = formatDate(locale, g.lastOk);
 const tested = formatDate(locale, g.tested);
 const lists = published.filter((l) => l.match(g));
@@ -52,6 +55,7 @@ const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-ti
     <div>
       <h1 class="need">{g.name}</h1>
       <p class="lead">{g.desc[locale]}</p>
+      {origin && <p class="origin">{isOfficial(g) ? t.fact.officialOf : t.fact.inspiredBy} <strong>{origin}</strong></p>}
       {g.offline
         ? <p class="notice"><span class="pill down">{t.offline}</span> {t.offlineSince(formatDate(locale, g.offlineSince) ?? '')}</p>
         : <a class="go" href={g.url} {...counted} target="_blank" rel="noopener">{t.open(g.name)}</a>}
@@ -61,6 +65,9 @@ const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-ti
   <dl class="facts">
     {facts.map(([label, value]) => <div><dt>{label}</dt><dd>{value}</dd></div>)}
   </dl>
+  <ul class="practical">
+    {practical.map(([fine, label]) => <li class:list={{ warn: !fine }}>{fine && <Icon name="check" />}{label}</li>)}
+  </ul>
   <p class="checks">
     {checked && !g.offline && <span><Icon name="shield" />{t.linkChecked(checked)}</span>}
     {tested && <span><Icon name="check" />{t.testedOn(tested)}</span>}
