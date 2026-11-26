@@ -9,10 +9,7 @@ to src/data/rejected.json instead.
 
 ## Found on 2026-11-20, not kept at the time
 
-- https://zapclash.com/ — French and English party mini-games, 2–12 players; only one source then, check the tone
 - https://kgames.fr/ — French streamer games (impostor, Spyfall, quiz); was still in beta
-- https://ironthumbs.com/ — party console, phones as controllers; released November 2026
-- https://promptriff.com/ — Quiplash-style; 8 players on the free tier, some packs for adults
 - https://www.decryptr.io/ — Decrypto online; site unchanged since 2020
 - https://alphabetsoup.club/ — word game, private matches of 50; free and no-account not stated
 - https://abstractboardgames.com/ — two-player abstract games by invitation link
