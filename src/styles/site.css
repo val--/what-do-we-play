@@ -297,6 +297,16 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 
 footer { padding-top: 1.4rem; padding-bottom: 2.5rem; font-size: .82rem; color: var(--soft); }
 footer p { max-width: 44rem; margin: 0 0 .4rem; }
+footer a { color: inherit; text-underline-offset: .18em; }
+footer a:hover { color: var(--green-ink); }
+
+/* Text pages (About) */
+.prose { max-width: 42rem; padding: 1rem 0 1.5rem; }
+.prose .lead { max-width: none; }
+.prose section { margin-top: 1.8rem; }
+.prose h2 { margin: 0 0 .5rem; font-family: var(--head); font-weight: 750; font-size: 1.3rem; }
+.prose section p { margin: 0 0 .7rem; }
+.prose a { color: var(--green-ink); text-underline-offset: .18em; overflow-wrap: anywhere; }
 
 @media (max-width: 680px) {
   .top, main, footer { padding-left: .9rem; padding-right: .9rem; }

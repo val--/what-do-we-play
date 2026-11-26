@@ -6,6 +6,7 @@ import '@fontsource-variable/dm-sans';
 import '../styles/site.css';
 import Icon from './Icon.astro';
 import { strings, LOCALES, SITES, type Locale } from '../i18n';
+import { about, aboutPath } from '../about';
 
 interface Props { locale: Locale; title: string; desc: string; paths: Record<Locale, string> }
 const { locale, title, desc, paths } = Astro.props;
@@ -65,6 +66,7 @@ const ogImage = new URL(`${base}/og-${locale}.png`, Astro.site);
 
     <footer>
       <p>{t.foot}</p>
+      <p><a href={base + aboutPath(locale)}>{about[locale].title}</a></p>
     </footer>
 
     <script src="../scripts/theme.js"></script>

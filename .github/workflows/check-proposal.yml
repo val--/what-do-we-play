@@ -1,0 +1,21 @@
+name: Check proposal
+
+# Builds the site for every pull request, so a mistake in a proposed game
+# (a missing description, a second spelling of a name) shows in red before it is merged.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run build

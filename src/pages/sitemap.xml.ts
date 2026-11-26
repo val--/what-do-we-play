@@ -3,6 +3,7 @@ import status from '../data/status.json';
 import { LOCALES, perLocale } from '../i18n';
 import { allPages, pathOf } from '../landings';
 import { entries as games, gamePath } from '../catalogue';
+import { aboutPath } from '../about';
 
 // One entry per page and language: the home page, the pages by need and the "games like …" pages (src/landings.ts), then each game's page.
 // They change when the daily link check runs.
@@ -16,6 +17,7 @@ export const GET: APIRoute = ({ site }) => {
   const pages = [
     ...[undefined, ...allPages].map((landing) => perLocale((l) => pathOf(l, landing))),
     ...games.map((g) => perLocale((l) => gamePath(l, g.id))),
+    perLocale(aboutPath),
   ];
   const entries = pages.flatMap((paths) => {
     const url = perLocale((l) => new URL(base + paths[l], site).href);
