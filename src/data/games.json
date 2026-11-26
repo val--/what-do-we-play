@@ -1350,5 +1350,59 @@
       "es": "Resolver el mismo crucigrama entre todos en tiempo real: se elige uno, se comparte el enlace y todos rellenan la cuadrícula a la vez, con chat. Gratis y de código abierto; los crucigramas están en inglés."
     },
     "tested": null
+  },
+  {
+    "id": "zapclash",
+    "name": "ZapClash",
+    "url": "https://zapclash.com/",
+    "keyword": "zapclash",
+    "types": ["quiz", "collection"],
+    "languages": ["fr", "en"],
+    "audience": ["friends"],
+    "players": { "min": 2, "max": 10 },
+    "duration": { "min": 5, "max": 10 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": false,
+    "desc": {
+      "en": "A French party game: each round is a different quick mini-game (quiz, reflexes, estimates) played on your own phone, with a TV as an optional recap screen. Free; an account is only needed to keep scores and appear on the leaderboard.",
+      "fr": "Un party game français : chaque manche est un mini-jeu différent et rapide (quiz, réflexes, estimations) joué sur son propre téléphone, la télé étant un écran récap facultatif. Gratuit ; un compte ne sert qu'à garder ses scores et à figurer au classement.",
+      "es": "Un juego de fiesta francés: cada ronda es un minijuego distinto y rápido (quiz, reflejos, estimaciones) que se juega en el propio teléfono, con la tele como pantalla de resumen opcional. Gratis; la cuenta solo sirve para guardar las puntuaciones y aparecer en la clasificación."
+    },
+    "tested": null
+  },
+  {
+    "id": "promptriff",
+    "name": "PromptRiff",
+    "url": "https://promptriff.com/",
+    "keyword": "promptriff",
+    "types": ["humor"],
+    "languages": ["en"],
+    "audience": ["friends", "family"],
+    "players": { "min": 3, "max": 8 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "Everyone answers the same ridiculous prompts on their phone, then the group votes for the funniest answer. The free game holds up to 8 players; a paid host pass (bought once by the host) adds game modes and more.",
+      "fr": "Chacun répond sur son téléphone aux mêmes questions absurdes, puis le groupe vote pour la réponse la plus drôle. Le jeu gratuit accepte jusqu'à 8 joueurs ; un pass payant pour l'hôte (acheté une seule fois) ajoute des modes de jeu et plus encore.",
+      "es": "Cada uno responde en su teléfono a las mismas preguntas absurdas y luego el grupo vota por la respuesta más graciosa. El juego gratuito admite hasta 8 jugadores; un pase de pago para el anfitrión (se compra una sola vez) añade modos de juego y más."
+    },
+    "tested": null
+  },
+  {
+    "id": "iron-thumbs",
+    "name": "Iron Thumbs",
+    "url": "https://ironthumbs.com/",
+    "keyword": "iron thumbs",
+    "types": ["arcade", "collection"],
+    "languages": ["en", "fr", "es", "de", "it", "pt"],
+    "audience": ["friends", "family"],
+    "players": { "min": 2, "max": 8 },
+    "duration": { "min": 10, "max": 30 },
+    "free": true, "noAccount": true, "mobile": true, "sharedScreen": true,
+    "desc": {
+      "en": "Put the page on the TV (or a laptop plugged into it), scan the QR code and play short party mini-games with your phone as the controller. Bots fill empty seats, so two people are enough.",
+      "fr": "On ouvre la page sur la télé (ou un ordinateur branché dessus), on scanne le QR code et on joue à de courts mini-jeux de soirée avec son téléphone comme manette. Des robots occupent les places vides : deux personnes suffisent.",
+      "es": "Se abre la página en la tele (o en un PC conectado a ella), se escanea el código QR y se juega a minijuegos de fiesta cortos con el teléfono como control. Unos bots ocupan los lugares vacíos, así que bastan dos personas."
+    },
+    "tested": null
   }
 ]
