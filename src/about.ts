@@ -11,15 +11,15 @@ const SLUGS: Record<Locale, string> = { en: 'about', fr: 'a-propos', es: 'acerca
 export const aboutPath = (locale: Locale) => `${SITES[locale].prefix}/${SLUGS[locale]}/`;
 
 // A section with an empty heading is shown as plain paragraphs.
-type About = { title: string; lead: string; sections: (games: number) => { h: string; p: string[] }[] };
+type About = { title: string; lead: string; sections: { h: string; p: string[] }[] };
 
 export const about: Record<Locale, About> = {
   en: {
     title: 'About',
     lead: 'WhatDoWePlay is a directory of games to play together in a web browser, with nothing to install.',
-    sections: (n) => [
+    sections: [
       { h: '', p: [
-        `${n} games picked by hand (with a little help from AI for a first sort 😉), to play with family, friends or coworkers. No ads, no account, no cookies.`,
+        'Games picked by hand (with a little help from AI for a first sort 😉), to play with family, friends or coworkers. No ads, no account, no cookies.',
         "Links are checked every day. The details come from each game's own site and can change: when in doubt, the game's site is right.",
       ] },
       { h: 'Contact', p: [
@@ -34,9 +34,9 @@ export const about: Record<Locale, About> = {
   fr: {
     title: 'À propos',
     lead: 'WhatDoWePlay est un annuaire de jeux à plusieurs qui se jouent dans le navigateur, sans rien installer.',
-    sections: (n) => [
+    sections: [
       { h: '', p: [
-        `${n} jeux choisis à la main (avec un coup de main de l'IA pour faire un premier tri 😉), à jouer en famille, entre amis ou entre collègues. Pas de publicité, pas de compte, pas de cookie.`,
+        "Des jeux choisis à la main (avec un coup de main de l'IA pour faire un premier tri 😉), à jouer en famille, entre amis ou entre collègues. Pas de publicité, pas de compte, pas de cookie.",
         "Les liens sont vérifiés chaque jour. Les informations viennent du site de chaque jeu et peuvent changer : en cas de doute, c'est lui qui fait foi.",
       ] },
       { h: 'Contact', p: [
@@ -51,9 +51,9 @@ export const about: Record<Locale, About> = {
   es: {
     title: 'Acerca de',
     lead: 'WhatDoWePlay es un directorio de juegos para jugar en grupo desde el navegador, sin instalar nada.',
-    sections: (n) => [
+    sections: [
       { h: '', p: [
-        `${n} juegos elegidos a mano (con una ayudita de la IA para hacer una primera selección 😉), para jugar en familia, con amigos o con compañeros de trabajo. Sin publicidad, sin cuenta, sin cookies.`,
+        'Juegos elegidos a mano (con una ayudita de la IA para hacer una primera selección 😉), para jugar en familia, con amigos o con compañeros de trabajo. Sin publicidad, sin cuenta, sin cookies.',
         'Los enlaces se comprueban cada día. Los datos proceden del sitio de cada juego y pueden cambiar: en caso de duda, vale lo que diga el sitio del juego.',
       ] },
       { h: 'Contacto', p: [
