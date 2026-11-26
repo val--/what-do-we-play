@@ -64,7 +64,7 @@ GitHub Pages, through [.github/workflows/deploy.yml](.github/workflows/deploy.ym
 
 ## New game proposals
 
-A scheduled Claude agent looks for new games every Monday and opens a pull request with at most five entries. It never merges anything itself. Its instructions are in [docs/scout.md](docs/scout.md): editing that file is enough to change its behaviour.
+A scheduled Claude agent looks for new games every Monday and opens a pull request with at most five entries. It never merges anything itself. Games with clear sites but little written about them come in a separate "À trancher" list of at most three, for the owner to judge. Its instructions are in [docs/scout.md](docs/scout.md): editing that file is enough to change its behaviour.
 
 To have a game looked at, add its address to [docs/suggestions.md](docs/suggestions.md): the agent opens those first.
 
