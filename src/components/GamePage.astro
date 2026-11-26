@@ -41,7 +41,7 @@ const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-ti
 ---
 <Base
   locale={locale}
-  title={t.gameTitle(g.name)}
+  title={t.gameTitle(g.name, g.players.min, g.players.max, g.free, g.noAccount)}
   desc={`${g.desc[locale]} ${t.gameDesc(players, minutes)}`}
   paths={perLocale((l) => gamePath(l, g.id))}
 >

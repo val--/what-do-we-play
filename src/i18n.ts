@@ -76,7 +76,9 @@ export const strings = {
     allGames: 'All games',
     pageDesc: (n: number) => (n === 1 ? 'One game picked by hand, its link checked every day.' : `${n} games picked by hand, links checked every day.`),
     open: (name: string) => `Play ${name}`,
-    gameTitle: (name: string) => `${name}: details and similar games — WhatDoWePlay`,
+    // A game page's title answers what people type after a game's name: how many, free or not, sign-up or not.
+    gameTitle: (name: string, min: number, max: number, free: boolean, noAccount: boolean) =>
+      `${name}: ${min === max ? min : `${min} to ${max}`} players, ${free ? 'free' : 'paid'}, ${noAccount ? 'no sign-up' : 'sign-up needed'}, similar games`,
     gameDesc: (players: string, minutes: string) => `${players} players, ${minutes}.`,
     linkChecked: (d: string) => `Link checked on ${d}`,
     testedOn: (d: string) => `Played by us on ${d}`,
@@ -150,7 +152,8 @@ export const strings = {
     allGames: 'Tous les jeux',
     pageDesc: (n: number) => (n === 1 ? 'Un jeu choisi à la main, lien vérifié chaque jour.' : `${n} jeux choisis à la main, liens vérifiés chaque jour.`),
     open: (name: string) => `Ouvrir ${name}`,
-    gameTitle: (name: string) => `${name} : infos et jeux similaires — WhatDoWePlay`,
+    gameTitle: (name: string, min: number, max: number, free: boolean, noAccount: boolean) =>
+      `${name} : ${min === max ? min : `${min} à ${max}`} joueurs, ${free ? 'gratuit' : 'payant'}, ${noAccount ? 'sans inscription' : 'inscription requise'}, jeux similaires`,
     gameDesc: (players: string, minutes: string) => `${players} joueurs, ${minutes}.`,
     linkChecked: (d: string) => `Lien vérifié le ${d}`,
     testedOn: (d: string) => `Testé par nos soins le ${d}`,
@@ -224,7 +227,8 @@ export const strings = {
     allGames: 'Todos los juegos',
     pageDesc: (n: number) => (n === 1 ? 'Un juego elegido a mano, enlace comprobado cada día.' : `${n} juegos elegidos a mano, enlaces comprobados cada día.`),
     open: (name: string) => `Abrir ${name}`,
-    gameTitle: (name: string) => `${name}: información y juegos parecidos — WhatDoWePlay`,
+    gameTitle: (name: string, min: number, max: number, free: boolean, noAccount: boolean) =>
+      `${name}: ${min === max ? min : `de ${min} a ${max}`} jugadores, ${free ? 'gratis' : 'de pago'}, ${noAccount ? 'sin registro' : 'registro obligatorio'}, juegos parecidos`,
     gameDesc: (players: string, minutes: string) => `${players} jugadores, ${minutes}.`,
     linkChecked: (d: string) => `Enlace comprobado el ${d}`,
     testedOn: (d: string) => `Probado por nosotros el ${d}`,
