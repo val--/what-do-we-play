@@ -5,7 +5,7 @@ import Base from './Base.astro';
 import GameCard from './GameCard.astro';
 import Icon from './Icon.astro';
 import { strings, perLocale, type Locale } from '../i18n';
-import { covers, range, formatDate, gamePath, similar, shotsOf, type Entry } from '../catalogue';
+import { covers, range, formatDate, gamePath, similar, shotsOf, inspiredBy, isOfficial, type Entry } from '../catalogue';
 import { published, pathOf } from '../landings';
 
 interface Props { locale: Locale; g: Entry }
@@ -27,6 +27,7 @@ const facts: [string, string][] = [
   [t.fact.devices, g.mobile ? t.fact.anyDevice : t.fact.computerOnly],
   [t.fact.screen, g.sharedScreen ? t.fact.screenYes : t.fact.screenNo],
 ];
+if (inspiredBy(g).length) facts.splice(4, 0, [isOfficial(g) ? t.fact.officialOf : t.fact.inspiredBy, inspiredBy(g).join(', ')]);
 const checked = formatDate(locale, g.lastOk);
 const tested = formatDate(locale, g.tested);
 const lists = published.filter((l) => l.match(g));

@@ -5,7 +5,7 @@
 // `fav={false}` leaves out the favourite button, on pages that do not load the filters.
 import Icon from './Icon.astro';
 import { strings, type Locale } from '../i18n';
-import { covers, isNew, range, formatDate, gamePath, type Entry } from '../catalogue';
+import { covers, isNew, range, formatDate, gamePath, inspiredBy, type Entry } from '../catalogue';
 
 interface Props { g: Entry; i: number; locale: Locale; fav?: boolean }
 const { g, i, locale, fav = true } = Astro.props;
@@ -13,9 +13,9 @@ const t = strings[locale];
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 const page = base + gamePath(locale, g.id);
 
-// Text the search box looks into: name, description, kinds and languages, without accents.
+// Text the search box looks into: name, description, the games it is inspired by, kinds and languages, without accents.
 const plain = (s: string) => s.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
-const searchText = plain([g.name, g.desc[locale], ...g.types.map((x) => t.types[x as keyof typeof t.types]), ...g.languages.map((l) => t.languages[l as keyof typeof t.languages])].join(' '));
+const searchText = plain([g.name, g.desc[locale], ...inspiredBy(g), ...g.types.map((x) => t.types[x as keyof typeof t.types]), ...g.languages.map((l) => t.languages[l as keyof typeof t.languages])].join(' '));
 // The visit counter (GoatCounter) also counts clicks on links carrying these attributes:
 // one line per game, "open/<id>", the same in every language.
 const counted = { 'data-goatcounter-click': `open/${g.id}`, 'data-goatcounter-title': g.name };

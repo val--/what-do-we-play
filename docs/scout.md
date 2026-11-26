@@ -89,11 +89,12 @@ When you find no supporting statement for a fact, you MUST use its default below
 
 ## 4. Write the entries
 
-Append each selected game to src/data/games.json, following exactly the shape and allowed values of the existing entries (id, name, url, keyword, types, languages, audience, players, duration, free, noAccount, mobile, sharedScreen, desc.en, desc.fr, desc.es, tested).
+Append each selected game to src/data/games.json, following exactly the shape and allowed values of the existing entries (id, name, url, keyword, types, languages, audience, players, duration, free, noAccount, mobile, sharedScreen, desc.en, desc.fr, desc.es, inspiredBy, tested).
 
 - `tested` is always null: nobody has played it yet.
 - `keyword` must be a lowercase word that actually appears in the HTML you fetched from `url` (usually the game's name), because the link checker searches for it.
 - Write `desc.en`, `desc.fr` and `desc.es` yourself in one or two plain sentences, in the tone of the existing ones. The Spanish must read naturally to both Spanish and Latin American readers: prefer neutral words ("teléfono", "PC", "sala", "anfitrión", "registro") over regional ones ("móvil", "celular", "ordenador", "computadora"). Do not copy marketing text. When the game is partly paid or needs an account for the host, say so in the description, as the existing entries for Kahoot! and Jackbox Games do.
+- `inspiredBy` is optional: a list of the published games this one is an online version of, by their usual name (`["Wavelength"]`, `["Motus", "Wordle"]`). Add it only when the game's own site or a source says so, or when the game is unmistakably that game played online; leave the field out otherwise, and never guess. Add `"official": true` on the same line only when the site states it is made or licensed by the original game's publisher. Say in the pull request where the link comes from.
 - Only use type, language and audience values that already exist in src/i18n.ts. Include `kids` in the audience only when the content is clearly suitable and there is no open public chat with strangers.
 
 ## 5. Fetch the thumbnails

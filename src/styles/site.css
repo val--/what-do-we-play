@@ -265,10 +265,11 @@ h1.need { font-size: clamp(1.9rem, 5.2vw, 3rem); line-height: 1.08; letter-spaci
 }
 .notice { margin: 1.1rem 0 0; font-size: .9rem; color: var(--soft); }
 .facts {
-  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; margin: 0; overflow: hidden;
-  background: var(--line); border: 1.5px solid var(--line); border-radius: 16px;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin: 0; overflow: hidden;
+  background: var(--card); border: 1.5px solid var(--line); border-radius: 16px;
 }
-.facts div { padding: .75rem 1rem; background: var(--card); }
+/* Each cell draws its own separators, so an incomplete last row stays the colour of the card. */
+.facts div { padding: .75rem 1rem; box-shadow: 1px 0 0 var(--line), 0 1px 0 var(--line); }
 .facts dt { font-size: .78rem; font-weight: 650; color: var(--soft); }
 .facts dd { margin: .1rem 0 0; font-weight: 650; }
 .checks { display: flex; flex-wrap: wrap; gap: .4rem 1.4rem; margin: .8rem 0 0; font-size: .85rem; font-weight: 600; color: var(--soft); }

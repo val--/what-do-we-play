@@ -15,6 +15,7 @@
       "fr": "Un joueur dessine un mot, les autres tentent de le deviner dans le chat.",
       "es": "Un jugador dibuja una palabra y los demás intentan adivinarla en el chat."
     },
+    "inspiredBy": ["Pictionary"],
     "tested": null
   },
   {
@@ -33,6 +34,7 @@
       "fr": "Le téléphone arabe dessiné : on écrit une phrase, on la dessine, on décrit le dessin, et on rit du résultat.",
       "es": "El teléfono descompuesto con dibujos: escribes una frase, alguien la dibuja, otro describe el dibujo, y al final todos se ríen del resultado."
     },
+    "inspiredBy": ["Telestrations"],
     "tested": null
   },
   {
@@ -51,6 +53,7 @@
       "fr": "Dessiner et deviner dans des salons à thème, par les créateurs de Gartic Phone.",
       "es": "Dibujar y adivinar en salas temáticas, de los creadores de Gartic Phone."
     },
+    "inspiredBy": ["Pictionary"],
     "tested": null
   },
   {
@@ -69,6 +72,7 @@
       "fr": "Un jeu de dessin à deviner tout simple, avec salons privés.",
       "es": "Un juego muy sencillo de dibujar y adivinar, con salas privadas."
     },
+    "inspiredBy": ["Pictionary"],
     "tested": null
   },
   {
@@ -87,6 +91,7 @@
       "fr": "Dessin à deviner avec des outils de dessin plus riches et des listes de mots personnalisées.",
       "es": "Dibujar y adivinar con herramientas de dibujo más completas y listas de palabras personalizadas."
     },
+    "inspiredBy": ["Pictionary"],
     "tested": null
   },
   {
@@ -105,6 +110,7 @@
       "fr": "Le téléphone arabe en images, pensé pour le téléphone : chacun joue sur son appareil.",
       "es": "El teléfono descompuesto con dibujos, pensado para el teléfono: cada uno juega en su dispositivo."
     },
+    "inspiredBy": ["Telestrations"],
     "tested": null
   },
   {
@@ -231,6 +237,7 @@
       "fr": "Jeux de déduction sociale (Spyfall, Avalon, Codewords, Loup-garou...) joués sur le téléphone de chacun.",
       "es": "Juegos de deducción social (Spyfall, Avalon, Codewords, Hombres lobo...) que se juegan en el teléfono de cada uno."
     },
+    "inspiredBy": ["Spyfall", "Avalon", "Codenames", "Werewolf"],
     "tested": null
   },
   {
@@ -249,6 +256,7 @@
       "fr": "Tout le monde connaît le lieu sauf l'espion, qui doit le deviner à partir des questions posées.",
       "es": "Todos conocen el lugar menos el espía, que tiene que adivinarlo a partir de las preguntas que se hacen."
     },
+    "inspiredBy": ["Spyfall"],
     "tested": null
   },
   {
@@ -267,6 +275,7 @@
       "fr": "Le Loup-garou en ligne, avec de nombreux rôles, en parties écrites ou vocales.",
       "es": "Los Hombres lobo online, con muchos roles, en partidas escritas o por voz."
     },
+    "inspiredBy": ["Werewolf"],
     "tested": null
   },
   {
@@ -285,6 +294,7 @@
       "fr": "La version officielle de Codenames : deux équipes, des indices en un mot, retrouver ses agents en premier.",
       "es": "La versión oficial online de Codenames: dos equipos, pistas de una sola palabra, y gana quien encuentra primero a sus agentes."
     },
+    "inspiredBy": ["Codenames"], "official": true,
     "tested": null
   },
   {
@@ -304,6 +314,7 @@
       "fr": "Une adaptation en ligne de Wavelength : donner un indice qui situe une cible cachée entre deux opposés.",
       "es": "Una adaptación online de Wavelength: dar una pista que sitúe un objetivo oculto entre dos opuestos."
     },
+    "inspiredBy": ["Wavelength"],
     "tested": null
   },
   {
@@ -340,6 +351,7 @@
       "fr": "Le petit bac : une lettre, plusieurs catégories, un chrono, et un mot à trouver pour chacune.",
       "es": "El Stop o Tutti Frutti: una letra, varias categorías, un cronómetro, y una palabra que encontrar para cada una."
     },
+    "inspiredBy": ["Scattergories"],
     "tested": null
   },
   {
@@ -375,6 +387,7 @@
       "fr": "Le Motus en ligne : on crée un salon privé, on partage le lien et tout le monde cherche les mêmes mots le plus vite possible. Les salons gratuits accueillent 6 joueurs ; au-delà, l'hôte doit être membre payant.",
       "es": "Un juego francés al estilo de Wordle: se crea una sala privada, se comparte el enlace y todos buscan las mismas palabras lo más rápido posible. Las salas gratis admiten 6 jugadores; para más, el anfitrión tiene que ser miembro de pago."
     },
+    "inspiredBy": ["Motus", "Wordle"],
     "tested": null
   },  {
     "id": "letter-jam",
@@ -392,6 +405,7 @@
       "fr": "La version officielle en ligne du jeu de mots coopératif : on voit la lettre de chacun sauf la sienne, et des indices formés avec les lettres des autres aident chaque joueur à deviner la sienne. Prévoir un appel vocal ou vidéo à côté.",
       "es": "La versión oficial online del juego cooperativo de palabras: ves la letra de todos menos la tuya, y las pistas formadas con las letras de los demás ayudan a cada jugador a adivinar la suya. Hace falta una llamada de voz o de video aparte."
     },
+    "inspiredBy": ["Letter Jam"], "official": true,
     "tested": null
   },  {
     "id": "squabble",
@@ -409,6 +423,7 @@
       "fr": "Wordle façon battle royale : tout le monde cherche des mots de cinq lettres en même temps, chaque erreur coûte des points de vie et le dernier debout gagne. En petit comité (Blitz) ou en grand salon (Royale).",
       "es": "Wordle en modo battle royale: todos buscan palabras de cinco letras a la vez, cada error cuesta puntos de vida y gana el último en pie. En grupo pequeño (Blitz) o en sala grande (Royale)."
     },
+    "inspiredBy": ["Wordle"],
     "tested": null
   },
 
@@ -500,6 +515,7 @@
       "fr": "Des grilles de quiz façon Jeopardy : on crée la sienne ou on en choisit une parmi des millions, on l'affiche sur un écran et on compte les points par équipe. Les joueurs n'ont pas d'appareil ; l'hôte lit et attribue les points.",
       "es": "Tableros de quiz al estilo Jeopardy: creas el tuyo o eliges uno entre millones, lo muestras en una pantalla y llevas los puntos por equipos. Los jugadores no necesitan dispositivo; el anfitrión lee y reparte los puntos."
     },
+    "inspiredBy": ["Jeopardy!"],
     "tested": null
   },  {
     "id": "arcademics",
@@ -628,6 +644,7 @@
       "fr": "Une alternative gratuite à GeoGuessr, financée par les dons, avec des salons multijoueurs.",
       "es": "Una alternativa gratuita a GeoGuessr, financiada con donaciones, con salas multijugador."
     },
+    "inspiredBy": ["GeoGuessr"],
     "tested": null
   },  {
     "id": "guess-where-you-are",
@@ -645,6 +662,7 @@
       "fr": "Un jeu gratuit à la GeoGuessr, financé par la publicité : deviner où la vue de rue a été prise, en partie privée ou en duel, sans inscription.",
       "es": "Un juego gratuito al estilo de GeoGuessr, financiado con publicidad: adivinar dónde se tomó la vista de calle, en partida privada o en duelo, sin registro."
     },
+    "inspiredBy": ["GeoGuessr"],
     "tested": null
   },  {
     "id": "maponica",
@@ -700,6 +718,7 @@
       "fr": "Un jeu de plateau de commerce et de construction à la manière des colons, jouable en invité.",
       "es": "Un juego de mesa de comercio y construcción al estilo de los colonos, que se puede jugar como invitado."
     },
+    "inspiredBy": ["Catan"],
     "tested": null
   },
   {
@@ -718,6 +737,7 @@
       "fr": "Un jeu de plateau d'achat de propriétés dans le navigateur : acheter des villes, construire, ruiner ses amis.",
       "es": "Un juego de mesa de compra de propiedades en el navegador: comprar ciudades, construir y arruinar a tus amigos."
     },
+    "inspiredBy": ["Monopoly"],
     "tested": null
   },
   {
@@ -790,6 +810,7 @@
       "fr": "Le jeu de cartes Set en temps réel : repérer trois cartes qui vont ensemble avant les autres.",
       "es": "El juego de cartas Set en tiempo real: encontrar tres cartas que formen un conjunto antes que los demás."
     },
+    "inspiredBy": ["Set"],
     "tested": null
   },  {
     "id": "lichess",
@@ -916,6 +937,7 @@
       "fr": "Des duels de blocs qui tombent en salons privés, jouables en invité. Clavier nécessaire.",
       "es": "Duelos de bloques que caen, en salas privadas, que se pueden jugar como invitado. Hace falta teclado."
     },
+    "inspiredBy": ["Tetris"],
     "tested": null
   },
   {
@@ -987,6 +1009,7 @@
       "fr": "Le Minecraft d'origine de 2009, officiel et jouable dans le navigateur sans compte : on choisit un pseudo, on envoie le lien à ses amis et on construit ensemble, jusqu'à dix joueurs. La partie s'arrête pour tout le monde quand l'hôte la quitte. Clavier nécessaire.",
       "es": "El Minecraft original de 2009, oficial y jugable en el navegador sin cuenta: eliges un nombre, envías el enlace a tus amigos y construyen juntos, hasta diez jugadores. La partida termina para todos cuando el anfitrión sale. Hace falta teclado."
     },
+    "inspiredBy": ["Minecraft"], "official": true,
     "tested": null
   },
 
@@ -1060,6 +1083,7 @@
       "fr": "Déposé au hasard dans Street View, chacun devine sur une carte où il se trouve. Gratuit avec publicités ; l'hôte partage un lien pour lancer une partie privée.",
       "es": "Apareces en un punto al azar de Street View y cada uno adivina en un mapa dónde está. Gratis con publicidad; el anfitrión comparte un enlace para iniciar una partida privada."
     },
+    "inspiredBy": ["GeoGuessr"],
     "tested": null
   },
   {
@@ -1097,6 +1121,7 @@
       "fr": "Dessin à deviner avec salons privés, un mode par équipes et un mode téléphone arabe. Gratuit avec publicités ; des pass payants accueillent de plus grands groupes.",
       "es": "Dibujar y adivinar con salas privadas, un modo por equipos y un modo de teléfono descompuesto. Gratis con publicidad; hay pases de pago para grupos más grandes."
     },
+    "inspiredBy": ["Pictionary"],
     "tested": null
   },
   {
@@ -1115,6 +1140,7 @@
       "fr": "Le petit bac par les créateurs de Gartic : une lettre au hasard, un mot à trouver par catégorie, puis le groupe valide les réponses. Gratuit avec publicités ; salons privés avec mot de passe.",
       "es": "El Stop o Tutti Frutti de los creadores de Gartic: una letra al azar, una palabra por categoría, y el grupo valida las respuestas. Gratis con publicidad; salas privadas con contraseña."
     },
+    "inspiredBy": ["Scattergories"],
     "tested": null
   },
   {
@@ -1133,6 +1159,7 @@
       "fr": "Un classique espagnol du dessin à deviner : un joueur dessine un mot secret, les autres écrivent leurs propositions. Gratuit avec publicités ; on crée une salle privée et on partage son code.",
       "es": "Un clásico español de dibujar y adivinar: un jugador dibuja una palabra secreta y los demás escriben sus intentos. Gratis con publicidad; se crea una sala privada y se comparte su código."
     },
+    "inspiredBy": ["Pictionary"],
     "tested": null
   },
   {
@@ -1151,6 +1178,7 @@
       "fr": "Un quiz en direct en espagnol : l'hôte ouvre une salle, choisit les thèmes et le temps de réponse, et chacun répond à des questions à quatre choix contre la montre. Gratuit avec publicités ; on rejoint par lien ou par code à cinq lettres.",
       "es": "Un juego de preguntas en directo en español: el anfitrión abre una sala, elige los temas y el tiempo de respuesta, y todos responden preguntas de cuatro opciones contra el reloj. Gratis con publicidad; se entra con un enlace o un código de cinco letras."
     },
+    "inspiredBy": ["Trivial Pursuit"],
     "tested": null
   },
   {
@@ -1223,6 +1251,7 @@
       "fr": "Un jeu gratuit à la GeoGuessr, financé par la publicité : deviner où l'image Street View a été prise. Les salons multijoueurs ne demandent pas de compte.",
       "es": "Un juego gratuito al estilo de GeoGuessr, financiado con publicidad: adivinar dónde se tomó la imagen de Street View. Las salas multijugador no requieren cuenta."
     },
+    "inspiredBy": ["GeoGuessr"],
     "tested": null
   },
   {
@@ -1277,6 +1306,7 @@
       "fr": "Chacun dirige une ligne qui ne cesse de s'allonger ; le dernier à ne pas s'écraser gagne la manche. Gratuit, sans publicité ni compte : on choisit un pseudo, on crée un salon et on partage son lien. Plusieurs joueurs peuvent partager un clavier.",
       "es": "Cada uno dirige una línea que no deja de crecer; gana la ronda el último que no choca. Gratis, sin publicidad ni cuenta: eliges un nombre, creas una sala y compartes su enlace. Varios jugadores pueden compartir un teclado."
     },
+    "inspiredBy": ["Achtung, die Kurve!"],
     "tested": null
   },
   {
@@ -1295,6 +1325,7 @@
       "fr": "Tout le monde reçoit le même mot secret sauf un imposteur, qui doit bluffer pendant les tours d'indices et échapper au vote. Gratuit, sans compte ; jusqu'à 20 joueurs, chacun sur son appareil.",
       "es": "Todos reciben la misma palabra secreta menos un impostor, que tiene que disimular durante las rondas de pistas y librarse de la votación. Gratis y sin cuenta; hasta 20 jugadores, cada uno en su dispositivo."
     },
+    "inspiredBy": ["The Chameleon", "Spyfall"],
     "tested": null
   },
   {
@@ -1313,6 +1344,7 @@
       "fr": "Chacun invente une fausse réponse crédible à une question de culture, d'image ou de carte, puis le groupe vote pour la vraie. Gratuit ; des joueurs contrôlés par l'ordinateur complètent les petits groupes.",
       "es": "Cada uno inventa una respuesta falsa pero creíble a una pregunta de cultura, de imagen o de mapa, y el grupo vota por la verdadera. Gratis; jugadores controlados por la máquina completan los grupos pequeños."
     },
+    "inspiredBy": ["Fibbage"],
     "tested": null
   },
   {
@@ -1385,6 +1417,7 @@
       "fr": "Chacun répond sur son téléphone aux mêmes questions absurdes, puis le groupe vote pour la réponse la plus drôle. Le jeu gratuit accepte jusqu'à 8 joueurs ; un pass payant pour l'hôte (acheté une seule fois) ajoute des modes de jeu et plus encore.",
       "es": "Cada uno responde en su teléfono a las mismas preguntas absurdas y luego el grupo vota por la respuesta más graciosa. El juego gratuito admite hasta 8 jugadores; un pase de pago para el anfitrión (se compra una sola vez) añade modos de juego y más."
     },
+    "inspiredBy": ["Quiplash"],
     "tested": null
   },
   {

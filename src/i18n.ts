@@ -82,6 +82,7 @@ export const strings = {
     shots: 'Screenshots',
     shotAlt: (name: string, n: number) => `${name}, screenshot ${n}`,
     fact: {
+      inspiredBy: 'Inspired by', officialOf: 'Official version of',
       price: 'Price', paid: 'Paid', account: 'Account', noAccount: 'No sign-up needed', needsAccount: 'Sign-up needed',
       devices: 'Devices', anyDevice: 'Computer and phone', computerOnly: 'Computer only',
       screen: 'Screen sharing', screenYes: 'Needed', screenNo: 'Not needed',
@@ -153,6 +154,7 @@ export const strings = {
     shots: "Captures d'écran",
     shotAlt: (name: string, n: number) => `${name}, capture ${n}`,
     fact: {
+      inspiredBy: 'Inspiré de', officialOf: 'Version officielle de',
       price: 'Prix', paid: 'Payant', account: 'Compte', noAccount: "Pas d'inscription", needsAccount: 'Inscription requise',
       devices: 'Appareils', anyDevice: 'Ordinateur et téléphone', computerOnly: 'Ordinateur seulement',
       screen: "Partage d'écran", screenYes: 'Nécessaire', screenNo: 'Pas nécessaire',
@@ -224,6 +226,7 @@ export const strings = {
     shots: 'Capturas de pantalla',
     shotAlt: (name: string, n: number) => `${name}, captura ${n}`,
     fact: {
+      inspiredBy: 'Inspirado en', officialOf: 'Versión oficial de',
       price: 'Precio', paid: 'De pago', account: 'Cuenta', noAccount: 'Sin registro', needsAccount: 'Registro obligatorio',
       devices: 'Dispositivos', anyDevice: 'PC y teléfono', computerOnly: 'Solo en PC',
       screen: 'Compartir pantalla', screenYes: 'Necesario', screenNo: 'No hace falta',

@@ -31,6 +31,8 @@ Add an entry to [src/data/games.json](src/data/games.json):
 | `audience` | `kids`, `family`, `friends`, `coworkers` |
 | `players`, `duration` | minimum and maximum (duration in minutes) |
 | `free`, `noAccount`, `mobile`, `sharedScreen` | practical criteria |
+| `desc` | one or two sentences in every language of the site (`en`, `fr`, `es`) |
+| `inspiredBy`, `official` | optional: the published games this one is an online version of (`["Wavelength"]`), and `true` when it is the publisher's own version |
 | `tested` | date of the last hands-on test (`null` until someone has actually played) |
 
 Filter labels and all site text live in [src/i18n.ts](src/i18n.ts).

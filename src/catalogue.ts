@@ -21,6 +21,11 @@ export const entries = games
   .sort((a, b) => Number(a.offline) - Number(b.offline));
 export type Entry = (typeof entries)[number];
 
+// The published game(s) a game is an online version of, when it is one (`inspiredBy` in games.json);
+// `official` marks the version made by the game's own publisher.
+export const inspiredBy = (g: object) => (g as { inspiredBy?: string[] }).inspiredBy ?? [];
+export const isOfficial = (g: object) => (g as { official?: boolean }).official === true;
+
 export const lastCheck = Object.values(st).map((s) => s.lastChecked ?? '').sort().pop() || null;
 
 // Thumbnails fetched by scripts/fetch-covers.mjs; games without a file keep the coloured tile.
