@@ -66,6 +66,8 @@ GitHub Pages, through [.github/workflows/deploy.yml](.github/workflows/deploy.ym
 
 A scheduled Claude agent looks for new games every Monday and opens a pull request with at most five entries. It never merges anything itself. Its instructions are in [docs/scout.md](docs/scout.md): editing that file is enough to change its behaviour.
 
+To have a game looked at, add its address to [docs/suggestions.md](docs/suggestions.md): the agent opens those first.
+
 To stop a refused game from being proposed again, add its address to [src/data/rejected.json](src/data/rejected.json), for example `["https://example.io/"]`.
 
 ## Thumbnails and trademarks

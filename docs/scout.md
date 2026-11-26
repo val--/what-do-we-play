@@ -11,12 +11,26 @@ The owner is not a specialist and will trust what the entries say. A wrong entry
 - README.md: the data model and the meaning of each field.
 - src/data/games.json: the catalogue. Note every existing `url` and `name`, and count how many games each type already has.
 - src/data/rejected.json: an array of URLs the owner has already refused. Never propose these again (compare by domain).
+- docs/suggestions.md: games the owner would like you to look at. See section 2.
 - Closed, unmerged pull requests whose branch starts with `proposals/`: games proposed there and not merged were most likely refused. Do not propose them again.
 - Open pull requests: if a previous proposal PR (branch starting with `proposals/`) is still open, do NOT open another one: stop and say so in your final message.
 
 ## 2. Search the web for candidates
 
-Look for browser-based multiplayer games that are not in the catalogue. Useful sources: recent blog lists ("best browser party games", "online games for remote teams", "jeux en ligne entre amis sans installation"), Reddit (r/WebGames, r/boardgames, r/remotework), AlternativeTo pages for games already in the catalogue, itch.io party/multiplayer HTML5 tags, Product Hunt, Hacker News.
+Look for browser-based multiplayer games that are not in the catalogue.
+
+General blog lists mostly repeat games the catalogue already has, so a quick search finds nothing. Search widely before concluding. Every week, follow ALL of these tracks:
+
+1. **The owner's suggestions.** Open every address listed in docs/suggestions.md and evaluate it like any other candidate. For these games only, the owner's suggestion counts as one of the two independent sources required below; every other condition applies unchanged.
+2. **French.** Searches in French ("jeux en ligne entre amis sans installation", "jeu multijoueur navigateur gratuit", "blind test en ligne entre amis", "petit bac en ligne"…), French blogs and forums.
+3. **Spanish**, then one of German, Portuguese or Italian, a different one each week ("juegos online para jugar con amigos sin descargar", "Browser Partyspiele mit Freunden", "jogos online para jogar com amigos no navegador"…).
+4. **Recent releases.** Hacker News "Show HN" posts about multiplayer browser or party games (its search is at hn.algolia.com), and the replies other people wrote under them; Product Hunt launches; recently added entries on AlternativeTo.
+5. **Alternatives to what we list.** Pick three games of the catalogue at random and read the AlternativeTo page of each ("alternatives to …"), plus one "games like …" search for each.
+6. **A gap.** Take the type with the fewest games in the catalogue and search for that kind specifically, in English.
+
+Reddit usually refuses automated readers: try it once, and move on if it does.
+
+Do not stop at the first few results. Before you conclude that there is nothing to propose, you must have opened the own site of at least 15 candidates that are not in the catalogue. Keep a list of every candidate you opened, with the track that led to it and why you kept or dropped it: the pull request and your final message report it.
 
 A candidate qualifies only if ALL of these hold:
 
@@ -104,8 +118,8 @@ For each game, the body gives, in this order:
 4. "Vignette": whether an image was kept, and if not, why.
 5. "À vérifier en jouant": only what a person must check by opening a game.
 
-After the games, a section "Écartés" lists the candidates you dropped and why, in one line each. End the body with: to refuse a game, remove its entry from the pull request and add its URL to src/data/rejected.json.
+After the games, a section "Écartés" lists the candidates you dropped and why, in one line each, and a section "Recherche" says in two or three lines which tracks of section 2 you followed and how many candidates you opened. When a game came from docs/suggestions.md, say so; tell the owner which suggestions can now be removed from that file (proposed here, or dropped for a reason that will not change), but do not edit the file yourself. End the body with: to refuse a game, remove its entry from the pull request and add its URL to src/data/rejected.json.
 
 If you cannot open the pull request (missing permission or tooling), push the branch if you can and state clearly in your final message what was done and what was not. If websites are unreachable because of the session's network policy, stop, open nothing, and say so.
 
-Your final message: a short French summary of what you proposed (or why nothing), with the pull request link.
+Your final message: a short French summary of what you proposed (or why nothing), with the pull request link. When you propose nothing, the message must list the tracks you followed, the number of candidates you opened, and each candidate with the reason it was dropped.
