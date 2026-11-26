@@ -14,6 +14,20 @@ for (const g of games) {
 type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string; added?: string };
 const st = status as Record<string, St>;
 
+// Each name in `inspiredBy` gets its own "games like …" page, so one original game must have one
+// spelling: stop the build when two names differ only by case, accents or punctuation.
+{
+  const seen = new Map<string, string>();
+  for (const g of games) {
+    for (const name of (g as { inspiredBy?: string[] }).inspiredBy ?? []) {
+      const key = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '');
+      const first = seen.get(key) ?? name;
+      if (first !== name) throw new Error(`games.json: "${g.id}" says inspiredBy "${name}", but another game already says "${first}". Use one spelling.`);
+      seen.set(key, name);
+    }
+  }
+}
+
 // Every game still listed (archived ones are gone), those that answer first.
 export const entries = games
   .filter((g) => st[g.id]?.state !== 'archived')
