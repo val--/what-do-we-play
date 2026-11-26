@@ -20,7 +20,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, '');
     <p class="lead">{page.lead}</p>
     {page.sections(entries.length).map((s) => (
       <section>
-        <h2>{s.h}</h2>
+        {s.h && <h2>{s.h}</h2>}
         {s.p.map((text) => <p set:html={text} />)}
       </section>
     ))}
