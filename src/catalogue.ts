@@ -7,23 +7,43 @@ import { LOCALES, SITES, type Locale } from './i18n';
 // A game must be described in every language the site is published in: stop the build otherwise,
 // rather than publish a page with a hole in it.
 for (const g of games) {
-  const missing = LOCALES.filter((l) => !(g.desc as Record<string, string>)[l]?.trim());
+  const missing = LOCALES.filter((l) => !(g.desc as Record<string, string> | undefined)?.[l]?.trim());
   if (missing.length) throw new Error(`games.json: "${g.id}" has no description in: ${missing.join(', ')}`);
 }
 
 type St = { state?: string; lastChecked?: string; lastOk?: string; offlineSince?: string; added?: string };
 const st = status as Record<string, St>;
 
+// The piece of an address made from a name: "Achtung, die Kurve!" -> "achtung-die-kurve".
+// The "games like …" pages (src/landings.ts) and the check below both use it, so they cannot disagree.
+export const slugOf = (s: string) =>
+  s.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+
 // Each name in `inspiredBy` gets its own "games like …" page, so one original game must have one
-// spelling: stop the build when two names differ only by case, accents or punctuation.
+// spelling. Stop the build when the field is not a list of names, when a name cannot make an
+// address, or when two names (or a name and a game of the catalogue) differ only by case,
+// accents, spaces or punctuation. Archived games are not shown anywhere and are left out.
 {
-  const seen = new Map<string, string>();
-  for (const g of games) {
-    for (const name of (g as { inspiredBy?: string[] }).inspiredBy ?? []) {
-      const key = name.normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase().replace(/[^a-z0-9]+/g, '');
-      const first = seen.get(key) ?? name;
-      if (first !== name) throw new Error(`games.json: "${g.id}" says inspiredBy "${name}", but another game already says "${first}". Use one spelling.`);
-      seen.set(key, name);
+  const sameName = (s: string) => slugOf(s).replace(/-/g, '');
+  const listed = games.filter((g) => st[g.id]?.state !== 'archived');
+  const titles = new Map(listed.map((g) => [sameName(g.name), g.name]));
+  const seen = new Map<string, { name: string; id: string }>();
+  for (const g of listed) {
+    const value: unknown = (g as { inspiredBy?: unknown }).inspiredBy;
+    if (value === undefined) continue;
+    if (!Array.isArray(value) || value.some((x) => typeof x !== 'string'))
+      throw new Error(`games.json: "${g.id}": inspiredBy must be a list of names, like ["Wordle"].`);
+    for (const name of value as string[]) {
+      const key = sameName(name);
+      if (!key || name !== name.trim())
+        throw new Error(`games.json: "${g.id}": inspiredBy "${name}" is empty, has spaces around it, or has no Latin letter or digit to make a page address from.`);
+      const first = seen.get(key);
+      if (first && first.name !== name)
+        throw new Error(`games.json: "${g.id}" says inspiredBy "${name}", but ${first.id === g.id ? 'the same entry' : `"${first.id}"`} already says "${first.name}". Use one spelling.`);
+      const title = titles.get(key);
+      if (title && title !== name)
+        throw new Error(`games.json: "${g.id}" says inspiredBy "${name}", but the catalogue has a game named "${title}". Write it the same way.`);
+      if (!first) seen.set(key, { name, id: g.id });
     }
   }
 }
