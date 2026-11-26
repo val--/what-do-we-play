@@ -91,7 +91,7 @@ const perkIcons = ['shield', 'check', 'monitor', 'users'];
   <div class="tally">
     <strong id="count" aria-live="polite" data-one={t.count(1)} data-many={t.count(2).replace('2', '{n}')} data-zero={t.count(0)}>{t.count(visible.length)}</strong>
     {lastCheck && <span class="verified"><Icon name="shield" />{t.linksChecked(formatDate(locale, lastCheck, 'short') ?? '')}</span>}
-    {lastBatch > 0 && <span class="fresh">{t.added(lastBatch, formatDate(locale, lastAdded, 'short', false) ?? '')}</span>}
+    {lastBatch > 0 && <button type="button" class="fresh" id="fresh" title={t.showNewest}>{t.added(lastBatch, formatDate(locale, lastAdded, 'short', false) ?? '')}</button>}
     <label class="search"><Icon name="search" /><input type="search" id="q" placeholder={t.search} aria-label={t.search} autocomplete="off" /></label>
     <label class="sort">{t.sortBy}
       <select id="sort">

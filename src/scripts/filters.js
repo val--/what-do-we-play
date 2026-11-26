@@ -133,6 +133,11 @@ reset.addEventListener('click', () => {
 sort.addEventListener('change', () => {
   list.append(...[...games].sort(SORTS[sort.value]));
 });
+// The "+3 games added" line sorts by newest first.
+document.getElementById('fresh')?.addEventListener('click', () => {
+  sort.value = 'new';
+  sort.dispatchEvent(new Event('change'));
+});
 list.addEventListener('click', (e) => {
   const btn = e.target.closest('.fav');
   if (!btn) return;
